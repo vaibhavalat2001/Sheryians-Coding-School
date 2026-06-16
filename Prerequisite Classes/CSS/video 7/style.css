@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body {  
+    width: 100%;
+    height: 100%;
+}
+
+
+.box {
+    height: 500px;  /* fixed unit: can't be change according to screen size */
+    width: 500px;
+    background-color: aquamarine;
+}
+
+.box {
+    height: 50%;     /* size relative to it's parent */
+    width: 50%;
+}
+
+.box {
+    /* relative to screen height */
+    /* height: 50vh; */
+    /* relative to screen width */
+    /* width: 50vw; */  
+    
+    /* height relative to view-port height */
+    height: 50vh;   
+    /* width relative to view-port height */
+    width: 50vh;    
+
+    /* height relative to view-port width */
+    /* height: 30vh; */
+    /* width relative to view-port width */
+    width: 50vw;
+}
+
+.box {    
+    font-size: 10px;
+}
+
+p {
+    font-size: 2em;
+}
+
+span {
+    /* em: not recomended it's take nerest parent size nested element create problem. */
+    font-size: 2em;
+}
+
+h2 {
+    /* rem: relative to root html */
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+.min-max {
+    background-color: lightsalmon;
+    /* vmax: listen only which one is max from height or width */
+    /* height: 50vmax;
+    width: 50vmax; */
+
+    height: 50vmin;
+    width: 50vmin;
+}
+
+h3 {
+    font-size: 5vmin;
+}
+
+.dvh {
+    background-color: orange;
+
+     /* for android mobile scrolling not appear  */
+    height: 100dvh;
+    width: 100vw;
+}

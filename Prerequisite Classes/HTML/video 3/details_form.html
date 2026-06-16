@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personla Details Form</title>
+</head>
+<body>
+    <br>
+    <h1>Student Information Form</h1>
+    <br><br>
+    <form action="">
+        <fieldset>
+            <legend>Personal Information:</legend>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" placeholder="Name">
+            <br><br>
+            <label for="mobile">Mobile:</label><br>
+            <input type="tel" name="" id="mobile" placeholder="Mobile number">
+            <br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" placeholder="Email id">
+            <br><br>
+            <label for="pass">Password:</label><br>
+            <input type="password" id="pass" placeholder="Password">
+            <br><br>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Address Line1:</legend>
+            <label for="addressline1">Address:</label><br>
+            <textarea name="" id="addressline1" rows="3" cols="25" placeholder="Enter Address"></textarea>
+            <br><br>
+            <label for="city">City:</label><br>
+            <select name="" id="city">
+                <option value="yavatmal">Yavatmal</option>
+                <option value="nanded">Nanded</option>
+                <option value="nagpur">Nagpur</option>
+                <option value="pusad">Pusad</option>
+                <option value="washim">Washim</option>
+            </select>
+
+            <br><br>
+            <label for="country">Country:</label><br>
+            <select name="" id="country">
+                <option value="india">India</option>
+                <option value="australia">Australia</option>
+                <option value="america">America</option>
+                <option value="japan">Japan</option>
+                <option value="korea">Korea</option>
+            </select>
+            <br><br>
+            <label for=""></label>
+        
+
+        </fieldset>
+        <br><br>
+        <label for="courses">Select Courses:</label>
+        <select name="" id="courses">
+            <optgroup label="FrontEnd">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JS">JS</option>
+            </optgroup>
+            <optgroup label="BackEnd">
+                <option value="Node.js">Node.js</option>
+                <option value="Express.js">Express.js</option>
+                <option value="Mongodb">Mongodb</option>
+            </optgroup>
+        </select>
+        <br><br>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is basic html">
+    <meta name="keywords" content="Basic of html structure">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="shortcut icon" href="./nature.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Basic of HTML</title>
+</head>
+
+<body>
+    <h1 id="heading">Heading 1</h1>
+    <h1>Heading 2</h1>
+    <h1>Heading 3</h1>
+    <h1>Heading 4</h1>
+    <h1>Heading 5</h1>
+    <h1>Heading 6</h1>
+
+    <hr>
+
+    <p>
+        <b>Vaibhav</b> <strong>Alat</strong> <br>
+        <i>Vaibhav</i> <em>Alat</em> <br>
+        <mark>Vaibhav</mark> <q>Alat</q> <br>
+        <small>Vaibhav</small> <big>Alat</big> <br>
+        <u>Vaibhav</u> <kbd>ctr + shift</kbd> <br>
+        Vaibhav<wbr>Alat <br>
+        <code>console.log("Vaibhav Alat")</code> <br>
+        <time datetime="2026-05-06">06 May 2026</time> <br>
+        <del>Rs 500</del> <br>
+        H<sub>2</sub>O <br>
+        a<sup>2</sup>b <br>
+        <cite>Shivaji Maharaj</cite> <br>
+        <var>let a = 10;</var> <br>
+        <samp>Output: 10</samp> <br>
+        <abbr title="This is html title">Hyper Text Markup Language</abbr>
+    </p>
+
+    <details>
+        <summary>Down below:</summary>
+        <h1>Vaibhav Gajanan </h1>
+    </details>
+
+    <hr>
+
+    <a href="https://google.com" target="_blank">Go to Google</a> <br>
+    <a href="tel:9067579706">Call Me</a> <br>
+    <a href="sms:9067579706">Send Sms</a> <br>
+    <a href="mailto:vaibhavgalat123@gmail.com">Send Email</a> <br>
+    <a href="https://wa.me/9067579706">WhatsApp me</a> <br>
+    <a href="./index.html" download="vaibhav.html">Download this web site html code</a> <br>
+    <a href="./nature.jpg" download="nature img">Download nature img</a> <br>
+    <a href="#heading">Go to up</a> <br>
+
+    <hr>
+
+    <img src="https://plus.unsplash.com/premium_photo-1720524513100-2fa5f656272f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+        alt="nature img"> <br>
+    <img src="./nature.jpg" alt="water fall" width="500px" height="400px"> <br>
+
+    <!-- <img src="photo-800.jpg" srcset="photo-400.jpg 400w, photo-800.jpg 800w, photo-1200.jpg 1200w"
+        sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px" alt="Description" width="800" height="600"
+        loading="lazy"> -->
+
+    <hr>
+
+    <audio src="./fahhhh.mp3" controls></audio>
+    <video src="" controls autoplay muted loop></video>
+
+    <iframe src="https://youtube.com/embed/AryuMWZ8qqU" frameborder="0" width="300px" height="500px"></iframe> <br>
+
+    <iframe src="https://www.wikipedia.org/" frameborder="0"></iframe>
+
+    <hr>
+
+    <ul type="square">
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Gurve</li>
+    </ul>
+
+    <ol type="a" reversed>
+        <li>Onion</li>
+        <li>Garlic</li>
+        <li>Ginger</li>
+        <li>Tomato</li>
+    </ol>
+
+    <hr>
+
+    <table border="2">
+        <colgroup>
+            <col style="background-color: lightcoral">
+            <col style="background-color: lightgreen;">
+            <col style="background-color: lightpink;">
+            <col style="background-color: lightseagreen;">
+        </colgroup>
+        <caption>Student Table</caption>
+        <thead>
+            <tr>
+                <th>Sr.no</th>
+                <th>Name</th>
+                <th>SurName</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Vaibhav</td>
+                <td rowspan="2">Alat</td>
+                <td>BCA</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Akshay</td>
+                <td>ITI</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">-- End --</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <form action="">
+        <fieldset>
+            <legend>Personal Information:</legend>
+
+            <label for="name"></label>
+            <input type="text" placeholder="Enter Name..." id="name" required> <br><br>
+            <input type="number" placeholder="Enter Number..."> <br><br>
+            <input type="tel" placeholder="Enter phone number..."> <br><br>
+            <input type="email" placeholder="Enter email..."> <br><br>
+            <input type="password" placeholder="Enter password..."> <br><br>
+            <input type="radio"> <br><br>
+            <input type="checkbox"> <br><br>
+            <input type="range"> <br><br>
+            <input type="color"> <br><br>
+            <input type="file"> <br><br>
+            <input type="search" placeholder="Search you want..."> <br><br>
+            <input type="image" src="./nature.jpg" alt="" height="200px" width="200px"> <br><br>
+            <input type="url" name="" id=""> <br><br>
+            <input type="time" name="" id=""> <br><br>
+            <input type="date" name="" id=""> <br><br>
+            <input type="week" name="" id=""> <br><br>
+            <input type="month" name="" id=""> <br><br>
+            <input type="datetime-local" name="" id=""> <br><br>
+            <input type="reset" value="reset">
+            <input type="submit" value="Submit"> <br><br>
+        </fieldset>
+    </form> <br><br>
+
+    <hr>
+
+    <h1>--Advance HTML--</h1> <br>
+
+    <!-- dialog — native modal dialog -->
+    <dialog id="my-modal">
+        <h2>Are you sure?</h2>
+        <p>This action cannot be undone.</p>
+        <button onclick="document.getElementById('my-modal').close()">Cancel</button>
+        <button>Confirm</button>
+    </dialog>
+    <button onclick="document.getElementById('my-modal').showModal()">Open modal</button>
+
+    <br><br>
+
+    <!-- progress — native progress bar -->
+    <label for="upload">Upload progress:</label>
+    <progress id="upload" value="65" max="100">65%</progress>
+
+    <br><br>
+
+    <!-- meter — a measurement within a known range -->
+    <label for="disk">Disk usage:</label>
+    <meter id="disk" value="6" min="0" max="10" low="3" high="8" optimum="2">6GB</meter>
+
+    <br><br>
+
+    <!-- datalist — searchable dropdown suggestions -->
+    <input list="cities" name="city" placeholder="Enter a city...">
+    <datalist id="cities">
+        <option value="Mumbai">
+        <option value="Pune">
+        <option value="Nagpur">
+        <option value="Chattrapati Sambhaji Nagar">
+        <option value="Nashik">
+    </datalist>
+
+    <br><br>
+
+    <!-- output — result of a calculation -->
+    <!-- <form oninput="result.value = parseInt(a.value) + parseInt(b.value)">
+        <input type="number" id="a" value="10"> +
+        <input type="number" id="b" value="20"> =
+        <output name="result">30</output>
+    </form> -->
+
+    <form oninput="result.value = parseInt(a.value) + parseInt(b.value)">
+        <input type="number" id="a" value="10"> +
+        <input type="number" id="b" value="20"> = 
+        <output name="result">30</output>
+    </form>
+
+    <br><br>
+
+    
+</body>
+
+</html>

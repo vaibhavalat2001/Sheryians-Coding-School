@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family:  'poppins', sans-serif;
+    background-color: black;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 26% 15% 8% 22% 26%;
+    grid-template-rows: 24% 25% 8% 16% 22%;
+    grid-template-areas: 
+                    "left-top top-center1 top-center1 top-center2  right-top"
+                    "left-top center center center right-top"
+                    "left-btm center center center right-top"
+                    "left-btm center center center right-btm"
+                    "left-btm btm-center1 btm-center2 btm-center2 right-btm";
+    gap: 10px;
+    padding: 20px
+}
+
+.left-top {
+    background-color: #f44336;
+    border-radius: 20px;
+    grid-area: left-top;
+}
+
+.left-btm {
+    background-color: aquamarine;
+    grid-area: left-btm;
+    border-radius: 20px;
+}
+
+.top-center1 {
+    background-color: burlywood;
+    grid-area: top-center1;
+    border-radius: 20px;
+}
+
+.top-center2 {
+    background-color: violet;
+    grid-area: top-center2;
+    border-radius: 20px;
+}
+
+.center {
+    background-color: brown;
+    grid-area: center;
+    border-radius: 20px;
+}
+
+.btm-center1 {
+    background-color: antiquewhite;
+    grid-area: btm-center1;
+    border-radius: 20px;
+}
+
+.btm-center2 {
+    background-color: yellowgreen;
+    grid-area: btm-center2;
+    border-radius: 20px;
+}
+
+.right-top {
+    background-color: turquoise;
+    grid-area: right-top;
+    border-radius: 20px;
+}
+
+.right-btm {
+    background-color: lightcoral;
+    grid-area: right-btm;
+    border-radius: 20px;
+}
+

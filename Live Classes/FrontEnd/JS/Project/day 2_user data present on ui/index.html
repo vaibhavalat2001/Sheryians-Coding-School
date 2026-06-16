@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full border-box">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER Data Display on the UI</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-black w-full h-full border-box">
+    <main class="flex justify-center items-center flex-col p-4 gap-10">
+        <form action="" class="w-3/4 flex flex-col justify-center items-center rounded-xl gap-4 border-2 border-white p-8 ">
+            <input class="bg-white px-4 rounded-lg text-lg md:text-2xl" type="text" id="name" placeholder="Enter your name" required>
+            <input class="bg-white px-4 rounded-lg text-lg md:text-2xl" type="text" id="email" placeholder="Enter email" >
+            <input class="bg-white px-4 rounded-lg text-lg md:text-2xl" type="url" id="url" placeholder="Enter img url">
+            <div class="flex gap-4">
+                <button class="bg-yellow-400 py-2 px-4 rounded-xl mt-3 cursor-pointer active:scale-90 font-bold" type="submit" value="sub" id="submit">Submit</button>
+                <button class="bg-green-300 py-2 px-4 rounded-xl mt-3 cursor-pointer active:scale-90 font-bold hidden" type="submit" value="upd" id="upd">Update</button>
+            </div>
+        </form>
+        
+        <div class="users flex flex-wrap w-full px-10 gap-4 justify-center">
+            
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

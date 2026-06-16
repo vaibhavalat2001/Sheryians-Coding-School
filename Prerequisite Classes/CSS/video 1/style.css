@@ -1,0 +1,31 @@
+* {
+   /* color: lightgreen; */
+   margin: 0px;
+   padding: 0px;
+}
+
+html, body {
+   width: 100%;
+}
+
+h1 {
+   color: aqua;
+   font-size: 50px;
+}
+
+#diff {
+   color: aquamarine
+}
+
+h2, p {
+   color: lightcoral
+}
+
+div {
+   height: 50%;
+   background-color: lightgoldenrodyellow;
+}
+
+::selection {
+   background-color: lightcoral
+}

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family:  'poppins', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    display: inline-block;
+    margin: 100px;
+    position: relative;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    height: 5px;
+    width: 0%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    transition: all ease-in 0.3s;
+}
+
+h1:hover:after {
+    width: 100%;
+}
+

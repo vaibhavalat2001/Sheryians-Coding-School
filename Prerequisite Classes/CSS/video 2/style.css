@@ -1,0 +1,89 @@
+/* new page */
+
+.heading {
+   font-size: 50px;
+   text-align: center;  /* start, center, end */
+   font-family: 'Courier New', Courier, monospace;
+   margin-bottom: 10px;
+   font-weight: 100;
+}
+
+
+.subHeading {
+   font-size: 25px;
+   color: gray;
+   text-align: center;
+}
+
+.para {
+   text-align: center;
+   /* text-decoration: 2px underline lightsalmon;  underline, line-through, overline */
+   text-transform: lowercase;
+   line-height: 20px;
+   word-spacing: 3px;
+   letter-spacing: 3px;
+   /* line-break: anywhere; */
+}
+
+.box {
+   margin: 50px 10px 30px 100px;
+   padding: 10px 20px 30px 40px;
+   height: 200px;
+   width: 200px;
+   background-color: aquamarine;
+   /* solid, dotted, dashed, ridge*/
+   border: 2px ridge red;  
+}
+
+.img {
+   margin: 20px 100px;
+   height: 350px;
+   width: 300px;
+   background-color: lightcoral;
+   background-image: url('https://plus.unsplash.com/premium_photo-1711434824963-ca894373272e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fHww');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: bottom;
+}
+
+.block {
+   display: inline;
+}
+
+.inline {
+   display: block;
+}
+
+.flex {
+   margin: 50px 0px;
+   height: auto;
+   width: 100%;
+   padding: 20px 0px;
+   background-color: gray;
+   display: flex;
+   align-items:center;
+   justify-content: space-evenly;
+   gap: 20px;
+   flex-wrap: wrap;
+   /* row, row-reverse, column, column-reverse */
+   /* flex-direction:row-reverse;  */
+}
+
+.boxes {
+   height: 200px;
+   width: 200px;
+   background-color: lightcoral;
+}
+
+#diff2 {
+   background-color: lightgreen;
+}
+#diff3 {
+   background-color: lightgoldenrodyellow;
+}
+#diff4 {
+   background-color: lightseagreen;
+}
+#diff5 {
+   background-color: lightpink;
+}

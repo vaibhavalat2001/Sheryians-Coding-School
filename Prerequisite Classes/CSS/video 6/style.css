@@ -1,0 +1,44 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.parent {
+    width: 100%;
+    height: 50%;
+    background-color: tomato;
+    
+}
+
+.child {
+    width: 20%;
+    height: 20%;
+    background-color: aquamarine;
+    animation: moveBox 3s ease-in infinite;
+}
+
+@keyframes moveBox {
+    /* from {
+        transform:  translate(0px);
+    }
+
+    to {
+        transform: translate(500px);
+    } */
+
+    /* in persantage */
+
+    0% {
+        tranform: translate(0px);
+    }
+
+    50% {
+        transform: translate(200px);
+    }
+    
+    100% {
+        transform: translate(400px);
+        transform: rotate(90deg);
+    }
+}
+

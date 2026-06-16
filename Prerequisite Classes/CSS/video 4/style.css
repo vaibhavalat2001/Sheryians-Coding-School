@@ -1,0 +1,71 @@
+* {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.position {
+   height: 100px;
+   width: 50%;
+   background-color: aquamarine;
+   /* relative, absolute, sticky, fixed */
+   /* relative not drop it's original position. It's move along it's original position.  */
+   position: relative;
+   top: 300px;
+}
+
+.diff1 {
+   background-color: lightcoral;
+   /* absolute drop it's original position. It's move according to the parent element.  */
+   position: absolute;
+   right: 0px;
+   bottom: 0px;
+}
+
+.diff2 {
+   background-color: rgb(29, 153, 241);
+   position: fixed;
+   top: 0px;
+}
+
+.diff3 {
+   background-color: lightsalmon;
+   position: sticky;
+   top: 50px;
+   z-index: 10;   
+}
+
+.diff4 {
+   background-color: cadetblue;
+}
+
+
+
+/* using postion center the div */
+/* not recomended to use position, try to use position minumum in responsive websites */
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.parent {
+    position: relative;
+    width: 80%;
+    height: 50%;
+    background-color: aquamarine;
+}
+
+.child {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 50%;
+    background-color: burlywood;
+}
