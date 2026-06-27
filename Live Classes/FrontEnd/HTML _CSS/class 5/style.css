@@ -18,3 +18,20 @@ h1 {
     margin: auto;
 
 }
+
+button {
+    background-color: rgb(35, 10, 53);
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 8px 12px;
+    color: rgb(184, 105, 224);
+
+    &:hover {
+        cursor: pointer;
+        border: 2px solid rgb(133, 24, 201);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}

@@ -96,6 +96,9 @@ let ui = () => {
                         </div>
                     </div>
                 </div>`;
+        
+    console.log(index);
+
     })
 
 }
