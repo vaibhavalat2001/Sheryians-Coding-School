@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 
 let App = () => {
   return <div>
-    <Navbar/>    
+    <Navbar/>   
   </div>
 }
 
