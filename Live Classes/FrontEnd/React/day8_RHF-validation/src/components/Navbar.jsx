@@ -1,0 +1,23 @@
+import React from "react";
+
+const Navbar = ({setToggle}) => {
+  return (
+    <div className="bg-black font-semibold rounded px-4 py-2 text-white items-center gap-4 flex justify-between">
+      <div>
+        <img
+          className="w-14 rounded-full"
+          src="data:image/png;base64,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"
+          alt=""
+        />
+      </div>
+      <div className="flex gap-6 max-sm:gap-3">
+        <div className="cursor-pointer active:scale-90">Home</div>
+        <div className="cursor-pointer active:scale-90">About</div>
+        <div className="cursor-pointer active:scale-90">Contact</div>
+      </div>
+      <button onClick={() => setToggle((pre) => !pre)} className="cursor-pointer max-sm:text-sm active:scale-90 px-2 max-sm:p-2 py-1 rounded bg-blue-400">Create user</button>
+    </div>
+  );
+};
+
+export default Navbar;
