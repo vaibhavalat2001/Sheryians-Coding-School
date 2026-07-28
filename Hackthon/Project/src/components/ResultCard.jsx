@@ -47,7 +47,7 @@ const ResultCard = ({ item }) => {
         id="title"
         className="w-full gap-2 px-4 py-4 flex justify-between items-start absolute bottom-0 text-white"
       >
-        <h2 className="font-semibold h-11 overflow-hidden sm:text-lg max-sm:text-sm capitalize">
+        <h2 className="font-semibold h-12 max-sm:h-11 overflow-hidden sm:text-lg max-sm:text-sm capitalize">
           {item.title}
         </h2>
         <button
