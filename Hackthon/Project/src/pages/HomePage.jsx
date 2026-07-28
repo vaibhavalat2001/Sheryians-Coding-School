@@ -21,8 +21,19 @@ const HomePage = () => {
           ""
         )}
       </div>
+
+      <div className={`${query !== ""? "hidden": ""} flex justify-center sm:text-xl`}>
+        <h2>Search anything in the search box</h2>
+      </div>
+
       <div className="flex justify-center">
-      <a className="text-blue-500 focus:text-orange-400 visited:text-red-600" href="https://www.linkedin.com/in/vaibhav-gajanan-alat/" target="_blank">By, Vaibhav Gajanan Alat</a>
+        <a
+          className="text-blue-500 focus:text-orange-400 visited:text-red-600"
+          href="https://www.linkedin.com/in/vaibhav-gajanan-alat/"
+          target="_blank"
+        >
+          By, Vaibhav Gajanan Alat
+        </a>
       </div>
     </div>
   );
