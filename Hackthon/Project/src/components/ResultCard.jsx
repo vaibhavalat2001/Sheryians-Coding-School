@@ -54,7 +54,7 @@ const ResultCard = ({ item }) => {
           onClick={() => {
             collectCollection(item);
           }}
-          className="bg-purple-600 cursor-pointer hover:text-bold hover:text-emerald-400 active:scale-80 px-2 sm:py-0 py-1 sm:text-lg max-sm:text-sm rounded"
+          className="bg-purple-600 cursor-pointer hover:bg-purple-500 hover:scale-120 hover:text-bold hover:text-emerald-400 active:scale-80 px-2 sm:py-0 py-1 sm:text-lg max-sm:text-sm rounded"
         >
           Save
         </button>

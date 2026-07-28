@@ -31,13 +31,12 @@ export async function fetchGif(query, limit=100) {
 
 
 
-export async function fetchPexelsPhotos(query, per_page=10) {
+export async function fetchPexelsPhotos(query, per_page=100) {
     let res = await axios.get('https://api.pexels.com/v1/search', {
         params:{query, per_page},
         headers:{authorization:PEXELS_KEY}
     });
-
-    return res
+    return res.data.photos
 }
 
 

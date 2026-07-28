@@ -7,7 +7,7 @@ import {
   setError,
   setLoading,
 } from "../redux/features/searchSlice";
-import { fetchPhotos, fetchVideos, fetchGif } from "../api/mediaApi";
+import { fetchPhotos, fetchPexelsPhotos, fetchVideos, fetchGif } from "../api/mediaApi";
 import ResultCard from "./ResultCard";
 
 const ResultGrid = () => {
@@ -25,14 +25,15 @@ const ResultGrid = () => {
           dispatch(setLoading());
           let data = [];
           if (activeTab == "photos") {
-            let res = await fetchPhotos(query);
-            data = res.results.map((item) => ({
+            let res = await fetchPexelsPhotos(query);
+            console.log(res);
+            data = res.map((item) => ({
               id: item.id,
               type: "photo",
-              title: item.alt_description,
-              thumbnail: item.urls.thumb,
-              src: item.urls.full,
-              url: item.links.html,
+              title: item.alt,
+              thumbnail: item.src.medium,
+              src: item.src.medium,
+              url: item.url
             }));
           }
           if (activeTab == "videos") {
