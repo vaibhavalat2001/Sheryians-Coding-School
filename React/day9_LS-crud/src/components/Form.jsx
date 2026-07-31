@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { nanoid } from "nanoid";
 
 const Form = ({ users, setUsers, setToggle, update, setUpdate }) => {
   let {
@@ -9,23 +10,21 @@ const Form = ({ users, setUsers, setToggle, update, setUpdate }) => {
     formState: { errors },
   } = useForm({
     mode: "onChange",
-    defaultValues: {
-      name: update.name,
-      email: update.email,
-      mobile: update.mobile,
-      pass: update.pass,
-      img: update.img,
-    },
+    defaultValues: update,
   });
 
   let formSubmit = (data) => {
-    if (update.email === data.email) {
-      setUsers((pre) =>
-        pre.map((user, ind) => (user.email === update.email ? data : user)),
+    if (update) {
+      let arr = users.map((user) =>
+        user.id === update.id ? data : user,
       );
-      setUpdate([]);
+      setUsers(arr);
+      localStorage.setItem("users", JSON.stringify(arr));
+      setUpdate(null);
     } else {
-      setUsers((pre) => [...pre, data])
+      let arr = [...users, { ...data, id: nanoid() }];
+      setUsers(arr);
+      localStorage.setItem("users", JSON.stringify(arr));
     }
     setToggle((pre) => !pre);
     reset();
@@ -109,7 +108,7 @@ const Form = ({ users, setUsers, setToggle, update, setUpdate }) => {
           })}
           className="outline-none border border-gray-400 p-2 rounded text-xl"
           type="url"
-          placeholder="Image"
+          placeholder="Image url"
         />
         {errors.img && <p className="text-red-400">{errors.img.message}</p>}
 
