@@ -9,12 +9,11 @@ let App = () =>  {
   let [flag, setFlag] = useState(true);
 
   // something();  // default export with any name
-  // one();  // export function with same name
-  // two();
+  // one();  // export function with same name two();
   console.log(flag);
 
   return <div>
-    <h1>hello</h1>
+    <h1>Day 3 - Props and useState</h1>
     <button onClick={() => setCount(count + 1)}>+</button>
     <span style={{margin:"0 20px"}}>{count}</span>
     <button onClick={() => setCount(count - 1)}>-</button>

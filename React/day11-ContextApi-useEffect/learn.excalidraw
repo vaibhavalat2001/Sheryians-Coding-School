@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "WjxnlKCUjDxcPHD5f3-qV",
+      "type": "text",
+      "x": -519.1532364972077,
+      "y": 38.57806116003604,
+      "width": 740.99951171875,
+      "height": 400,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aA",
+      "roundness": null,
+      "seed": 1014920643,
+      "version": 1766,
+      "versionNonce": 962843875,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1785677269639,
+      "link": null,
+      "locked": false,
+      "text": "Today I learnt context api provider wraping with different different\nfunction component how it's working, I tried access state from \ncontext provider to different function component that not child of \ncontext provider. I also leart useEffect with empty dependecy, and with\ndependency, and also i learnt mount, upadate and unmount phases working\nin mount phase component render in render tree and in unmount phase\ncomponent remover from render tree. When we use setInterval in about\ncomponent and another componenet is contact then we tryiend to \ntrigger componenet one by one on ui then sentInter never stop. when\nabout page go from render tree after that also senInter work. \nso we leart how to stop setInterval when about page went from render\ntree. means unmount the about componenet. we useEffect inside useEffect\nreturn callback function that trigger when componenet unmount so we \nwrote inside the return callback function clearSetInterval(interval);\nthen when about component unmount then useEffect clear the setInterval. \n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Today I learnt context api provider wraping with different different\nfunction component how it's working, I tried access state from \ncontext provider to different function component that not child of \ncontext provider. I also leart useEffect with empty dependecy, and with\ndependency, and also i learnt mount, upadate and unmount phases working\nin mount phase component render in render tree and in unmount phase\ncomponent remover from render tree. When we use setInterval in about\ncomponent and another componenet is contact then we tryiend to \ntrigger componenet one by one on ui then sentInter never stop. when\nabout page go from render tree after that also senInter work. \nso we leart how to stop setInterval when about page went from render\ntree. means unmount the about componenet. we useEffect inside useEffect\nreturn callback function that trigger when componenet unmount so we \nwrote inside the return callback function clearSetInterval(interval);\nthen when about component unmount then useEffect clear the setInterval. \n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
