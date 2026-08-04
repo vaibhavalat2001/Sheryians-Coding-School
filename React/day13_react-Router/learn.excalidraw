@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "2zbQOF9QXAGpPYm2zWwdY",
+      "type": "text",
+      "x": 17.867277005867948,
+      "y": 149.35133617515362,
+      "width": 1050.3792724609375,
+      "height": 1675,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 342403810,
+      "version": 2957,
+      "versionNonce": 1203746210,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1785850237523,
+      "link": null,
+      "locked": false,
+      "text": "Day 13 react-routing:\nToday i learnt react-routing there are to \napproach declaration routing and data routing\nI learnt today declaration routing\nin this routing inbuild component like\nBrowserRouting  for wrap app.jsx component\nRoutes component for create route \ninside Routes another component Route\nin Route componenet two inbuild attribute\npath=\"\" and element={} also another component\nto Navlink this is for click and go that page, like link\nNavlink componenet get also to=\"\" attribut\ninside to get path of that page.\nInside Route we also do nested routing\nwrite like \n<Route path=\"\" element={} >\n       <Route path=\"\" element={}/>\n</Route>\ninside nested routing working use need to\ntake <Outlet/> component inside parent \nRoute component. then parent Route take\nchildren Route component. \n\nI created 3 Component for 3 pages\nHome.jsx, About.jsx, Contact.jsx and for nesting\nI created another component Details.jsx for Home page \nnesting and NestedContact.jsx for\nContact page another component. \nalso I learnt useNavigation() hook \nit's use for get another page path \nwhen we wrote onclick on button and \ninside onclick use useNavigation use to add path of another component\nthen we move that component or page. \n\nI created AppRoutes.jsx router\nand add one Routes component and insed Routes add\n3 Route and gave path and element <HOme/>, <About/> and <Contact/>\nand another component I created Navbar.jsx\ninside I create navbar and create three\n<Navlink to=\"/\">Home </Navlink>\n<Navlink to=\"/about\">About </Navlink> \n<Navlink to=\"/contact\">Contact </Navlink>  \nand given path /, /about, and /contact\nwhen I clicked home then i went home page. and when i click on about then i went about page same contact\n\nand nesting routing i do this\n <Route path='/' element={<Home/>}>\n            <Route path='details' element={<Details/>}/>\n        </Route>\n<Route path='/contact' element={<Contact/>}>\n            <Route path='nested' element={<NestedContact/>} />\n        </Route>\n\nfor nesting routing able i used outlet on parent routes. like this\n<div>\n      <div>This is contact page</div>\n      <button  className='text-red-500' onClick={() => navigate(\"nested\")}>Nested contact</button>\n      <Outlet/>\n    </div>\n\nalso i learnt how different different path work like this path\nhttp://localhost:5173/contact/nested\n\n\n\n\n ",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 13 react-routing:\nToday i learnt react-routing there are to \napproach declaration routing and data routing\nI learnt today declaration routing\nin this routing inbuild component like\nBrowserRouting  for wrap app.jsx component\nRoutes component for create route \ninside Routes another component Route\nin Route componenet two inbuild attribute\npath=\"\" and element={} also another component\nto Navlink this is for click and go that page, like link\nNavlink componenet get also to=\"\" attribut\ninside to get path of that page.\nInside Route we also do nested routing\nwrite like \n<Route path=\"\" element={} >\n       <Route path=\"\" element={}/>\n</Route>\ninside nested routing working use need to\ntake <Outlet/> component inside parent \nRoute component. then parent Route take\nchildren Route component. \n\nI created 3 Component for 3 pages\nHome.jsx, About.jsx, Contact.jsx and for nesting\nI created another component Details.jsx for Home page \nnesting and NestedContact.jsx for\nContact page another component. \nalso I learnt useNavigation() hook \nit's use for get another page path \nwhen we wrote onclick on button and \ninside onclick use useNavigation use to add path of another component\nthen we move that component or page. \n\nI created AppRoutes.jsx router\nand add one Routes component and insed Routes add\n3 Route and gave path and element <HOme/>, <About/> and <Contact/>\nand another component I created Navbar.jsx\ninside I create navbar and create three\n<Navlink to=\"/\">Home </Navlink>\n<Navlink to=\"/about\">About </Navlink> \n<Navlink to=\"/contact\">Contact </Navlink>  \nand given path /, /about, and /contact\nwhen I clicked home then i went home page. and when i click on about then i went about page same contact\n\nand nesting routing i do this\n <Route path='/' element={<Home/>}>\n            <Route path='details' element={<Details/>}/>\n        </Route>\n<Route path='/contact' element={<Contact/>}>\n            <Route path='nested' element={<NestedContact/>} />\n        </Route>\n\nfor nesting routing able i used outlet on parent routes. like this\n<div>\n      <div>This is contact page</div>\n      <button  className='text-red-500' onClick={() => navigate(\"nested\")}>Nested contact</button>\n      <Outlet/>\n    </div>\n\nalso i learnt how different different path work like this path\nhttp://localhost:5173/contact/nested\n\n\n\n\n ",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
