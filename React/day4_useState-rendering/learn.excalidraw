@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "L0A0MeXMXIDzcjJt68FEI",
+      "type": "text",
+      "x": 25.58996337589616,
+      "y": 141.6309039445116,
+      "width": 1380.3990478515625,
+      "height": 650,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a3",
+      "roundness": null,
+      "seed": 2019827690,
+      "version": 1230,
+      "versionNonce": 1228806006,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1785766881682,
+      "link": null,
+      "locked": false,
+      "text": "day 4 today i learnt useState rendering, I created useState\nof product data and pass array of object of 20 data with\n  {\n      id: 1,\n      title: \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\n      price: 109.95,\n      description:\n        \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",\n      category: \"men's clothing\",\n      image: \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png\",\n      rating: {\n        rate: 3.9,\n        count: 120,\n      },\n    },\nlike this \nthen i create products card componenet and used map on product \ndata to render prductsCard component. inside the product card i\nreceive each product card object and create a card and return\nall card details on ui. on ui showing image, title, category, and price\nalso i create another function productDel for delete product\nand pass function as a props inside the productCard and \nreceiver props inside the productCard and created a \nbutton inside the product card then on button i wrote \nonClick on button like this  onClick={() => del(product.id)}\nthen when click on delete button card of that product remove",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "day 4 today i learnt useState rendering, I created useState\nof product data and pass array of object of 20 data with\n  {\n      id: 1,\n      title: \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\n      price: 109.95,\n      description:\n        \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",\n      category: \"men's clothing\",\n      image: \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png\",\n      rating: {\n        rate: 3.9,\n        count: 120,\n      },\n    },\nlike this \nthen i create products card componenet and used map on product \ndata to render prductsCard component. inside the product card i\nreceive each product card object and create a card and return\nall card details on ui. on ui showing image, title, category, and price\nalso i create another function productDel for delete product\nand pass function as a props inside the productCard and \nreceiver props inside the productCard and created a \nbutton inside the product card then on button i wrote \nonClick on button like this  onClick={() => del(product.id)}\nthen when click on delete button card of that product remove",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}

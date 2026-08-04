@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "6hK39LRPD7l9YuWxfXoCm",
+      "type": "text",
+      "x": 19.82633399963379,
+      "y": 129.21871948242188,
+      "width": 812.579345703125,
+      "height": 1550,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 1685007529,
+      "version": 3032,
+      "versionNonce": 174482739,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1785821647775,
+      "link": null,
+      "locked": false,
+      "text": "day 5 - rendering form handling: in this class i \nlearnt form handling with two differnet methods\nbruteforce approach and better approach. \nI created three different form componenet form1, form2, \nand form3 then form1 I wrote form inside 3 input\n1st for name, 2nd for email and 3rd for password\nthen i worte onChange() on form then I given callback inside\nthe onChange then I chane e value and console e \nthen I got synthetic Event. then i check in synthetic \nevent inside i see targert object inside value \nthen i wrote e.target.value after console i got \nactual input. then i store this value inside the \nname state, email in email state and passwond in \npassword state. then I print this values on ui\nusing   h1 tag \n<h1>Name - {name}</h1>\n      <h1>Email - {email}</h1>\n      <h1>Password - {pass}</h1>\nthis is for bruateforce approach form1 component\nalso for better approach in form2\ni create only one state that is formData \nthen i wrote on every input filed         \nonChange={(e) => setFormData({...formData, name: e.target.value})}\n and print result on ui using\n<h1>Name - {formData.name}</h1>\n    <h1>Email - {formData.email}</h1>\n    <h1>Password - {formData.pass}</h1>\n\nand another modificaiton on better approach is \ni create a function handclick and pass into onChange for call>\n let handleClick = (e) => {\n    let { name, value } = e.target;\n    setFormData({ ...formData, [name]: value });\n  };\n\nand get all value in name of input and update the state\nand same print on ui. \n\nalso on app.jsx componenet I wrote user name state and pass object \n{name: \"vaibhav\"} then using button onClick  change the object to different name\nit's only change the name when click the button after stop the changing object. \nbecuase state function compare previous value == upadeting value so it's\nchange only once. \n\n <h1>User - {user.name}</h1>\n      <button onClick={() => user.name = \"Akshay\"}>Change Name</button> \n also i this class i learnt how to implement tailwindcss in \nour react-vite project I first run command npm install tailwindcss @tailwindcss/vite\nthen i installed tailwindcss packages then on index.css i \nremove external styling a wrote @import 'tailwindcss'\nthen on vite.config.js file i import the tailwindcss and inside the \nplugin object i called tailwindcss. \nthen I used different class inside my form\nlike text-xl, text-red-500, flex, flex-col, justify-center,\nitems-center, border, border-white, rounded, w-40, w-full,\nh-screen, bg-black, gap-4, and lot of things i learnt tailwindcss classes.  \n\n\n\n\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "day 5 - rendering form handling: in this class i \nlearnt form handling with two differnet methods\nbruteforce approach and better approach. \nI created three different form componenet form1, form2, \nand form3 then form1 I wrote form inside 3 input\n1st for name, 2nd for email and 3rd for password\nthen i worte onChange() on form then I given callback inside\nthe onChange then I chane e value and console e \nthen I got synthetic Event. then i check in synthetic \nevent inside i see targert object inside value \nthen i wrote e.target.value after console i got \nactual input. then i store this value inside the \nname state, email in email state and passwond in \npassword state. then I print this values on ui\nusing   h1 tag \n<h1>Name - {name}</h1>\n      <h1>Email - {email}</h1>\n      <h1>Password - {pass}</h1>\nthis is for bruateforce approach form1 component\nalso for better approach in form2\ni create only one state that is formData \nthen i wrote on every input filed         \nonChange={(e) => setFormData({...formData, name: e.target.value})}\n and print result on ui using\n<h1>Name - {formData.name}</h1>\n    <h1>Email - {formData.email}</h1>\n    <h1>Password - {formData.pass}</h1>\n\nand another modificaiton on better approach is \ni create a function handclick and pass into onChange for call>\n let handleClick = (e) => {\n    let { name, value } = e.target;\n    setFormData({ ...formData, [name]: value });\n  };\n\nand get all value in name of input and update the state\nand same print on ui. \n\nalso on app.jsx componenet I wrote user name state and pass object \n{name: \"vaibhav\"} then using button onClick  change the object to different name\nit's only change the name when click the button after stop the changing object. \nbecuase state function compare previous value == upadeting value so it's\nchange only once. \n\n <h1>User - {user.name}</h1>\n      <button onClick={() => user.name = \"Akshay\"}>Change Name</button> \n also i this class i learnt how to implement tailwindcss in \nour react-vite project I first run command npm install tailwindcss @tailwindcss/vite\nthen i installed tailwindcss packages then on index.css i \nremove external styling a wrote @import 'tailwindcss'\nthen on vite.config.js file i import the tailwindcss and inside the \nplugin object i called tailwindcss. \nthen I used different class inside my form\nlike text-xl, text-red-500, flex, flex-col, justify-center,\nitems-center, border, border-white, rounded, w-40, w-full,\nh-screen, bg-black, gap-4, and lot of things i learnt tailwindcss classes.  \n\n\n\n\n\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#111"
+  },
+  "files": {}
+}

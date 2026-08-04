@@ -5,10 +5,10 @@ import Form3 from "./Form3";
 
 const Web = () => {
   return (
-    <div className="bg-gray-800 h-screen text-white">
-      {/* <Form1/> */}
-      {/* <Form2/> */}
-      <Form3/>
+    <div className="bg-gray-800 h-screen flex flex-col items-center text-white">
+      <Form1/>
+      {/* <Form2/>
+      <Form3/> */}
     </div>
   );
 };

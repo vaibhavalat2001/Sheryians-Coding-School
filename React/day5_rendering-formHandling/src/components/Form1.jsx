@@ -7,22 +7,23 @@ const Form1 = () => {
   const [pass, setPass] = useState("");
 
   return (
-    <div className="flex flex-col p-5 w-1/2 gap-4">
+    <div className="flex flex-col p-5 w-50 gap-4">
+      <h1 className="text-red-500">Bruteforce Approach:</h1>
       <input
         onChange={(e) => setName(e.target.value)}
-        className="border"
+        className="border rounded px-2"
         type="text"
         placeholder="name"
       />
       <input
         onChange={(e) => setEmail(e.target.value)}
-        className="border"
+        className="border rounded px-2"
         type="text"
         placeholder="email"
       />
       <input
         onChange={(e) => setPass(e.target.value)}
-        className="border"
+        className="border rounded px-2"
         type="text"
         placeholder="password"
         name=""

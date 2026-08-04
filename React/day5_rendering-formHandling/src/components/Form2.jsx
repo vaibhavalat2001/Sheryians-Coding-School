@@ -6,22 +6,23 @@ const Form2 = () => {
 
   console.log(formData);
   return (
-    <div className="flex flex-col p-5 w-1/2 gap-4">
+    <div className="flex flex-col p-5 w-50 gap-4">
+      <h1 className="text-red-500">Better Approach:</h1>
       <input
         onChange={(e) => setFormData({...formData, name: e.target.value})}
-        className="border"
+        className="border rounded px-2"
         type="text"
         placeholder="name"
       />
       <input
         onChange={(e) => setFormData({...formData, email: e.target.value})}
-        className="border"
+        className="border rounded px-2"
         type="text"
         placeholder="email"
       />
       <input
         onChange={(e) => setFormData({...formData, pass: e.target.value})}
-        className="border"
+        className="border rounded px-2"
         type="text"
         placeholder="password"
         name=""
