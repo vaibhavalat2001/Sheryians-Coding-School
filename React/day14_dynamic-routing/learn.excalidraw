@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "77t1Aoz-w-5HbU22sNKIm",
+      "type": "text",
+      "x": -18.36574185204239,
+      "y": 151.31538830113095,
+      "width": 1055.8592529296875,
+      "height": 1850,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a1",
+      "roundness": null,
+      "seed": 1296379921,
+      "version": 3891,
+      "versionNonce": 376971537,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1785927565152,
+      "link": null,
+      "locked": false,
+      "text": "Day 14: Dynamic-routing, protected-routing:\nToday i learnt dynamic routing and protected routing.\ni created pages folder and inside that 4 pages means\n4 components about.jsx, home.jsx, products.jsx and\nproductDetails.jsx. and on Navbar.jsx component I gave\nNavlink of this three pages home, about, products page.\nand Create another one routes folder inside AppRoutes.jsx\nand ProtectedRoute.jsx files. Inside AppRoutes.jsx\ni wrote this code:\n <Routes>\n        <Route path=\"/\" element={<Home />} />\n        <Route\n          path=\"/about\"\n          element={\n            <ProtectedRoute>\n              <About />\n            </ProtectedRoute>\n          }\n        />\n        <Route path=\"/products\" element={<Products />} />\n        <Route path=\"/details/:id\" element={<ProductDeatails />} />\n      </Routes>\n\nand on Navbar connect this route using Navlink\n\n<NavLink to={\"/\"}>Home</NavLink>\n        <NavLink to={\"/about\"}>About</NavLink>\n        <NavLink to={\"/products\"}>Products</NavLink>\n\n\nalso I create context provider for centerlition of all state and data and wrap \nContextProvider App.jsx and also I installed react router using upm and \nuse inbulid component <BrowserRouter> </BrowserRouter> wrap the contextProvider inside app.jsx\nSo when I click on navbar home, then i go home page, and when i click about I go on \nabout page. same for product page.\n\nAfter that i created api folder and created ProductsApi.jsx file\nand inside that i use axios and call the fake store product api.\nand get data and store in setProductsData state fuction\nafter that i create ProductCart.jsx component and create ui\nto show all product cards one by one using map on productData state product data \ndistructure form useContext(MyStore) and show productCard.jsx component \non home.jsx page. also i created ProductDeatails.jsx page for\nshow each product detail when click on any product. for that \nI used dynamic routing. I create another <Route> inside the AppRoutes.jsx\nand give path /details/:id then on productCard.jsx i wrote each\ncard useNavigate() and pass product.id on path \"/details/${product.id}\"\nusing this  i store id and receive this id on ProductDetails.jsx page using \nusePrams() useparams return object that retun useNavigate\nafter that on ProductDetails page i use axios to fetch single product using api for single data\n base of id that clicked on that perticular producd and store in SetSingleProduct useState function\nand also on same productDetails page created ui of productDetails page using singleData state and display\nimage, category, title, rate, reviews, price description, add to cart button and buy now button\n\nalso I learnt Protected route\nI create ProtectedRoute.jsx file and then i wrote \nconst ProtectedRoute = ({ children }) => {\n  let isAdmin = false;\n\n  // protexted route condition\n  if (!isAdmin) {\n    alert(\"You not an admin\");\n    return <Navigate to={\"/\"} />;\n  }\n\n  return children;\n\n  return <div>hello</div>;\n};\n\nthis is my day 14 learning from sheryians coding school\n\n \n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 14: Dynamic-routing, protected-routing:\nToday i learnt dynamic routing and protected routing.\ni created pages folder and inside that 4 pages means\n4 components about.jsx, home.jsx, products.jsx and\nproductDetails.jsx. and on Navbar.jsx component I gave\nNavlink of this three pages home, about, products page.\nand Create another one routes folder inside AppRoutes.jsx\nand ProtectedRoute.jsx files. Inside AppRoutes.jsx\ni wrote this code:\n <Routes>\n        <Route path=\"/\" element={<Home />} />\n        <Route\n          path=\"/about\"\n          element={\n            <ProtectedRoute>\n              <About />\n            </ProtectedRoute>\n          }\n        />\n        <Route path=\"/products\" element={<Products />} />\n        <Route path=\"/details/:id\" element={<ProductDeatails />} />\n      </Routes>\n\nand on Navbar connect this route using Navlink\n\n<NavLink to={\"/\"}>Home</NavLink>\n        <NavLink to={\"/about\"}>About</NavLink>\n        <NavLink to={\"/products\"}>Products</NavLink>\n\n\nalso I create context provider for centerlition of all state and data and wrap \nContextProvider App.jsx and also I installed react router using upm and \nuse inbulid component <BrowserRouter> </BrowserRouter> wrap the contextProvider inside app.jsx\nSo when I click on navbar home, then i go home page, and when i click about I go on \nabout page. same for product page.\n\nAfter that i created api folder and created ProductsApi.jsx file\nand inside that i use axios and call the fake store product api.\nand get data and store in setProductsData state fuction\nafter that i create ProductCart.jsx component and create ui\nto show all product cards one by one using map on productData state product data \ndistructure form useContext(MyStore) and show productCard.jsx component \non home.jsx page. also i created ProductDeatails.jsx page for\nshow each product detail when click on any product. for that \nI used dynamic routing. I create another <Route> inside the AppRoutes.jsx\nand give path /details/:id then on productCard.jsx i wrote each\ncard useNavigate() and pass product.id on path \"/details/${product.id}\"\nusing this  i store id and receive this id on ProductDetails.jsx page using \nusePrams() useparams return object that retun useNavigate\nafter that on ProductDetails page i use axios to fetch single product using api for single data\n base of id that clicked on that perticular producd and store in SetSingleProduct useState function\nand also on same productDetails page created ui of productDetails page using singleData state and display\nimage, category, title, rate, reviews, price description, add to cart button and buy now button\n\nalso I learnt Protected route\nI create ProtectedRoute.jsx file and then i wrote \nconst ProtectedRoute = ({ children }) => {\n  let isAdmin = false;\n\n  // protexted route condition\n  if (!isAdmin) {\n    alert(\"You not an admin\");\n    return <Navigate to={\"/\"} />;\n  }\n\n  return children;\n\n  return <div>hello</div>;\n};\n\nthis is my day 14 learning from sheryians coding school\n\n \n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
