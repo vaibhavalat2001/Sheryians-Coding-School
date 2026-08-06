@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "V5ONPCD6aoEGhHiAq0UnD",
+      "type": "text",
+      "x": 28.671875,
+      "y": 130.22569274902344,
+      "width": 628.99951171875,
+      "height": 1250,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a1",
+      "roundness": null,
+      "seed": 925664469,
+      "version": 1779,
+      "versionNonce": 1289329307,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1785939022474,
+      "link": null,
+      "locked": false,
+      "text": "Day 7 - useRef and React-hook-form:\nToday class i learnt implemention of useRef hook and\nreact-hook-form.\nuseRef: using useRef I handle the form. \nI created Form.jsx component for form impletation using \nuseRef and for display form data ui I\ncreated UseRefUI.jsx on form.jsx i used useRef hook\nand store data in setUser state\nlet formRef = useRef({});\n  let handleSubmit = (e) => {\n    e.preventDefault();\n    setUser(() => [formRef.current]);\n  };\n\nand for input i used like this.\n          ref={(e) => (formRef.current.productName = e)}\n\nand on user state I use map and pass object data\nthrough props inside the UseRefUI.jsx component.\n\nand rhf i created RHF.jsx component and use \nand install react-hook-from using npm i and \non rhf.jsx componet i wrote. \n\n  let {\n    register,\n    handleSubmit,\n    reset,\n    formState: { errors },\n  } = useForm();\n\nand on input i wrote \n{...register(\"proName\")}\n{...register(\"price\")}\n{...register(\"cat\")}\n{...register(\"img\")}\n\nand for storing form data I created function formSubmit\ninside formSubmit storing data inside setUser() function state. \n  let formSubmit = (e) => {\n    setUser(() => ({...e}))\n    // reset();\n  };\n\nand on displying data on ui I used RHFUI.jsx component. \n {user.map((user, ind) => (\n        <RHFUI key={ind} user={user} />\n      ))} */}\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 7 - useRef and React-hook-form:\nToday class i learnt implemention of useRef hook and\nreact-hook-form.\nuseRef: using useRef I handle the form. \nI created Form.jsx component for form impletation using \nuseRef and for display form data ui I\ncreated UseRefUI.jsx on form.jsx i used useRef hook\nand store data in setUser state\nlet formRef = useRef({});\n  let handleSubmit = (e) => {\n    e.preventDefault();\n    setUser(() => [formRef.current]);\n  };\n\nand for input i used like this.\n          ref={(e) => (formRef.current.productName = e)}\n\nand on user state I use map and pass object data\nthrough props inside the UseRefUI.jsx component.\n\nand rhf i created RHF.jsx component and use \nand install react-hook-from using npm i and \non rhf.jsx componet i wrote. \n\n  let {\n    register,\n    handleSubmit,\n    reset,\n    formState: { errors },\n  } = useForm();\n\nand on input i wrote \n{...register(\"proName\")}\n{...register(\"price\")}\n{...register(\"cat\")}\n{...register(\"img\")}\n\nand for storing form data I created function formSubmit\ninside formSubmit storing data inside setUser() function state. \n  let formSubmit = (e) => {\n    setUser(() => ({...e}))\n    // reset();\n  };\n\nand on displying data on ui I used RHFUI.jsx component. \n {user.map((user, ind) => (\n        <RHFUI key={ind} user={user} />\n      ))} */}\n\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}

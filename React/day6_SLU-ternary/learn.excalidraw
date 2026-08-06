@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "XJ_-pTyvZcwSJXMBC_32l",
+      "type": "text",
+      "x": 8.18344493211897,
+      "y": 124.31842645989255,
+      "width": 687.99951171875,
+      "height": 675,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "#b2f2bb",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aH",
+      "roundness": null,
+      "seed": 642773162,
+      "version": 1975,
+      "versionNonce": 2113771467,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1785905991914,
+      "link": null,
+      "locked": false,
+      "text": "Day 6_ SLU-ternary: \nToday I learnt slu and ternary operator. \nI created three component Login.jsx, Register.jsx\nand UserCard.jsx and now a days I am using Tailwindcss for \ndesign part. Inside App.jsx i create toggle state \ni pass true value inside toggle useState so bydefault register\ncomponenet show.  below is button to go on login page. \n I worte ternary operator on toggle like this \n\n {toggle ? (\n        <Register setUsers={setUsers} setToggle={setToggle} />\n      ) : (\n        <Login setToggle={setToggle}/>\n      )}\n\non register page i wrote handleSubmit function and call the function\ninside the form on onSubmit event. in hadleSubmit function I get the\ninput value and store as a object in  setUsers state function.\n when use fill the register form using name, email, password, image url\nthen click on register. all input data store in setUsers. and on app.jsx\nI create map on users. and pass props inside UserCard.jsx componenet\nwhen user fill registration form and submit data then userCard show\non ui. \n\n\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 6_ SLU-ternary: \nToday I learnt slu and ternary operator. \nI created three component Login.jsx, Register.jsx\nand UserCard.jsx and now a days I am using Tailwindcss for \ndesign part. Inside App.jsx i create toggle state \ni pass true value inside toggle useState so bydefault register\ncomponenet show.  below is button to go on login page. \n I worte ternary operator on toggle like this \n\n {toggle ? (\n        <Register setUsers={setUsers} setToggle={setToggle} />\n      ) : (\n        <Login setToggle={setToggle}/>\n      )}\n\non register page i wrote handleSubmit function and call the function\ninside the form on onSubmit event. in hadleSubmit function I get the\ninput value and store as a object in  setUsers state function.\n when use fill the register form using name, email, password, image url\nthen click on register. all input data store in setUsers. and on app.jsx\nI create map on users. and pass props inside UserCard.jsx componenet\nwhen user fill registration form and submit data then userCard show\non ui. \n\n\n\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}

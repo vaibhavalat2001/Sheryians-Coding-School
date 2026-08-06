@@ -11,7 +11,7 @@ const RHF = ({ setUser }) => {
   } = useForm();
 
   let formSubmit = (e) => {
-    setUser(() => ({...e}));
+    setUser(() => ([{ ...e }]));
     // console.log(e);
     // reset();
   };
@@ -35,12 +35,15 @@ const RHF = ({ setUser }) => {
           type="number"
           placeholder="Price"
         />
-        <input
+         <select
           {...register("cat")}
-          className="py-1 text-2xl px-2 border-2 border-gray-400 rounded"
-          type="text"
-          placeholder="category"
-        />
+          className="border-2 border-gray-400 py-1 rounded text-xl"
+        >
+          <option value="">Select Category:</option>
+          <option value="MENS">Mens</option>
+          <option value="WOMEN">Women</option>
+          <option value="KIDS">Kids</option>
+        </select>
         <input
           {...register("img")}
           className="py-1 text-2xl px-2 border-2 border-gray-400 rounded"

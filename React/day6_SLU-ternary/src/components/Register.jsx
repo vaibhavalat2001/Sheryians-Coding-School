@@ -69,7 +69,7 @@ const Register = ({setToggle, setUsers}) => {
           onClick={() => setToggle((pre) => !pre)}
           className="text-blue-700 cursor-pointer"
         >
-          Login here
+         {""} Login here
         </span>
       </p>
     </div>
