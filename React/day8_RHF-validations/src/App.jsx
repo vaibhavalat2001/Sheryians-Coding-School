@@ -22,7 +22,7 @@ const App = () => {
     <div className="p-2 min-h-screen bg-gray-600">
       <Navbar setToggle={setToggle} />
       {toggle ? (
-        <div className="border-2 mt-6 flex justify-center flex-wrap gap-y-6 gap-x-4 border-gray-400 p-4">
+        <div className="border-2 mt-4 flex justify-center flex-wrap gap-y-4 gap-x-4 border-gray-400 p-4">
           {users.map((user) => (
             <UserCard user={user} up={up} del={del} />
           ))}

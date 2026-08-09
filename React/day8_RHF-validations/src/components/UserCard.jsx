@@ -5,7 +5,7 @@ const UserCard = ({ user, del, up }) => {
     <div className="bg-black text-white flex p-4 rounded gap-3 border flex-col w-60 flex-wrap">
       <div className="flex justify-center w-50">
         <img
-          className="object-cover w-full h-50 rounded-xl"
+          className="object-cover object-top w-full h-50 rounded-xl"
           src={user.img}
           alt=""
         />

@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "2Wk6QvwkEIqWJE0Cnet4Q",
+      "type": "text",
+      "x": 25.33333396911621,
+      "y": 142.6666717529297,
+      "width": 804.45947265625,
+      "height": 825,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a2",
+      "roundness": null,
+      "seed": 287553086,
+      "version": 1771,
+      "versionNonce": 1273200318,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1786092408916,
+      "link": null,
+      "locked": false,
+      "text": "Day 8 - React-hook-form validations:\nToday i learnt reat hook form validations I created three\ncomponents Form.jsx, Navbar.jsx and UserCard.jsx\non App.jsx import navbar and below i use toggle state\nby default state value is false so form.jsx show on ui\nand i passed setToggle state in navbar as a props and\non button i added onclick for change setToggle \ni use settoggle((pre) => !pre) so on button \nform.jsx change to userCard.jsx. on form.jsx also i pass setToggle\nin form.jsx i used react-hook-form for collect user data\nand wrote validations. I create 5 inputes name, email, number,\npassword, and img url, on name i wrote validation inside name not two spaces\nallowed for email need to use @ for mobile number minimum 10 and maximum 10\npassowrd is optional and need to add image url and submit. \ni use patter for email, name to check validations for name\n pattern: {\n              value: /^[A-Za-z]+(?: [A-Za-z]+)*$/,\n              message: \"Only letters and single spaces are allowed\",\n            },\n\nfor email:  pattern: {\n              value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/,\n              message: \"Please enter a valid email address\",\n            },\n\nafter click on add user button then ui change to userCard.jsx componenet\nusign toggle change. on userCard showing filled details name, email, mobile and img, \nalso there is to button upadate and delete. use click on update \nbutton form will open and all card details written inside form\nchange and click add use so same card modify. also when click on \ndelete button card will delete. \n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 8 - React-hook-form validations:\nToday i learnt reat hook form validations I created three\ncomponents Form.jsx, Navbar.jsx and UserCard.jsx\non App.jsx import navbar and below i use toggle state\nby default state value is false so form.jsx show on ui\nand i passed setToggle state in navbar as a props and\non button i added onclick for change setToggle \ni use settoggle((pre) => !pre) so on button \nform.jsx change to userCard.jsx. on form.jsx also i pass setToggle\nin form.jsx i used react-hook-form for collect user data\nand wrote validations. I create 5 inputes name, email, number,\npassword, and img url, on name i wrote validation inside name not two spaces\nallowed for email need to use @ for mobile number minimum 10 and maximum 10\npassowrd is optional and need to add image url and submit. \ni use patter for email, name to check validations for name\n pattern: {\n              value: /^[A-Za-z]+(?: [A-Za-z]+)*$/,\n              message: \"Only letters and single spaces are allowed\",\n            },\n\nfor email:  pattern: {\n              value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/,\n              message: \"Please enter a valid email address\",\n            },\n\nafter click on add user button then ui change to userCard.jsx componenet\nusign toggle change. on userCard showing filled details name, email, mobile and img, \nalso there is to button upadate and delete. use click on update \nbutton form will open and all card details written inside form\nchange and click add use so same card modify. also when click on \ndelete button card will delete. \n\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
