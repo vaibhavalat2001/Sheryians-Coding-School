@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "40iobMiO4g2T-wEer7NIf",
+      "type": "text",
+      "x": 39.66667175292969,
+      "y": 165.33334350585938,
+      "width": 736.0794067382812,
+      "height": 1425,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 1015186791,
+      "version": 2862,
+      "versionNonce": 31405021,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1786345568723,
+      "link": null,
+      "locked": false,
+      "text": "Day 17 - Memoization: \ntoday i learnt memoization. sir taught React.memo, \nuseCallback() and useMemo().\nI wrote code sir taught in the class. I created \n2 component about.jsx and home.jsx\nand wront that component on app.jsx. I created cout\nstate for increment count and check rendering.\nWhen i increase the count then my app render, home\nrender and about render. then i use React.memo. \non home and about like this:\nexport default React.memo(Home);\nexport default React.memo(About);  \nthen when i increase count then my home or about\nnot rendering. but when i pass dynamic value in \nhome or about then home or about render. so\nI realize React.memo it's memoize static function\ncomponent. \nuseCallback() : useCallback() hook give one function\nand empty dependcy array. I create a greet arrow function and \npass props into home and about component on home and about\nthere react.memo already written but when i increment the counter\nthen home or about rerender then i realize greet function store the\nreferance of a function so dynamic value goin inside home or about\nthat why home or about rendering. for preventing functional rendering\ni used useCallback() hook. i wrote useCallback() and pass arraw function\nand empty dependecy. then i increment the cout value then useCallback()\nhold the refecase value and prevent for rendering. \n\nuseMemo() hook:  useMomo() it's use for memorize expencive operation and \nreturn result. it's give function and empty dependecy. \ni create calculation fuction and use useMemo() to calculation sum of \ngiven number from 0 to given number i calculate sum of 100000000 number\nso I increment the cout but the calculation not rendering 2nd time. \nso I realize useMomo() calculate the sum of all digite and store in\ncalculation function. \neg. \n const calculation = useMemo(() => {\n    console.log(\"Calculation running...\");\n    let sum = 0;\n    for (let i = 0; i < 100000000; i++) {\n      sum += i;\n    }\n    return sum;\n  }, [])\n\nalso sir gave idea about 4 layer architecture concept:\n4 layer is: presentation layer = UI\n             business logic layer = hook\n             data layer = api\n              state layer = state/context api/ redux\n\n\n\n  \n\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 17 - Memoization: \ntoday i learnt memoization. sir taught React.memo, \nuseCallback() and useMemo().\nI wrote code sir taught in the class. I created \n2 component about.jsx and home.jsx\nand wront that component on app.jsx. I created cout\nstate for increment count and check rendering.\nWhen i increase the count then my app render, home\nrender and about render. then i use React.memo. \non home and about like this:\nexport default React.memo(Home);\nexport default React.memo(About);  \nthen when i increase count then my home or about\nnot rendering. but when i pass dynamic value in \nhome or about then home or about render. so\nI realize React.memo it's memoize static function\ncomponent. \nuseCallback() : useCallback() hook give one function\nand empty dependcy array. I create a greet arrow function and \npass props into home and about component on home and about\nthere react.memo already written but when i increment the counter\nthen home or about rerender then i realize greet function store the\nreferance of a function so dynamic value goin inside home or about\nthat why home or about rendering. for preventing functional rendering\ni used useCallback() hook. i wrote useCallback() and pass arraw function\nand empty dependecy. then i increment the cout value then useCallback()\nhold the refecase value and prevent for rendering. \n\nuseMemo() hook:  useMomo() it's use for memorize expencive operation and \nreturn result. it's give function and empty dependecy. \ni create calculation fuction and use useMemo() to calculation sum of \ngiven number from 0 to given number i calculate sum of 100000000 number\nso I increment the cout but the calculation not rendering 2nd time. \nso I realize useMomo() calculate the sum of all digite and store in\ncalculation function. \neg. \n const calculation = useMemo(() => {\n    console.log(\"Calculation running...\");\n    let sum = 0;\n    for (let i = 0; i < 100000000; i++) {\n      sum += i;\n    }\n    return sum;\n  }, [])\n\nalso sir gave idea about 4 layer architecture concept:\n4 layer is: presentation layer = UI\n             business logic layer = hook\n             data layer = api\n              state layer = state/context api/ redux\n\n\n\n  \n\n\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
