@@ -15,6 +15,7 @@ const cardVariants = cva(
         outline:
           "border border-gray-300 bg-transparent text-gray-800 dark:border-gray-700",
       },
+      
       // hoverEffect: {
       //   none: "",
       //   scale: "hover:scale-[1.02]",
@@ -22,6 +23,7 @@ const cardVariants = cva(
       //   lift: "hover:-translate-y-1 hover:shadow-xl",
       //   rotate: "hover:rotate-1",
       // },
+
       size: {
         sm: "p-3 text-sm",
         md: "p-6 text-base",
