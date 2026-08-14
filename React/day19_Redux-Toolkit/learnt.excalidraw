@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "EwCaLRCJXkcI4ODCp_hYP",
+      "type": "text",
+      "x": -33.99999237060547,
+      "y": 150.00001525878906,
+      "width": 482.45317077636724,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a1",
+      "roundness": null,
+      "seed": 1409016566,
+      "version": 164,
+      "versionNonce": 1283160682,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1786602443293,
+      "link": null,
+      "locked": false,
+      "text": "Day 19 - Redux: \ni learnt react-redux and redux-toolkit:\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 19 - Redux: \ni learnt react-redux and redux-toolkit:\n\n",
+      "autoResize": false,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
