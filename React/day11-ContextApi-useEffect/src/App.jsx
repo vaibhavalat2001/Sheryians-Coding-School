@@ -13,30 +13,40 @@ const App = () => {
   // const {count, setCount} = useContext(MyStore);
 
   // with dependecy render every depency execution
-  
-  const getData = async() => {
+
+  const getData = async () => {
     const res = await axios.get("https://fakestoreapi.com/products");
     console.log(res.data);
     setApiData(res.data);
   };
-  
+
   // empty dependecy render only once
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
-    <div>
+    <div className="h-screen  text-2xl gap-5 flex flex-col justify-center items-center">
       <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button
+        className="bg-red-500 px-2 py-1 rounded-2xl"
+        onClick={() => setCount(count + 1)}
+      >
+        Increment
+      </button>
 
       <div>{toggle}</div>
-      <button onClick={() => setToggle((pre) => !pre)}>Change Toggle</button>
+      {toggle ? <Contact /> : <About />}
+      <button
+        className="bg-green-500 px-2 py-1 rounded-2xl"
+        onClick={() => setToggle((pre) => !pre)}
+      >
+        Change Toggle
+      </button>
       {/* <ContextProvider>
         <Home />
         <About />
       </ContextProvider> */}
-      {toggle ? <Contact /> : <About />}
     </div>
   );
 };
