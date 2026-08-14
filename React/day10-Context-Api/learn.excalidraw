@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "GxZMSt9Jy1QZ-rp-fy2nT",
+      "type": "text",
+      "x": -35.30028583003576,
+      "y": 124.66667175292969,
+      "width": 666.1180796525854,
+      "height": 1675,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a1",
+      "roundness": null,
+      "seed": 60030545,
+      "version": 3679,
+      "versionNonce": 2047251553,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1786524028163,
+      "link": null,
+      "locked": false,
+      "text": "Day 10 - contextApi:\nIn this class I learnt contextProvider. using props we share the\ndata but we need to create state on parent component then we \npass props or function inside another another component and\nupadate the state, when our application scale go bigger then props \nwill very hacktik to manage. so for that context api come into the \npicture. in context provider i learnt there is two things first is\nconsumer and provider. for context provider first create context\nusing createContext and store into variable but variable first\ncharacter must be capital. then create context provider function\nand inside function parameter give children as a parameter and\ninside function wrote variable.provider and inside pass children. \ninside variable.provider pass value as a attribute and value\nattribute give single value. I create state couter and pass into the\nvalue attribute. and then wrap contextProvider to the app.jsx. \nthen we can use state inside any app.jsx component using\nuseContext() hook. inside useContext() pass store name of the\ncontext. \nI build mini project for my practice of context provider I created\ncontext MyProduct.jsx inside this component i create context.\nlike this. \nimport { createContext, useState } from \"react\";\n\n// create context\nexport const MyProduct = createContext();\n\n// create context provider to store data\nexport const MyProductContextProvider = ({ children }) => {\n  let [page, setPage] = useState(\"productPage\");\n  let [cartItem, setCartItem] = useState([]);\n\n  return <MyProduct.Provider value={{page, setPage, cartItem,\nsetCartItem}}>{children}</MyProduct.Provider>;\n};\n\n\nafter that I created componenets navbar.jsx, productCard.jsx,\nregister.jsx, login.jsx, and cart.jsx. Inside app.jsx i created array to\nstore 20 products object after that i used map on product array\nand pass each object into productCard.jsx component as a props\nand after that productCard component return ui product image, \ncategory, title, description,  rating, price, reviews, and one Add to\ncart button of each product card. \nafter that on button I used onClick and store that perticular card\ndata on state that that i wrote inside context provider and\ndestructure using useContext in productCard.jsx components. \n  const { setCartItem } = useContext(MyProduct);\n\non cart.jsx component i give cart from context provide and show ui\nand of added cart item, total cart also, and price of all cart atom\nalso. \n const totalPrice = cartItem.reduce((total, item) => total +\nitem.price, 0);\n\nI also used toastify when cart item and into cart. on cart page\nthere I used remove cart functionality and also toastify when cart\ndelete. \n  const removeFromCart = (cart) => {\n    console.log(cart);\n    setCartItem(cartItem.filter((item) => item.id !== cart.id));\n  };\n\n \n\n\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 10 - contextApi:\nIn this class I learnt contextProvider. using props we share the data but we need to create state on parent component then we \npass props or function inside another another component and upadate the state, when our application scale go bigger then props \nwill very hacktik to manage. so for that context api come into the \npicture. in context provider i learnt there is two things first is consumer and provider. for context provider first create context using createContext and store into variable but variable first character must be capital. then create context provider function\nand inside function parameter give children as a parameter and inside function wrote variable.provider and inside pass children. \ninside variable.provider pass value as a attribute and value attribute give single value. I create state couter and pass into the value attribute. and then wrap contextProvider to the app.jsx. \nthen we can use state inside any app.jsx component using useContext() hook. inside useContext() pass store name of the context. \nI build mini project for my practice of context provider I created\ncontext MyProduct.jsx inside this component i create context.\nlike this. \nimport { createContext, useState } from \"react\";\n\n// create context\nexport const MyProduct = createContext();\n\n// create context provider to store data\nexport const MyProductContextProvider = ({ children }) => {\n  let [page, setPage] = useState(\"productPage\");\n  let [cartItem, setCartItem] = useState([]);\n\n  return <MyProduct.Provider value={{page, setPage, cartItem, setCartItem}}>{children}</MyProduct.Provider>;\n};\n\n\nafter that I created componenets navbar.jsx, productCard.jsx, register.jsx, login.jsx, and cart.jsx. Inside app.jsx i created array to store 20 products object after that i used map on product array\nand pass each object into productCard.jsx component as a props\nand after that productCard component return ui product image, \ncategory, title, description,  rating, price, reviews, and one Add to cart button of each product card. \nafter that on button I used onClick and store that perticular card data on state that that i wrote inside context provider and destructure using useContext in productCard.jsx components. \n  const { setCartItem } = useContext(MyProduct);\n\non cart.jsx component i give cart from context provide and show ui\nand of added cart item, total cart also, and price of all cart atom also. \n const totalPrice = cartItem.reduce((total, item) => total + item.price, 0);\n\nI also used toastify when cart item and into cart. on cart page there I used remove cart functionality and also toastify when cart delete. \n  const removeFromCart = (cart) => {\n    console.log(cart);\n    setCartItem(cartItem.filter((item) => item.id !== cart.id));\n  };\n\n \n\n\n\n",
+      "autoResize": false,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#111"
+  },
+  "files": {}
+}

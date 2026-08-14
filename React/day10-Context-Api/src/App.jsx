@@ -283,45 +283,44 @@ const App = () => {
 
   const { page, cartItem } = useContext(MyProduct);
   return (
-      <Lightfall
-        colors={["#ffd23f", "#fb5607", "#3bceac"]}
-        backgroundColor="#ff006e"
-        speed={0.5}
-        streakCount={2}
-        streakWidth={1}
-        streakLength={1}
-        glow={1}
-        density={0.6}
-        twinkle={1}
-        zoom={3}
-        backgroundGlow={0.5}
-        opacity={1}
-        mouseInteraction
-        mouseStrength={0.5}
-        mouseRadius={1}
-        color1="#A6C8FF"
-        color2="#5227FF"
-        color3="#FF9FFC"
-      >
-        <div className="top-0 g-gradient-to-tl from-red-500 via-fuchsia-500 to-zinc-400 p-4 text-white min-h-screen w-screen">
-          <Navbar />
+    <Lightfall
+      colors={["#ffd23f", "#fb5607", "#3bceac"]}
+      backgroundColor="#ff006e"
+      speed={0.5}
+      streakCount={2}
+      streakWidth={1}
+      streakLength={1}
+      glow={1}
+      density={0.6}
+      twinkle={1}
+      zoom={3}
+      backgroundGlow={0.5}
+      opacity={1}
+      mouseInteraction
+      mouseStrength={0.5}
+      mouseRadius={1}
+      color1="#A6C8FF"
+      color2="#5227FF"
+      color3="#FF9FFC"
+    >
+      <div className="top-0 g-gradient-to-tl from-red-500 via-fuchsia-500 to-zinc-400 p-4 text-white min-h-screen w-screen">
+        <Navbar />
 
-          {page === "productPage" && (
-            <div className="p-5 grid grid-cols-1 justify-center items-center xl:grid-cols-5 lg:grid-cols-4 min-[860px]:grid-cols-3 sm:grid-cols-2  max-sm:grid-cols-1 gap-4 place-items-center ">
-              {products.map((val) => (
-                <ProductCard key={val.id} product={val} />
-              ))}
-            </div>
-          )}
+        {page === "productPage" && (
+          <div className="p-5 grid grid-cols-1 justify-center items-center xl:grid-cols-5 lg:grid-cols-4 min-[860px]:grid-cols-3 sm:grid-cols-2  max-sm:grid-cols-1 gap-4 place-items-center ">
+            {products.map((val) => (
+              <ProductCard key={val.id} product={val} />
+            ))}
+          </div>
+        )}
 
-          {page === "cartPage" && <Cart />}
+        {page === "cartPage" && <Cart />}
 
-          {page === "loginPage" && <Login />}
+        {page === "loginPage" && <Login />}
 
-          {page === "registerPage" && <Register />}
-        </div>
-      </Lightfall>
-    
+        {page === "registerPage" && <Register />}
+      </div>
+    </Lightfall>
   );
 };
 
