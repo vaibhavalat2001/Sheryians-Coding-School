@@ -1,10 +1,16 @@
 import { FiMail, FiLock, FiEye, FiEyeOff, FiShoppingBag } from "react-icons/fi";
-import { useAuth } from "../hooks/authHook";
-
+import { useAuth } from "../../hook/useAuthHook";
 
 const LoginPage = () => {
-  const {register, handleSubmit, errors, loginForm, navigate, showPassword, setShowPassword} = useAuth()
-
+  const {
+    register,
+    handleSubmit,
+    errors,
+    loginForm,
+    navigate,
+    showPassword,
+    setShowPassword,
+  } = useAuth();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 p-4">
@@ -34,21 +40,17 @@ const LoginPage = () => {
               <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 text-lg" />
 
               <input
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Enter a valid email",
-                  },
+                {...register("username", {
+                  required: "username is required",
                 })}
-                type="email"
+                type="text"
                 placeholder="Enter your email"
                 className="w-full bg-white/20 border border-white/20 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-white focus:bg-white/30 placeholder:text-gray-300 transition"
               />
             </div>
-            {errors.email && (
+            {errors.username && (
               <p className="text-red-500 font-semibold">
-                {errors.email.message}
+                {errors.username.message}
               </p>
             )}
           </div>
@@ -63,12 +65,12 @@ const LoginPage = () => {
               <input
                 {...register("password", {
                   required: "Password is required",
-                  pattern: {
-                    value:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
-                    message:
-                      "Password must contain uppercase, lowercase, number and special character",
-                  },
+                //   pattern: {
+                //     value:
+                //       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
+                //     message:
+                //       "Password must contain uppercase, lowercase, number and special character",
+                //   },
                   minLength: {
                     value: 8,
                     message: "password must be at least 8 characters",

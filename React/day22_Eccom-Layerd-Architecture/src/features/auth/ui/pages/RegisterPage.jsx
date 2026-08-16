@@ -1,10 +1,23 @@
-import { FiMail, FiLock, FiEye, FiEyeOff, FiShoppingBag } from "react-icons/fi";
-import { useAuth } from "../hooks/authHook";
+import {
+  FiUser,
+  FiMail,
+  FiLock,
+  FiEye,
+  FiEyeOff,
+  FiShoppingBag,
+} from "react-icons/fi";
+import { useAuth } from "../../hook/useAuthHook";
 
-
-const LoginPage = () => {
-  const {register, handleSubmit, errors, loginForm, navigate, showPassword, setShowPassword} = useAuth()
-
+const RegisterPage = () => {
+  const {
+    register,
+    handleSubmit,
+    errors,
+    registerForm,
+    navigate,
+    showPassword,
+    setShowPassword,
+  } = useAuth();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 p-4">
@@ -19,13 +32,44 @@ const LoginPage = () => {
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl font-bold text-center">Welcome Back 👋</h1>
+        <h1 className="text-3xl font-bold text-center">Create Account 🎉</h1>
 
         <p className="text-center text-gray-200 mt-2 mb-8">
-          Login to continue shopping
+          Register to start shopping
         </p>
 
-        <form onSubmit={handleSubmit(loginForm)} className="space-y-5">
+        <form onSubmit={handleSubmit(registerForm)} className="space-y-5">
+          {/* Name */}
+          <div>
+            <label className="text-sm font-medium mb-2 block">Full Name</label>
+
+            <div className="relative">
+              <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 text-lg" />
+
+              <input
+                {...register("name", {
+                  required: "Name is required",
+                  minLength: {
+                    value: 3,
+                    message: "Name must be at least 3 characters",
+                  },
+                  pattern: {
+                    value: /^[A-Za-z ]+$/,
+                    message: "Only letters and spaces are allowed",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your full name"
+                className="w-full bg-white/20 border border-white/20 rounded-xl py-3 pl-12 pr-4 outline-none focus:border-white focus:bg-white/30 placeholder:text-gray-300 transition"
+              />
+            </div>
+            {errors.name && (
+              <p className="text-red-500 font-semibold">
+                {errors.name.message}
+              </p>
+            )}
+          </div>
+
           {/* Email */}
           <div>
             <label className="text-sm font-medium mb-2 block">Email</label>
@@ -71,11 +115,11 @@ const LoginPage = () => {
                   },
                   minLength: {
                     value: 8,
-                    message: "password must be at least 8 characters",
+                    message: "Password must be at least 8 characters",
                   },
                 })}
                 type={showPassword ? "text" : "password"}
-                placeholder="Enter your password"
+                placeholder="Create a password"
                 className="w-full bg-white/20 border border-white/20 rounded-xl py-3 pl-12 pr-12 outline-none focus:border-white focus:bg-white/30 placeholder:text-gray-300 transition"
               />
 
@@ -98,22 +142,12 @@ const LoginPage = () => {
             )}
           </div>
 
-          {/* Forgot Password */}
-          <div className="flex justify-end">
-            <button
-              type="button"
-              className="text-sm text-gray-200 hover:text-white"
-            >
-              Forgot Password?
-            </button>
-          </div>
-
-          {/* Login Button */}
+          {/* Register Button */}
           <button
             type="submit"
             className="w-full bg-white text-blue-700 font-bold py-3 rounded-xl hover:scale-[1.02] hover:bg-gray-100 transition-all duration-300 shadow-lg"
           >
-            Login
+            Create Account
           </button>
         </form>
 
@@ -124,14 +158,14 @@ const LoginPage = () => {
           <div className="flex-1 h-px bg-white/30"></div>
         </div>
 
-        {/* Register */}
+        {/* Login Link */}
         <p className="text-center text-gray-200">
-          Don't have an account?{" "}
+          Already have an account?{" "}
           <button
-            onClick={() => navigate("register")}
+            onClick={() => navigate("/")}
             className="font-semibold text-white hover:underline"
           >
-            Register
+            Login
           </button>
         </p>
       </div>
@@ -139,4 +173,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
