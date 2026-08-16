@@ -1,5 +1,5 @@
 import { FiMail, FiLock, FiEye, FiEyeOff, FiShoppingBag } from "react-icons/fi";
-import { useAuth } from "../hooks/AuthHook";
+import { useAuth } from "../hooks/authHook";
 
 
 const LoginPage = () => {

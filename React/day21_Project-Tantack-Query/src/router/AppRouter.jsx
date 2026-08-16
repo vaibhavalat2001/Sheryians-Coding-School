@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+import React, { lazy, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import AuthLayout from "../layouts/AuthLayout";
-import LoginPage from "../pages/LoginPage";
-import RegisterPage from "../pages/RegisterPage";
-import MainLayout from "../layouts/MainLayout";
-import HomePage from "../pages/HomePage";
 import { useDispatch } from "react-redux";
 import { addUser } from "../features/authSlice";
 import { toast } from "react-toastify";
+import AuthLayout from "../layouts/AuthLayout";
 import PublicProtected from "./protected/PublicProtected";
 import MainProtected from "./protected/MainProtected";
-import ShopPage from "../pages/ShopPage";
-import AboutPage from "../pages/AboutPage";
+import MainLayout from "../layouts/MainLayout";
+const LoginPage = lazy(() => import('../pages/LoginPage'))
+const RegisterPage = lazy(() => import('../pages/RegisterPage'))
+const HomePage = lazy(() => import('../pages/HomePage'))
+const ShopPage = lazy(() => import('../pages/ShopPage'))
+const AboutPage = lazy(() => import('../pages/AboutPage'))
 
 const AppRouter = () => {
   const dispatch = useDispatch();

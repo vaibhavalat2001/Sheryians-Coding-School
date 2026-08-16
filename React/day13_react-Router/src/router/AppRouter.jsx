@@ -9,7 +9,7 @@ import NestedContact from '../pages/NestedContact'
 
 const AppRouter = () => {
   return (
-    <div>
+    <div className='p-4 text-xl'>
       <Routes>
         <Route path='/' element={<Home/>}>
             <Route path='details' element={<Details/>}/>

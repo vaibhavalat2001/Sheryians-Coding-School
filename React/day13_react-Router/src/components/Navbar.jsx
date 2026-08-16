@@ -3,7 +3,7 @@ import { NavLink } from 'react-router'
 
 const Navbar = () => {
   return (
-    <div className='flex gap-5 p-4 justify-between bg-blue-500'>
+    <div className='flex gap-5 text-xl p-4 justify-between bg-blue-500'>
       <h1>logo</h1>
       <div className='flex gap-3'>
         <NavLink to={"/"}>Home</NavLink>

@@ -25,12 +25,11 @@ export const useAuth = () => {
 
   const loginForm = (data) => {
     const user = registeredUser.find((val) => {
-      console.log(data);
       return data.email === val.email && data.password === val.password;
     });
 
     if (!user) {
-      toast.error("Invalid user");
+      toast.error("Invalid user", {closeOnClick: true});
       reset();
       return;
     }

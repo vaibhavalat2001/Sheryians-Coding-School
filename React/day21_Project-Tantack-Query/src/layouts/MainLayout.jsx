@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 
 const MainLayout = () => {
   return (
-    <div className='flex flex-col gap-5 text-2xl'>
+    <div className='flex bg-zinc-800 flex-col text-2xl'>
       <Navbar/>
       <Outlet/>
     </div>
