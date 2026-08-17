@@ -6,8 +6,8 @@ const Navbar = () => {
   const { loggedInUser } = useContext(Auth);
   const navigate = useNavigate();
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between max-sm:px-4 px-8 py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 shadow-lg">
-      <div>
+    <div className="sticky top-0 z-50 flex items-center justify-between max-sm:px-4 px-8 py-3 bg-linear-to-r from-indigo-600 via-purple-600 to-indigo-700 shadow-lg">
+      <div onClick={() => navigate("/main")} className="active:scale-90">
         <img
           className="w-20 h-18 max-sm:w-16 max-sm:h-16 object-cover object-top rounded-full"
           src="https://cdn.vectorstock.com/i/1000v/27/09/online-shop-logo-template-icon-vector-30562709.jpg"

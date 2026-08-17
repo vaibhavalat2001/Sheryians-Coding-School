@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-6">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
@@ -93,7 +93,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <h3 className="font-bold text-lg">Email</h3>
-                <p className="text-gray-600">vaibhav@example.com</p>
+                <p className="text-gray-600">vaibhavgalat123@gmail.com</p>
               </div>
             </div>
 

@@ -8,8 +8,26 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 items-center gap-12">
         <div>
-          <span className="inline-block bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full font-medium">
-            🛍️ Welcome to ShopEase
+          <span className="inline-block text-center bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full font-medium">
+            🛍️ Welcome to{" "}
+            <span
+              className="
+    inline-block
+    text-4xl font-bold
+    bg-linear-to-r from-amber-400 via-emerald-400 to-fuchsia-500
+    bg-clip-text text-transparent
+    bg-size[200%_200%]
+    animate-gradient
+    transition-all duration-500
+    hover:scale-110
+    hover:-rotate-1
+    hover:drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]
+    cursor-pointer
+    animate-pulse
+  "
+            >
+              ShopVexa
+            </span>
           </span>
 
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 mt-6 leading-tight">
@@ -58,10 +76,7 @@ const HomePage = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 transition">
-            <ShoppingBag
-              className="mx-auto text-indigo-600 mb-4"
-              size={42}
-            />
+            <ShoppingBag className="mx-auto text-indigo-600 mb-4" size={42} />
             <h3 className="text-xl font-bold">Quality Products</h3>
             <p className="text-gray-500 mt-3">
               Carefully selected products from trusted brands.
@@ -77,10 +92,7 @@ const HomePage = () => {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 transition">
-            <ShieldCheck
-              className="mx-auto text-indigo-600 mb-4"
-              size={42}
-            />
+            <ShieldCheck className="mx-auto text-indigo-600 mb-4" size={42} />
             <h3 className="text-xl font-bold">Secure Payment</h3>
             <p className="text-gray-500 mt-3">
               Safe and encrypted payment methods.
@@ -88,10 +100,7 @@ const HomePage = () => {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 transition">
-            <Headphones
-              className="mx-auto text-indigo-600 mb-4"
-              size={42}
-            />
+            <Headphones className="mx-auto text-indigo-600 mb-4" size={42} />
             <h3 className="text-xl font-bold">24/7 Support</h3>
             <p className="text-gray-500 mt-3">
               Friendly customer support whenever you need help.
@@ -102,10 +111,8 @@ const HomePage = () => {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl text-center py-16 px-6 text-white shadow-xl">
-          <h2 className="text-4xl font-bold">
-            Ready to Start Shopping?
-          </h2>
+        <div className="bg-linear-to-r from-indigo-600 to-purple-600 rounded-3xl text-center py-16 px-6 text-white shadow-xl">
+          <h2 className="text-4xl font-bold">Ready to Start Shopping?</h2>
 
           <p className="mt-4 text-lg text-indigo-100">
             Browse our latest collection and grab the best deals today.

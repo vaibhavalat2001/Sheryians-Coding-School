@@ -60,7 +60,7 @@ const ShopPage = () => {
               </div>
 
               {/* Description */}
-              <p className="text-gray-500 text-sm leading-6 mt-4 line-clamp-3 flex-grow">
+              <p className="text-gray-500 text-sm leading-6 mt-4 line-clamp-3 grow">
                 {product.description}
               </p>
 
