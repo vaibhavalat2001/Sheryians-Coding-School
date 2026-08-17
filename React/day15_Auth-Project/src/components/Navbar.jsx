@@ -3,7 +3,7 @@ import { Auth } from "../context/AuthContext";
 import { Navigate, NavLink, useNavigate } from "react-router";
 
 const Navbar = () => {
-  const { loggedInUser } = useContext(Auth);
+  const { loggedInUser, setLoggedInUser } = useContext(Auth);
   const navigate = useNavigate();
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between max-sm:px-4 px-8 py-3 bg-linear-to-r from-indigo-600 via-purple-600 to-indigo-700 shadow-lg">
@@ -20,7 +20,7 @@ const Navbar = () => {
             `active:scale-90 hover:text-white transition-all duration-300 font-semibold ${isActive ? "text-white" : "text-black"}`
           }
           end
-          to={"."}
+          to={"/main"}
         >
           Home
         </NavLink>
@@ -29,7 +29,7 @@ const Navbar = () => {
             `active:scale-90 hover:text-white transition-all duration-300 font-semibold ${isActive ? "text-white" : "text-black"}`
           }
           end
-          to={"shop"}
+          to={"/main/shop"}
         >
           Shop
         </NavLink>
@@ -38,7 +38,7 @@ const Navbar = () => {
             `active:scale-90 hover:text-white transition-all duration-300 font-semibold ${isActive ? "text-white" : "text-black"}`
           }
           end
-          to={"contact"}
+          to={"/main/contact"}
         >
           Contact
         </NavLink>
@@ -46,6 +46,7 @@ const Navbar = () => {
       <button
         onClick={() => {
           localStorage.removeItem("loggedInUser");
+          setLoggedInUser(null);
           navigate("/");
         }}
         className="active:scale-90 max-sm:px-2 max-[400px]:text-sm text-lg text-white font-semibold bg-red-500 rounded px-4 py-1"

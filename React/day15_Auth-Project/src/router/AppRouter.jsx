@@ -4,46 +4,56 @@ import MainLayout from "../layouts/MainLayout";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import AuthLayout from "../layouts/AuthLayout";
-import ProtectedRouter from "./ProtectedRouter";
 import ShopPage from "../pages/ShopPage";
 import HomePage from "../pages/HomePage";
 import ContactPage from "../pages/ContactPage";
+import PublicProtected from "./protected/PublicProtected";
+import MainProtected from "./protected/MainProtected";
 
 const AppRouter = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <AuthLayout />,
+      element: <PublicProtected />,
       children: [
         {
           path: "",
-          element: <LoginPage />,
-        },
-        {
-          path: "register",
-          element: <RegisterPage />,
+          element: <AuthLayout />,
+          children: [
+            {
+              path: "",
+              element: <LoginPage />,
+            },
+            {
+              path: "register",
+              element: <RegisterPage />,
+            },
+          ],
         },
       ],
     },
+
     {
       path: "/main",
-      element: (
-        <ProtectedRouter>
-          <MainLayout />
-        </ProtectedRouter>
-      ),
+      element: <MainProtected />,
       children: [
         {
-          index: true,
-          element: <HomePage />,
-        },
-        {
-          path: "shop",
-          element: <ShopPage />,
-        },
-        {
-          path: "contact",
-          element: <ContactPage />,
+          path: "",
+          element: <MainLayout />,
+          children: [
+            {
+              path: "",
+              element: <HomePage />,
+            },
+            {
+              path: "shop",
+              element: <ShopPage />,
+            },
+            {
+              path: "contact",
+              element: <ContactPage />,
+            },
+          ],
         },
       ],
     },
