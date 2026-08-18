@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
       <div className="p-5">
 
         {/* Title */}
-        <h2 className="line-clamp-2 min-h-[56px] text-lg font-bold text-gray-800">
+        <h2 className="line-clamp-2 min-h-14 text-lg font-bold text-gray-800">
           {product.title}
         </h2>
 

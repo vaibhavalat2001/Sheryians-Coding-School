@@ -10,7 +10,7 @@ const HomePage = () => {
 
       {/* ================= HERO SECTION ================= */}
       <section className="px-6 pb-10 pt-16 sm:px-10 lg:px-14 lg:pt-10">
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 shadow-xl lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-linear-to-br from-indigo-600 via-violet-600 to-purple-700 shadow-xl lg:grid-cols-2">
 
           {/* Hero Content */}
           <div className="flex flex-col justify-center px-7 py-12 sm:px-12 lg:px-14 lg:py-16">
@@ -50,7 +50,7 @@ const HomePage = () => {
           </div>
 
           {/* Hero Visual */}
-          <div className="relative hidden min-h-[400px] items-center justify-center overflow-hidden lg:flex">
+          <div className="relative hidden min-h-100 items-center justify-center overflow-hidden lg:flex">
 
             <div className="absolute h-72 w-72 rounded-full bg-white/10 blur-2xl" />
 
@@ -181,7 +181,7 @@ const HomePage = () => {
 
             <div
               onClick={() => navigate("/main/product")}
-              className="group cursor-pointer rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+              className="group cursor-pointer rounded-2xl bg-linear-to-br from-blue-500 to-indigo-600 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-8 text-5xl">👕</div>
 
@@ -202,7 +202,7 @@ const HomePage = () => {
 
             <div
               onClick={() => navigate("/main/product")}
-              className="group cursor-pointer rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+              className="group cursor-pointer rounded-2xl bg-linear-to-br from-pink-500 to-rose-600 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-8 text-5xl">👗</div>
 
@@ -223,7 +223,7 @@ const HomePage = () => {
 
             <div
               onClick={() => navigate("/main/product")}
-              className="group cursor-pointer rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-600 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+              className="group cursor-pointer rounded-2xl bg-linear-to-br from-yellow-500 to-orange-600 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-8 text-5xl">💎</div>
 
@@ -244,7 +244,7 @@ const HomePage = () => {
 
             <div
               onClick={() => navigate("/main/product")}
-              className="group cursor-pointer rounded-2xl bg-gradient-to-br from-slate-600 to-gray-900 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+              className="group cursor-pointer rounded-2xl bg-linear-to-br from-slate-600 to-gray-900 p-6 text-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-8 text-5xl">💻</div>
 

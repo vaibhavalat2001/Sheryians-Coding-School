@@ -9,7 +9,7 @@ const MainLayout = () => {
   const { loggedInUser, setLoggedInUser } = useContext(Auth);
 
   return (
-    <div className="grid h-screen grid-cols-1 bg-gradient-to-br from-violet-50 via-purple-100 to-indigo-200 lg:grid-cols-[220px_1fr]">
+    <div className="grid h-screen grid-cols-1 bg-linear-to-br from-violet-50 via-purple-100 to-indigo-200 lg:grid-cols-[220px_1fr]">
       {/* Mobile / Tablet Top Bar */}
       <div className="absolute bg-white w-full top-0 z-50 flex items-center justify-between px-6 py-4 lg:hidden">
         <div className="flex items-center gap-4">
@@ -22,7 +22,7 @@ const MainLayout = () => {
           <h1 className="text-2xl font-bold">E-COMM</h1>
         </div>
 
-        <button className="bg-gradient-to-tl from-emerald-500 font-bold via-pink-600 to-indigo-500 text-white rounded-full w-11 cursor-pointer active:scale-90 text-4xl">
+        <button className="bg-linear-to-tl from-emerald-500 font-bold via-pink-600 to-indigo-500 text-white rounded-full w-11 cursor-pointer active:scale-90 text-4xl">
           {loggedInUser.name.toUpperCase().charAt(0)}
         </button>
       </div>
@@ -38,7 +38,7 @@ const MainLayout = () => {
       {/* Navbar / Sidebar */}
       <div
         className={`
-          fixed left-0 top-0 h-full z-50 sm:w-[260px] max-sm:w-[200px] bg-white
+          fixed left-0 top-0 h-full z-50 sm:w-65 max-sm:w-50 bg-white
           shadow-xl transition-transform duration-300
           lg:static lg:block lg:w-auto lg:translate-x-0 lg:shadow-none
           ${nav ? "translate-x-0" : "-translate-x-full"}
