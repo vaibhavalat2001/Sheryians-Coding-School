@@ -9,16 +9,16 @@ const authSlice = createSlice({
     isLoading: false,
     isAutheticated: false,
   },
-//   reducers: {
-//     addUser: (state, action) => {
-//       state.user = action.payload;
-//       state.isLoading = false;
-//     },
-//     removeUser: (state) => {
-//       state.user = null;
-//       state.isLoading = false;
-//     },
-//   },
+  // reducers: {
+  //   addUser: (state, action) => {
+  //     state.user = action.payload;
+  //     state.isLoading = false;
+  //   },
+  //   removeUser: (state) => {
+  //     state.user = null;
+  //     state.isLoading = false;
+  //   },
+  // },
   extraReducers: (builder) => {
     builder
       .addCase(loginUserAction.pending, (state, action) => {
