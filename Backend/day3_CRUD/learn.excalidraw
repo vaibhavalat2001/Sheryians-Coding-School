@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "Ohzx2rEqUsozzInv3v8Xh",
+      "type": "text",
+      "x": 29.33333396911621,
+      "y": 156.6666717529297,
+      "width": 605.07958984375,
+      "height": 1750,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a1",
+      "roundness": null,
+      "seed": 1449024333,
+      "version": 3148,
+      "versionNonce": 1019107683,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1787129428010,
+      "link": null,
+      "locked": false,
+      "text": "Day 3: CRUD:\ni learnt crud operations: first i created server.js file\nthen i run commands: npm init -y next npm i express and\nthen i run npx nodemon:\nthere is some method for crud operation that is \nget for read or get data, post for create or send data,\nput for update complete object, patch for update\nexisiting data from an object and delete for delete the\ndata, I also learnt req and res objects in req\nthere is body, params, query, header. inside req.body we\nget json data (from submited data), req.params it's give\ndymanic routing means endpoint or url like \nhttps://localhost:3000/user/3    so here 3 is a params\nand in req.query it will give after ? of url like limits query or\n&& skip query on an url. \nres objects is send, status, json. we send res from backed to\nfront end res.send return text, res.json return json data, and\nres.status resturn status. \n\nin read operation i used get method:\napp.get(\"/user\", (req, res) => {\n  res.send(users);\n});\n\nfor create operation i used post method:\nfirst i created users = [];  empty array then>\ni used post method /user path for geting data\nfrom front end of that path. the data come in req.body\nthen i used push method to push req.body json data inside \nusers array. below is code:\n// create data\napp.post(\"/user\", (req, res) => {\n  users.push(req.body);\n  res.json(users);\n});\n\n\nfor update operation i used put method:\nand on path i used :id for updating that perticular\nid data and use req.params for getting id from path\nand updating data from req.body i used map to update\nthat perticular data from an array. and send responce\nall updated data. below is code that i wrote. \n// update\napp.put(\"/user/:id\", (req, res) => {\n  let { id } = req.params;\n  let { name } = req.body;\n  let updated = users.map((val) => {\n    return val.id === id ? { ...val, name } : val;\n  });\n\n  users = updated;\n  res.json(updated);\n});\n\n\nfor delete perticular data i used delete method:\nI used path /user/:id for data id to delete that \nperticular data. then i destructure id using req.params\nthen i used filter method of an users array and\nstore data in rest variable that not matched with same\nid and send res.json(rest). below is code:\n// delete\napp.delete(\"/user/:id\", (req, res) => {\n  let { id } = req.params;\n  let rest = users.filter((val) => val.id !== id);\n  users = rest;\n  res.json(rest);\n});\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Day 3: CRUD:\ni learnt crud operations: first i created server.js file\nthen i run commands: npm init -y next npm i express and\nthen i run npx nodemon:\nthere is some method for crud operation that is \nget for read or get data, post for create or send data,\nput for update complete object, patch for update\nexisiting data from an object and delete for delete the\ndata, I also learnt req and res objects in req\nthere is body, params, query, header. inside req.body we\nget json data (from submited data), req.params it's give\ndymanic routing means endpoint or url like \nhttps://localhost:3000/user/3    so here 3 is a params\nand in req.query it will give after ? of url like limits query or\n&& skip query on an url. \nres objects is send, status, json. we send res from backed to\nfront end res.send return text, res.json return json data, and\nres.status resturn status. \n\nin read operation i used get method:\napp.get(\"/user\", (req, res) => {\n  res.send(users);\n});\n\nfor create operation i used post method:\nfirst i created users = [];  empty array then>\ni used post method /user path for geting data\nfrom front end of that path. the data come in req.body\nthen i used push method to push req.body json data inside \nusers array. below is code:\n// create data\napp.post(\"/user\", (req, res) => {\n  users.push(req.body);\n  res.json(users);\n});\n\n\nfor update operation i used put method:\nand on path i used :id for updating that perticular\nid data and use req.params for getting id from path\nand updating data from req.body i used map to update\nthat perticular data from an array. and send responce\nall updated data. below is code that i wrote. \n// update\napp.put(\"/user/:id\", (req, res) => {\n  let { id } = req.params;\n  let { name } = req.body;\n  let updated = users.map((val) => {\n    return val.id === id ? { ...val, name } : val;\n  });\n\n  users = updated;\n  res.json(updated);\n});\n\n\nfor delete perticular data i used delete method:\nI used path /user/:id for data id to delete that \nperticular data. then i destructure id using req.params\nthen i used filter method of an users array and\nstore data in rest variable that not matched with same\nid and send res.json(rest). below is code:\n// delete\napp.delete(\"/user/:id\", (req, res) => {\n  let { id } = req.params;\n  let rest = users.filter((val) => val.id !== id);\n  users = rest;\n  res.json(rest);\n});\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#111"
+  },
+  "files": {}
+}
