@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "P8MkHJN7Bkfb5twZHCcxG",
+      "type": "text",
+      "x": 241.33334350585938,
+      "y": 143.66668701171875,
+      "width": 792.1594848632812,
+      "height": 250,
+      "angle": 0,
+      "strokeColor": "#e03131",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 1500973085,
+      "version": 13,
+      "versionNonce": 699589245,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1787283385047,
+      "link": null,
+      "locked": false,
+      "text": "Today class i learnt mondo db set up. how to download mongodb, install, and \nthen on mongodb atlas platform create oraganization then project name for \ndatabase after i create cluster and took free virtual machine for transform \ndata from database to server. then i learnt provider aws, microsoft azure, \ngoogle cloud platform (gcp), then i deploy database. after that clustor give\n me database give me connection string and password for connection database. \nSo for that i installed mongodb compass. Mongodb compass is a gui for visualize \nall data like users, products, login, register user, all rest thing about data. then\n in compass there is connection icone inside i put connection link and password \nand then connect my compass to database.",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Today class i learnt mondo db set up. how to download mongodb, install, and \nthen on mongodb atlas platform create oraganization then project name for \ndatabase after i create cluster and took free virtual machine for transform \ndata from database to server. then i learnt provider aws, microsoft azure, \ngoogle cloud platform (gcp), then i deploy database. after that clustor give\n me database give me connection string and password for connection database. \nSo for that i installed mongodb compass. Mongodb compass is a gui for visualize \nall data like users, products, login, register user, all rest thing about data. then\n in compass there is connection icone inside i put connection link and password \nand then connect my compass to database.",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#1111"
+  },
+  "files": {}
+}
