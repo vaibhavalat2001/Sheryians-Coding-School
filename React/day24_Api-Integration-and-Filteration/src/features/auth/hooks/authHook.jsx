@@ -15,7 +15,7 @@ export const useAuth = () => {
     register,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({mode: "onChange"});
 
   const navigate = useNavigate();
 

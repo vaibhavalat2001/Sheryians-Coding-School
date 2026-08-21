@@ -3,7 +3,7 @@ import {
   getProducts,
   getProductsByCategory,
   getProductsCategory,
-} from "../api/ProductApi";
+} from "../api/productApi";
 import { useEffect, useState } from "react";
 
 export const useAllProducts = () => {

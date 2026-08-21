@@ -9,6 +9,7 @@ const authSlice = createSlice({
     isLoading: false,
     isAutheticated: false,
   },
+  
   // reducers: {
   //   addUser: (state, action) => {
   //     state.user = action.payload;
@@ -19,6 +20,7 @@ const authSlice = createSlice({
   //     state.isLoading = false;
   //   },
   // },
+
   extraReducers: (builder) => {
     builder
       .addCase(loginUserAction.pending, (state, action) => {
