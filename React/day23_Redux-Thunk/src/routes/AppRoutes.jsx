@@ -5,7 +5,7 @@ import AuthLayout from '../app/layouts/AuthLayout';
 import RegisterPage from '../features/auth/ui/pages/RegisterPage';
 import MainProtected from './protected/MainProtected';
 import MainLayout from '../app/layouts/MainLayout';
-import HomePage from '../shared/pages/HomePage';
+import HomePage from '../shared/ui/pages/HomePage';
 import ProductPage from '../features/product/ui/pages/ProductPage';
 import OrderPage from '../features/order/ui/pages/OrderPage';
 import CartPage from '../features/cart/ui/pages/cartPage';
