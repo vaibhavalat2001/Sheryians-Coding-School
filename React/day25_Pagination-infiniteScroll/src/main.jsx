@@ -7,7 +7,7 @@ import Infinite from "./Infinite.jsx";
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
-    {/* <Tanstack /> */}
-    <Infinite/>
+    <Tanstack />
+    {/* <Infinite/> */}
   </QueryClientProvider>,
 );
