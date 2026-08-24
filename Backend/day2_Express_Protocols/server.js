@@ -99,7 +99,7 @@ app.post("/user", (req, res) => {
   ]);
 });
 
-const port = 30;
+const port = 3000;
 app.listen(port, () => {
   console.log("Server is connected");
 });
