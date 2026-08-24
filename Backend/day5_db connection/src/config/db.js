@@ -5,9 +5,9 @@ const connectDb = async () => {
     await mongoose.connect(
       "mongodb+srv://vaibhavgalat123_db_user:vaibhav123@cohort-3-cluster.2ajtckf.mongodb.net/",
     );
-    console.log("mongodb connected:");
+    console.log("Mongodb connected:");
   } catch (error) {
-    console.log("mongodb connection error: ", error);
+    console.log("Error while connecting database: ", error);
   }
 };
 

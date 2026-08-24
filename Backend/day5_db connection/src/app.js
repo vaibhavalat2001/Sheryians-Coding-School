@@ -2,6 +2,7 @@ const express = require("express");
 const NotesModel = require("./model/note.model")
 
 const app = express();
+app.use(express.json())
 
 app.get("/", (req, res) => {
     res.send("I am connected");
