@@ -1,10 +1,16 @@
 import { FiMail, FiLock, FiEye, FiEyeOff, FiShoppingBag } from "react-icons/fi";
 import { useAuth } from "../hooks/authHook";
 
-
 const LoginPage = () => {
-  const {register, handleSubmit, errors, loginForm, navigate, showPassword, setShowPassword} = useAuth()
-
+  const {
+    register,
+    handleSubmit,
+    errors,
+    loginForm,
+    navigate,
+    showPassword,
+    setShowPassword,
+  } = useAuth()
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 p-4">
