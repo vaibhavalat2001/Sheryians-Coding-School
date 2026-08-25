@@ -6,7 +6,7 @@ import {
   FiEyeOff,
   FiShoppingBag,
 } from "react-icons/fi";
-import { useAuth } from "../hooks/authHook";
+import { useAuth } from "../hooks/AuthHook";
 
 
 const RegisterPage = () => {
