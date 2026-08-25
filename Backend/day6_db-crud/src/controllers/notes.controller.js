@@ -17,13 +17,28 @@ const createNotesController = async (req, res) => {
   }
 };
 
-// READ
+const getSingleNotesController = async (req, res) => {
+  try {
+    const notes = NotesModel.find();
+    return res.status(200).json({
+      message: "Single notes fetched successfully",
+      notes: notes,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "invalid server error",
+    });
+  }
+};
+
+
+// READ all
 const getAllNotesController = async (req, res) => {
   try {
     const notes = await NotesModel.find();
     res.status(200).json({
       message: "Notes fetched successfully",
-      notes: notes,  
+      notes: notes,
     });
   } catch (error) {
     return res.status(500).json({
@@ -31,7 +46,6 @@ const getAllNotesController = async (req, res) => {
     });
   }
 };
-
 
 // UPDATE
 const updateNotesController = async (req, res) => {
@@ -54,26 +68,26 @@ const updateNotesController = async (req, res) => {
   }
 };
 
-
-// DELETE 
+// DELETE
 const deleteNotesController = async (req, res) => {
-    try {
-        const id = req.params.id;
-        const notes = await NotesModel.findByIdAndDelete(id)
-        return res.status(200).json({
-            message: "Note delete successfully",
-            deleted: notes
-        })
-    } catch (error) {
-        return res.status(500).json({
-            message: "internal serverl error"
-        })
-    }
-}
+  try {
+    const id = req.params.id;
+    const notes = await NotesModel.findByIdAndDelete(id);
+    return res.status(200).json({
+      message: "Note delete successfully",
+      deleted: notes,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "internal serverl error",
+    });
+  }
+};
 
 module.exports = {
   createNotesController,
+  getSingleNotesController,
   getAllNotesController,
   updateNotesController,
-  deleteNotesController
+  deleteNotesController,
 };
