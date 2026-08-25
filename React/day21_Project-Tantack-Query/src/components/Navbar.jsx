@@ -40,7 +40,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-[#0d0d0d]/90 backdrop-blur-xl border-b border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Main Navbar */}
-        <div className="h-[72px] flex items-center justify-between">
+        <div className="h-18 flex items-center justify-between">
           {/* Logo */}
           <NavLink
             to="/main"
@@ -176,7 +176,7 @@ const Navbar = () => {
             duration-300
             ${
               isMenuOpen
-                ? "max-h-[400px] opacity-100 pb-5"
+                ? "max-h-100 opacity-100 pb-5"
                 : "max-h-0 opacity-0"
             }
           `}

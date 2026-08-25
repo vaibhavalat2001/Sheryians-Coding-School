@@ -17,7 +17,7 @@ const AboutPage = () => {
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden border-b border-zinc-900">
         {/* Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-purple-600/10 blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-125 h-75 bg-purple-600/10 blur-[120px] rounded-full" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 text-center">
           <span
@@ -99,9 +99,9 @@ const AboutPage = () => {
                 alt="Online shopping"
                 className="
                   w-full
-                  h-[320px]
-                  sm:h-[400px]
-                  lg:h-[450px]
+                  h-80
+                  sm:h-100
+                  lg:h-113
                   object-cover
                   opacity-75
                   hover:opacity-100
@@ -115,7 +115,7 @@ const AboutPage = () => {
                 className="
                 absolute
                 inset-0
-                bg-gradient-to-t
+                bg-linear-to-t
                 from-black/60
                 via-transparent
                 to-transparent
@@ -252,8 +252,8 @@ const AboutPage = () => {
           left-1/2
           -translate-x-1/2
           top-0
-          w-[500px]
-          h-[300px]
+          w-125
+          h-75
           bg-purple-600/10
           blur-[100px]
           rounded-full
@@ -621,7 +621,7 @@ const AboutPage = () => {
           overflow-hidden
           rounded-2xl sm:rounded-3xl
           border border-purple-500/20
-          bg-gradient-to-br
+          bg-linear-to-br
           from-purple-950/50
           via-[#151515]
           to-[#111111]

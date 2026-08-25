@@ -158,14 +158,14 @@ const HomePage = () => {
             </div>
 
             {/* Hero Image */}
-            <div className="hidden lg:block h-full min-h-[480px]">
+            <div className="hidden lg:block h-full min-h-120">
               <img
                 src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1000&q=80"
                 alt="Shopping"
                 className="w-full h-full object-cover opacity-70"
               />
 
-              <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-[#111111] to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-1/2 bg-linear-to-r from-[#111111] to-transparent" />
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@ const HomePage = () => {
                 p-4 sm:p-5
                 text-center
                 hover:border-purple-500/40
-                hover:bg-purple-500/[0.04]
+                hover:bg-purple-500/4]
                 hover:-translate-y-1
                 transition-all
                 duration-300
@@ -380,7 +380,7 @@ const HomePage = () => {
             overflow-hidden
             rounded-2xl sm:rounded-3xl
             border border-purple-500/20
-            bg-gradient-to-br from-purple-950/60 via-[#151515] to-[#111111]
+            bg-linear-to-br from-purple-950/60 via-[#151515] to-[#111111]
             px-6 sm:px-10 lg:px-14
             py-12 sm:py-16
           "
