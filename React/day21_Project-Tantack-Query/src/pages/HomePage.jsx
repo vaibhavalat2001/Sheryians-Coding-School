@@ -7,8 +7,11 @@ import {
   Truck,
   ShieldCheck,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const categories = [
     { name: "Beauty", icon: "💄" },
     { name: "Furniture", icon: "🛋️" },
@@ -61,10 +64,8 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-white">
-
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-
         <div
           className="
             relative
@@ -74,17 +75,14 @@ const HomePage = () => {
             bg-[#111111]
           "
         >
-
           {/* Background Glow */}
           <div className="absolute -top-32 -right-32 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl" />
 
           <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
 
           <div className="relative grid lg:grid-cols-2 items-center">
-
             {/* Hero Content */}
             <div className="px-6 sm:px-10 lg:px-14 py-14 sm:py-20">
-
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm">
                 <Sparkles size={15} />
                 Discover Something New
@@ -112,8 +110,8 @@ const HomePage = () => {
               </p>
 
               <div className="flex flex-wrap gap-3 mt-8">
-
                 <button
+                  onClick={() => navigate("shop")}
                   className="
                     group
                     flex
@@ -133,7 +131,6 @@ const HomePage = () => {
                   "
                 >
                   Shop Now
-
                   <ArrowRight
                     size={18}
                     className="group-hover:translate-x-1 transition"
@@ -141,6 +138,7 @@ const HomePage = () => {
                 </button>
 
                 <button
+                  onClick={() => navigate("shop")}
                   className="
                     px-5 sm:px-6
                     py-3
@@ -156,14 +154,11 @@ const HomePage = () => {
                 >
                   Explore Categories
                 </button>
-
               </div>
-
             </div>
 
             {/* Hero Image */}
             <div className="hidden lg:block h-full min-h-[480px]">
-
               <img
                 src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1000&q=80"
                 alt="Shopping"
@@ -171,18 +166,14 @@ const HomePage = () => {
               />
 
               <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-[#111111] to-transparent" />
-
             </div>
-
           </div>
         </div>
       </section>
 
       {/* ================= CATEGORIES ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-
         <div className="flex items-end justify-between mb-7">
-
           <div>
             <p className="text-purple-500 text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Explore
@@ -197,11 +188,9 @@ const HomePage = () => {
             View All
             <ArrowRight size={16} />
           </button>
-
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-
           {categories.map((category) => (
             <div
               key={category.name}
@@ -220,7 +209,6 @@ const HomePage = () => {
                 duration-300
               "
             >
-
               <div
                 className="
                   w-12
@@ -246,20 +234,15 @@ const HomePage = () => {
               <h3 className="text-xs sm:text-sm font-medium text-zinc-300 mt-3 group-hover:text-white">
                 {category.name}
               </h3>
-
             </div>
           ))}
-
         </div>
       </section>
 
       {/* ================= FEATURED PRODUCTS ================= */}
       <section className="border-y border-zinc-900 bg-[#101010]">
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-
           <div className="flex items-end justify-between mb-8">
-
             <div>
               <p className="text-purple-500 text-xs sm:text-sm font-semibold uppercase tracking-wider">
                 Trending
@@ -274,11 +257,9 @@ const HomePage = () => {
               See All
               <ArrowRight size={16} />
             </button>
-
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-
             {products.map((product) => (
               <div
                 key={product.title}
@@ -294,10 +275,8 @@ const HomePage = () => {
                   duration-300
                 "
               >
-
                 {/* Product Image */}
                 <div className="relative h-44 sm:h-56 overflow-hidden bg-zinc-900">
-
                   <img
                     src={product.image}
                     alt={product.title}
@@ -354,12 +333,10 @@ const HomePage = () => {
                   >
                     <ShoppingBag size={17} />
                   </button>
-
                 </div>
 
                 {/* Product Info */}
                 <div className="p-3 sm:p-5">
-
                   <p className="text-[10px] sm:text-xs text-purple-400">
                     {product.category}
                   </p>
@@ -369,7 +346,6 @@ const HomePage = () => {
                   </h3>
 
                   <div className="flex items-center gap-1 mt-2">
-
                     <Star
                       size={13}
                       className="fill-yellow-400 text-yellow-400"
@@ -378,11 +354,9 @@ const HomePage = () => {
                     <span className="text-xs text-zinc-400">
                       {product.rating}
                     </span>
-
                   </div>
 
                   <div className="flex items-center gap-2 mt-3">
-
                     <span className="font-bold text-sm sm:text-lg">
                       {product.price}
                     </span>
@@ -390,21 +364,16 @@ const HomePage = () => {
                     <span className="text-xs text-zinc-600 line-through">
                       {product.oldPrice}
                     </span>
-
                   </div>
-
                 </div>
-
               </div>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* ================= PROMO ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-
         <div
           className="
             relative
@@ -416,11 +385,9 @@ const HomePage = () => {
             py-12 sm:py-16
           "
         >
-
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl" />
 
           <div className="relative max-w-2xl">
-
             <span className="text-purple-400 text-sm font-semibold">
               SPECIAL OFFER
             </span>
@@ -430,11 +397,12 @@ const HomePage = () => {
             </h2>
 
             <p className="text-zinc-400 mt-4 leading-relaxed">
-              Discover exclusive deals and trending products picked
-              especially for you.
+              Discover exclusive deals and trending products picked especially
+              for you.
             </p>
 
             <button
+              onClick={() => navigate("shop")}
               className="
                 mt-7
                 flex
@@ -452,77 +420,58 @@ const HomePage = () => {
               Explore Deals
               <ArrowRight size={18} />
             </button>
-
           </div>
         </div>
       </section>
 
       {/* ================= FEATURES ================= */}
       <section className="border-t border-zinc-900">
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-
           <div className="grid sm:grid-cols-3 gap-5">
-
             <div className="flex gap-4 p-5 rounded-xl border border-zinc-800 bg-[#111111]">
-
               <div className="shrink-0 w-11 h-11 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
                 <Truck size={20} className="text-purple-400" />
               </div>
 
               <div>
-                <h3 className="font-semibold">
-                  Fast Delivery
-                </h3>
+                <h3 className="font-semibold">Fast Delivery</h3>
 
                 <p className="text-sm text-zinc-500 mt-1">
                   Quick and reliable delivery.
                 </p>
               </div>
-
             </div>
 
             <div className="flex gap-4 p-5 rounded-xl border border-zinc-800 bg-[#111111]">
-
               <div className="shrink-0 w-11 h-11 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
                 <ShieldCheck size={20} className="text-purple-400" />
               </div>
 
               <div>
-                <h3 className="font-semibold">
-                  Secure Shopping
-                </h3>
+                <h3 className="font-semibold">Secure Shopping</h3>
 
                 <p className="text-sm text-zinc-500 mt-1">
                   Safe and secure shopping experience.
                 </p>
               </div>
-
             </div>
 
             <div className="flex gap-4 p-5 rounded-xl border border-zinc-800 bg-[#111111]">
-
               <div className="shrink-0 w-11 h-11 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
                 <Star size={20} className="text-purple-400" />
               </div>
 
               <div>
-                <h3 className="font-semibold">
-                  Quality Products
-                </h3>
+                <h3 className="font-semibold">Quality Products</h3>
 
                 <p className="text-sm text-zinc-500 mt-1">
                   Products you'll love and trust.
                 </p>
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
     </div>
   );
 };

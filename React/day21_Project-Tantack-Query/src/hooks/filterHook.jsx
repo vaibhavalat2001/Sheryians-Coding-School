@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getProductsDataApi } from "../api/productApi";
 
 export const useFilter = () => {
-    const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [productsData, setProductsData] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -26,7 +26,7 @@ export const useFilter = () => {
 
   return {
     isLoading,
-    filterProducts, 
+    filterProducts,
     filteredProducts,
-  }
-}
+  };
+};
