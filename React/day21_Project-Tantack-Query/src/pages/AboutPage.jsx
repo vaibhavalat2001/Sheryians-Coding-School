@@ -36,7 +36,7 @@ const AboutPage = () => {
           "
           >
             <Sparkles size={15} />
-            ABOUT SHOPVERSE
+            ABOUT CARTIQO
           </span>
 
           <h1

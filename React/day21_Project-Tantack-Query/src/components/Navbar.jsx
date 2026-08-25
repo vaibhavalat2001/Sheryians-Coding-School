@@ -46,8 +46,8 @@ const Navbar = () => {
             to="/main"
             className="text-xl sm:text-2xl font-bold text-white shrink-0"
           >
-            <span className="text-purple-500">Shop</span>
-            Verse
+            <span className="text-purple-500">Cart</span>
+            Iqo
           </NavLink>
 
           {/* Desktop Navigation */}
