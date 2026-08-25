@@ -2,7 +2,7 @@ const ProductCard = ({ product }) => {
   const isInStock = product.stock > 0;
 
   return (
-    <div className="group relative w-full max-w-sm rounded-xl p-[1px] overflow-hidden bg-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-blue-500 transition-all duration-500">
+    <div className="group relative w-full max-w-sm rounded-xl overflow-hidden bg-transparent hover:bg-linear-to-r hover:from-purple-500 hover:via-pink-500 hover:to-blue-500 transition-all duration-500">
       
       {/* Card */}
       <div className="relative bg-[#111111] rounded-xl overflow-hidden">
