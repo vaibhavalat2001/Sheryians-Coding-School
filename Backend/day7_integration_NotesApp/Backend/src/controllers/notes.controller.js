@@ -82,10 +82,29 @@ const deleteNotesController = async (req, res) => {
   }
 };
 
+
+// DELETE all 
+const deleteAllNotesController = async (req, res) => {
+  try {
+    let allDeleted = await NotesModel.deleteMany();
+
+    return res.status(200).json({
+      message: "Deleted all notes successfully",
+      deletedNotes: allDeleted
+    })
+  } catch (error) {
+    return res.status(500).json({
+      message: "invalid server error"
+    })
+  }
+}
+
+
 module.exports = {
   createNotesController,
   getSingleNotesController,
   getAllNotesController,
   updateNotesController,
   deleteNotesController,
+  deleteAllNotesController
 };
