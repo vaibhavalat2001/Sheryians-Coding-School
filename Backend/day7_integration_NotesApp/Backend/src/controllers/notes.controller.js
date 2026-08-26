@@ -36,17 +36,22 @@ const getSingleNotesController = async (req, res) => {
 
 // READ
 const getAllNotesController = async (req, res) => {
-  try {
-    let allNotes = await NotesModel.find();
-    return res.status(200).json({
-      message: "All notes fetched successfully",
-      allNotes: allNotes,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      message: "internal server error",
-    });
-  }
+    try {
+        const allNotes = await NotesModel.find();
+
+        return res.status(200).json({
+            message: "All notes fetched successfully",
+            allNotes: allNotes,
+        });
+
+    } catch (error) {
+        console.error("GET ALL NOTES ERROR:", error);
+
+        return res.status(500).json({
+            message: "Internal server error",
+            error: error.message,
+        });
+    }
 };
 
 // UPDATE
