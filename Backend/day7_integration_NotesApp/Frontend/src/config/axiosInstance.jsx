@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-    baseURL: "http://localhost:3000/notes/"
+    baseURL: "https://nottivo-backend.vercel.app/notes/"
 })
