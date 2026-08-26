@@ -4,10 +4,12 @@ import { loginUserApi } from "../api/authApi";
 import { useDispatch } from "react-redux";
 import { addUser } from "../state/authSlice";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 export const useAuth = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState();
 
   const {
     handleSubmit,
@@ -22,7 +24,7 @@ export const useAuth = () => {
     try {
       const responce = await loginUserApi(data);
       dispatch(addUser(responce));
-      toast.success(`${responce.firstName} you logged`, {closeOnClick: true});
+      toast.success(`${responce.firstName} you logged`, { closeOnClick: true });
     } catch (error) {
       console.log("login error", error);
     }
@@ -39,5 +41,7 @@ export const useAuth = () => {
     errors,
     loginForm,
     registerForm,
+    showPassword,
+    setShowPassword,
   };
 };
