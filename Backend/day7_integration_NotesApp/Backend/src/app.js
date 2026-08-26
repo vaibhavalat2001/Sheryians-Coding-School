@@ -4,7 +4,7 @@ const notesRouter = require("./routes/notes.routes");
 
 const app = express();
 app.use(express.json());
-connectDB();
+connectDB();    
 
 app.get("/", (req, res) => {
     res.send("Backend connected");
