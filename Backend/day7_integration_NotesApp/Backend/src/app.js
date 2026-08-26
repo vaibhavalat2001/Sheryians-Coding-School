@@ -8,6 +8,8 @@ app.use(express.json());
 app.use(cors({
     origin: "https://nottivo.vercel.app"
 }))
+
+
 connectDB();       
 
 app.get("/notes", (req, res) => {
