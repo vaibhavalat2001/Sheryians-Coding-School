@@ -13,7 +13,11 @@ app.use(cors({
 connectDB();       
 
 app.get("/", (req, res) => {
-    res.send("Backend connected");
+    res.send("Nottivo Backend is live 🚀");
+})
+
+app.get("/notes", (req, res) => {
+    res.send("Backend Connected")
 })
 
 app.use("/notes", notesRouter)
