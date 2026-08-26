@@ -1,12 +1,21 @@
 const mongoose = require("mongoose");
 
-const connectDB = async() => {
+let isConnected = false;
+
+const connectDB = async () => {
+    if (isConnected) {
+        return;
+    }
+
     try {
-        await mongoose.connect(process.env.MONGODB_URI);
-        console.log("Mongodb connected");
+        await mongoose.connect("mongodb+srv://vaibhavgalat123_db_user:vaibhav123@cohort-3-cluster.2ajtckf.mongodb.net/?appName=cohort-3-Cluster");
+
+        isConnected = true;
+        console.log("MongoDB connected");
     } catch (error) {
-        console.log("error while connect db", error)
-    }  
-}     
-     
+        console.error("MongoDB connection error:", error);
+        throw error;
+    }
+};
+
 module.exports = connectDB;
