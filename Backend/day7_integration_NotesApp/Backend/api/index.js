@@ -1,22 +1,33 @@
-const app = require("../src/app");
-const connectDB = require("../src/config/db");
+const mongoose = require("mongoose");
 
-const handler = async (req, res) => {
+const MONGODB_URI =
+    "YOUR_NEW_MONGODB_CONNECTION_STRING";
+
+module.exports = async (req, res) => {
     try {
-        await connectDB();
+        console.log("Starting MongoDB connection...");
+
+        const connection = await mongoose.connect(MONGODB_URI, {
+            serverSelectionTimeoutMS: 10000,
+        });
+
+        console.log("MongoDB connected:", connection.connection.host);
 
         return res.status(200).json({
-            message: "Vercel + MongoDB connection successful"
+            success: true,
+            message: "MongoDB connected from Vercel",
+            host: connection.connection.host,
+            readyState: mongoose.connection.readyState,
         });
 
     } catch (error) {
-        console.error("DATABASE ERROR:", error);
+        console.error("MONGODB ERROR:", error);
 
         return res.status(500).json({
-            message: "Database connection failed",
-            error: error.message
+            success: false,
+            message: "MongoDB connection failed",
+            error: error.message,
+            name: error.name,
         });
     }
 };
-
-module.exports = handler;
