@@ -175,6 +175,7 @@ const App = () => {
                   </label>
 
                   <input
+                  required
                     onChange={handleChange}
                     name="title"
                     value={formData.title}
@@ -191,6 +192,7 @@ const App = () => {
                   </label>
 
                   <textarea
+                  minLength={20}
                     onChange={handleChange}
                     name="description"
                     value={formData.description}
