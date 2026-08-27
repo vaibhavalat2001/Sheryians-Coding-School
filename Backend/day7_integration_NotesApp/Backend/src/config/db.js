@@ -8,7 +8,8 @@ const connectDB = async () => {
     }
 
     try {
-        await mongoose.connect("mongodb+srv://vaibhavgalat123_db_user:vaibhav123@cohort-3-cluster.2ajtckf.mongodb.net/?appName=cohort-3-Cluster");
+
+        await mongoose.connect("mongodb+srv://vaibhavgalat123_db_user:vaibhav123@cohort-3-cluster.2ajtckf.mongodb.net/?appName=cohort-3-Cluster")
 
         isConnected = true;
         console.log("MongoDB connected");
