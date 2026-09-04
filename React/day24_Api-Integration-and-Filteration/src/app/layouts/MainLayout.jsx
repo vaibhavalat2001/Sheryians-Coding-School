@@ -4,7 +4,7 @@ import Navbar from '../../shared/ui/components/Navbar';
 
 const MainLayout = () => {
   return (
-    <div className='bg-black min-h-screen text-2xl p-2 flex flex-col gap-4 text-white'>
+    <div className='bg-black -mb-6 min-h-screen text-2xl flex flex-col text-white'>
         <Navbar/>
       <Outlet/>
     </div>

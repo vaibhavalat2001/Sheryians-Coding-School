@@ -27,3 +27,11 @@ export const getProductsByCategory = async (category) => {
     console.log("Get products by category error: ", error);
   }
 };
+
+export const addProductCart = async () => {
+  try {
+    let res = await api.post("carts/add")
+  } catch (error) {
+    console.log("add product cart error: ", error);
+  }
+};

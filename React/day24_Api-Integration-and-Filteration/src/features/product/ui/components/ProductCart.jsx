@@ -93,7 +93,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Add To Cart */}
-        <button
+        <button 
           type="button"
           className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-fuchsia-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-600/20 transition-all duration-300 hover:from-violet-500 hover:to-fuchsia-500 hover:shadow-violet-500/30 active:scale-[0.98]"
         >

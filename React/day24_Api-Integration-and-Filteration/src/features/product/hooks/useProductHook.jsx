@@ -37,6 +37,7 @@ export const useAllCategorys = () => {
   });
 };
 
+
 export const useProductByCategory = () => {
   const [category, setCategory] = useState(null);
   let { data, isPending, error } = useQuery({
@@ -51,3 +52,8 @@ export const useProductByCategory = () => {
     setCategory,
   };
 };
+
+
+export const addProductCart = () => {
+  
+}
