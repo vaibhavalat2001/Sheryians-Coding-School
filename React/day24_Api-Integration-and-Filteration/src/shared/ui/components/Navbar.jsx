@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router";
+import { Navigate, NavLink, useNavigate } from "react-router";
 import { Box, ShoppingCart, Menu, X, Zap, LogOut } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
 
   // Close mobile menu when clicking outside navbar
   useEffect(() => {
@@ -133,6 +134,10 @@ const Navbar = () => {
 
           {/* Logout */}
           <button
+            onClick={() => {
+              localStorage.removeItem("accessToken");
+              navigate("/");
+            }}
             type="button"
             className="group flex items-center gap-2 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-400 transition-all duration-300 hover:border-red-500/40 hover:bg-red-500/20 hover:text-red-300"
           >
@@ -219,6 +224,10 @@ const Navbar = () => {
 
           {/* Mobile Logout */}
           <button
+            onClick={() => {
+              localStorage.removeItem("accessToken");
+              navigate("/");
+            }}
             type="button"
             className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-400 transition-all duration-300 hover:border-red-500/40 hover:bg-red-500/20"
           >
