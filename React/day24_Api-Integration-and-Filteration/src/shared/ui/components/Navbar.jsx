@@ -1,13 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router";
-import {
-  Box,
-  ShoppingCart,
-  Menu,
-  X,
-  Zap,
-  LogOut,
-} from "lucide-react";
+import { Box, ShoppingCart, Menu, X, Zap, LogOut } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +46,6 @@ const Navbar = () => {
       className="sticky top-0 z-50 w-full border-b border-white/10 backdrop-blur-xl"
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
         {/* ================= LOGO ================= */}
         <NavLink
           to="/main"
@@ -61,17 +53,14 @@ const Navbar = () => {
           className="group flex items-center gap-2"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-violet-600 to-fuchsia-600 shadow-lg shadow-violet-600/25 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-            <Zap
-              size={21}
-              className="fill-white text-white"
-            />
+            <Zap size={21} className="fill-white text-white" />
           </div>
 
           <div className="hidden sm:block">
             <h1 className="text-xl font-bold tracking-tight text-white">
-              Shop
+              Nex
               <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Verse
+                Zora
               </span>
             </h1>
 
@@ -103,7 +92,6 @@ const Navbar = () => {
 
         {/* ================= DESKTOP ACTIONS ================= */}
         <div className="hidden items-center gap-2 md:flex">
-
           {/* Cart */}
           <NavLink
             to="/main/cart"
@@ -170,13 +158,10 @@ const Navbar = () => {
       {/* ================= MOBILE MENU ================= */}
       <div
         className={`overflow-hidden border-t border-white/10 bg-zinc-950 transition-all duration-300 md:hidden ${
-          isMenuOpen
-            ? "max-h-100 opacity-100"
-            : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-100 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="space-y-2 px-4 py-4">
-
           {/* Mobile Navigation Links */}
           {navLinks.map((link) => (
             <NavLink
@@ -201,7 +186,6 @@ const Navbar = () => {
 
           {/* Mobile Cart + Orders */}
           <div className="grid grid-cols-2 gap-2">
-
             <NavLink
               to="/main/cart"
               onClick={() => setIsMenuOpen(false)}
@@ -231,7 +215,6 @@ const Navbar = () => {
               <Box size={17} />
               Orders
             </NavLink>
-
           </div>
 
           {/* Mobile Logout */}
