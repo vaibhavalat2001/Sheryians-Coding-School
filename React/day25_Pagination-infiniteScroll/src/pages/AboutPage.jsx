@@ -17,7 +17,7 @@ const AboutPage = () => {
 
       {/* ================= HERO ================= */}
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-10 sm:px-8 lg:pt-16">
-        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-600 px-6 py-14 text-white sm:px-12 lg:px-20 lg:py-20">
+        <div className="relative overflow-hidden rounded-4xl bg-linear-to-br from-emerald-600 via-emerald-500 to-teal-600 px-6 py-14 text-white sm:px-12 lg:px-20 lg:py-20">
 
           {/* Decorative circles */}
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10" />
@@ -232,11 +232,11 @@ const AboutPage = () => {
         <div className="grid items-center gap-12 lg:grid-cols-2">
 
           {/* Illustration */}
-          <div className="relative flex min-h-[350px] items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br from-orange-50 to-emerald-50">
+          <div className="relative flex min-h-88 items-center justify-center overflow-hidden rounded-4xl bg-linear-to-br from-orange-50 to-emerald-50">
 
             <div className="absolute h-64 w-64 rounded-full bg-white/70" />
 
-            <div className="relative flex h-36 w-36 items-center justify-center rounded-[2rem] bg-white shadow-xl shadow-emerald-100">
+            <div className="relative flex h-36 w-36 items-center justify-center rounded-4xl bg-white shadow-xl shadow-emerald-100">
               <ShoppingBag
                 size={70}
                 strokeWidth={1.5}
@@ -326,7 +326,7 @@ const AboutPage = () => {
       {/* ================= CTA ================= */}
       <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8">
 
-        <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 px-6 py-14 text-center sm:px-10">
+        <div className="relative overflow-hidden rounded-4xl bg-slate-900 px-6 py-14 text-center sm:px-10">
 
           <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-emerald-500/20 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-orange-500/20 blur-3xl" />

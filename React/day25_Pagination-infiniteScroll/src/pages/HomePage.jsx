@@ -87,7 +87,7 @@ const HomePage = () => {
 
       {/* ================= HERO ================= */}
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-8 sm:px-8 lg:pt-12">
-        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-600 px-6 py-12 text-white shadow-xl shadow-emerald-100 sm:px-10 lg:px-16 lg:py-20">
+        <div className="relative overflow-hidden rounded-4xl bg-linear-to-br from-emerald-600 via-emerald-500 to-teal-600 px-6 py-12 text-white shadow-xl shadow-emerald-100 sm:px-10 lg:px-16 lg:py-20">
 
           {/* Decorative circles */}
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10" />
@@ -340,7 +340,7 @@ const HomePage = () => {
 
       {/* ================= CTA ================= */}
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] bg-orange-50 px-6 py-12 text-center sm:px-10">
+        <div className="relative overflow-hidden rounded-4xl bg-orange-50 px-6 py-12 text-center sm:px-10">
 
           <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-orange-200/40 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-emerald-200/40 blur-3xl" />

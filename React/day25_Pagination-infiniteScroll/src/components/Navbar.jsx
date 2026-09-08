@@ -24,7 +24,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-lg font-bold text-white shadow-lg shadow-emerald-200">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-600 text-lg font-bold text-white shadow-lg shadow-emerald-200">
             S
           </div>
 
@@ -96,7 +96,7 @@ const Navbar = () => {
           {/* Cart */}
           <NavLink
             to="/cart"
-            className="relative ml-1 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-200 transition hover:scale-105 hover:shadow-lg"
+            className="relative ml-1 flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-200 transition hover:scale-105 hover:shadow-lg"
             aria-label="Cart"
           >
             <ShoppingCart size={19} />
