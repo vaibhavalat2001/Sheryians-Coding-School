@@ -1,7 +1,7 @@
 const createFiles = (req, res) => {
     try {
         console.log(req.files);   
-        console.log(req. body);
+        console.log(req.body);
        return res.status(200).json({
         message: "form created successfully"
        })
