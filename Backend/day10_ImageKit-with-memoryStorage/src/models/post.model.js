@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+}, {timestamps: true})
 
 const postModel = mongoose.model("post", postSchema);
 
