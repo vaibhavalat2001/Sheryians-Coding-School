@@ -1,10 +1,18 @@
-import axios from "axios"
+import axios from "axios";
 
-export const getProducts = async(limit, pageParam) => {
-    try {
-        let res = await axios.get(`https://dummyjson.com/products?limit=${limit}&skip=${pageParam}`);
-        return res.data
-    } catch (error) {
-        console.log("Product api erro: ", error)
-    }
-}
+export const getProducts = async (limit, skip) => {
+  try {
+    const res = await axios.get(
+      `https://dummyjson.com/products/?limit=${limit}&skip=${limit * skip}`,
+    );
+    return res.data;
+  } catch (error) {
+    console.error(
+      "Product API Error:",
+        error.response?.status,
+        error.message
+    );
+
+    throw error;
+  }
+};

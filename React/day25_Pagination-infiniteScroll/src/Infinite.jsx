@@ -8,8 +8,7 @@ const Infinite = () => {
   const {
     data,
     isPending,
-    error,
-    fetchNextPage,
+    fetchNextPage,   
     hasNextPage,
     isFetchingNextPage,
   } = useInfiniteQuery({
@@ -25,7 +24,6 @@ const Infinite = () => {
 
   if (isPending) return "Loading...";
   let allProducts = data.pages.flatMap((val) => val.products);
-  console.log(allProducts);
   return (
     <div className="min-h-screen bg-black flex flex-col gap-6 p-6">
       <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center gap-5">
