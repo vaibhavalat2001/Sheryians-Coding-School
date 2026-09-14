@@ -33,6 +33,7 @@ export const useApi = () => {
         error.config.headers.Authorization = `Bearer ${res.data.token.accessToken}`;
         return axios(error.config);
       }
+      return Promise.reject(error);
     },
   );
 
