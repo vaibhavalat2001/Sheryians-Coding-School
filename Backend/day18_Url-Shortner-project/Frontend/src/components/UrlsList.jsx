@@ -54,7 +54,7 @@ const UrlsList = () => {
       {/* URL List */}
       <div className="flex flex-col gap-3">
         {[...(urls || [])].reverse().map((data) => {
-          const shortUrl = `http://localhost:3000/${data.shortCode}`;
+          const shortUrl = `https://urlshort-backend.vercel.app/${data.shortCode}`;
           const isCopied = copiedId === data._id;
 
           return (
@@ -91,7 +91,7 @@ const UrlsList = () => {
                     rel="noreferrer"
                     className="flex items-center gap-2 truncate text-base font-medium text-indigo-400 hover:text-indigo-300"
                   >
-                    <span className="truncate">{shortUrl}</span>
+                    <span className="truncate">{data.shortCode}</span>
 
                     <ExternalLink
                       size={15}

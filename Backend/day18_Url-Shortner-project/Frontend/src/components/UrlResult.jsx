@@ -15,7 +15,7 @@ const UrlResult = () => {
 
   if (!urlResult) return null;
 
-  const shortUrl = `http://localhost:3000/${urlResult.shortCode}`;
+  const shortUrl = `https://urlshort-backend.vercel.app/${urlResult.shortCode}`;
 
   const handleCopy = async () => {
     try {
