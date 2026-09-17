@@ -6,7 +6,12 @@ const app = express();
 
 app.use(express.json());
 
+
 app.use("/api/urls", urlRouter);
+app.get("/", (req, res) => {
+  res.send("server connected successfully");
+});
+
 
 /*
  *   @post https://localhost:3000/:shortCode
