@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://urlshort-backend.vercel.app/",
+        target: "https://urlshort-backend.vercel.app",
         changeOrigin: true,
       },
     },
