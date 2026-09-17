@@ -1,18 +1,24 @@
 import express from "express";
 import urlRouter from "../routers/url.router.js";
 import urlModel from "../models/url.models.js";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "https://shortnerurl-frontend.vercel.app/",
+    credentials: true,
+  }),
+);
 
 app.use("/api/urls", urlRouter);
 
 app.get("/", (req, res) => {
   res.send("server connected successfully");
 });
-
 
 /*
  *   @post https://localhost:3000/:shortCode
