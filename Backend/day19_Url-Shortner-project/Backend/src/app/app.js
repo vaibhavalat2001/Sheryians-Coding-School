@@ -7,13 +7,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "https://shortnerurl-frontend.vercel.app/",
-    credentials: true,
-  }),
-);
-
 app.use("/api/urls", urlRouter);
 
 app.get("/", (req, res) => {
@@ -50,6 +43,13 @@ app.get("/:code", async (req, res) => {
       message: "doesn't access page",
     });
   }
+
+  app.use(
+    cors({
+      origin: "https://shortnerurl-frontend.vercel.app/",
+      credentials: true,
+    }),
+  );
 });
 
 export default app;
