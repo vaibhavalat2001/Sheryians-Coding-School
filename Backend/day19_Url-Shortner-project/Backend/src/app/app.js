@@ -43,13 +43,13 @@ app.get("/:code", async (req, res) => {
       message: "doesn't access page",
     });
   }
-
-  app.use(
-    cors({
-      origin: "https://shortnerurl-frontend.vercel.app/",
-      credentials: true,
-    }),
-  );
 });
+
+app.use(
+  cors({
+    origin: "https://shortnerurl-frontend.vercel.app/",
+    credentials: true,
+  }),
+);
 
 export default app;
