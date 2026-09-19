@@ -7,6 +7,13 @@ const app = express();
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "https://shortnerurl-frontend.vercel.app",
+    credentials: true,
+  }),
+);
+
 app.use("/api/urls", urlRouter);
 
 app.get("/", (req, res) => {
@@ -26,7 +33,7 @@ app.get("/:code", async (req, res) => {
   }
 
   try {
-    const url = await urlModel.findOneAndUpdate({ shortCode: code });
+    const url = await urlModel.findOne({ shortCode: code });
     if (!url) {
       return res.status(404).json({
         message: "url not found",
@@ -44,12 +51,5 @@ app.get("/:code", async (req, res) => {
     });
   }
 });
-
-app.use(
-  cors({
-    origin: "https://shortnerurl-frontend.vercel.app/",
-    credentials: true,
-  }),
-);
 
 export default app;
