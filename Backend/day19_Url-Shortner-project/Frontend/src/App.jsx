@@ -435,13 +435,11 @@ const App = () => {
       `}</style>
 
       <main className="relative min-h-screen overflow-hidden bg-[#f8f9ff] text-slate-900">
-
         {/* =========================================================
             BACKGROUND
         ========================================================= */}
 
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
           {/* Violet / Indigo Aurora */}
           <div
             className="
@@ -722,13 +720,11 @@ const App = () => {
         ========================================================= */}
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-
           {/* =======================================================
               HERO
           ======================================================= */}
 
           <section className="perspective mx-auto max-w-5xl text-center">
-
             {/* Badge */}
 
             <div className="reveal mb-7 inline-flex">
@@ -764,11 +760,8 @@ const App = () => {
                   <span className="absolute inset-0 animate-ping rounded-full bg-indigo-500 opacity-60" />
                   <span className="relative h-2.5 w-2.5 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
                 </span>
-
                 Smart URL Workspace
-
                 <span className="text-purple-300">✦</span>
-
                 <span className="hidden text-slate-400 sm:inline">
                   Fast & Simple
                 </span>
@@ -790,7 +783,6 @@ const App = () => {
               "
             >
               Long links?
-
               <span
                 className="
                   linear-moving
@@ -825,9 +817,8 @@ const App = () => {
                 sm:leading-8
               "
             >
-              Transform long and messy URLs into clean, memorable links.
-              Share them anywhere and manage everything from one beautiful
-              workspace.
+              Transform long and messy URLs into clean, memorable links. Share
+              them anywhere and manage everything from one beautiful workspace.
             </p>
 
             {/* Feature Chips */}
@@ -907,7 +898,6 @@ const App = () => {
           ======================================================= */}
 
           <section className="perspective relative mx-auto mt-20 w-full max-w-5xl sm:mt-24">
-
             {/* 3D Orbit */}
 
             <div
@@ -1007,7 +997,6 @@ const App = () => {
                   lg:p-9
                 "
               >
-
                 {/* Scanner */}
 
                 <div
@@ -1048,11 +1037,9 @@ const App = () => {
                   "
                 >
                   <div className="flex items-center gap-4">
-
                     {/* Icon */}
 
                     <div className="relative hidden sm:block">
-
                       <div className="absolute inset-0 rounded-2xl bg-indigo-500 blur-xl opacity-30" />
 
                       <div
@@ -1114,7 +1101,6 @@ const App = () => {
                       <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400" />
                       <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
                     </span>
-
                     System Ready
                   </div>
                 </div>
@@ -1175,9 +1161,7 @@ const App = () => {
           ======================================================= */}
 
           <section className="mx-auto mt-28 max-w-5xl">
-
             <div className="mb-12 text-center">
-
               <div
                 className="
                   mb-3
@@ -1211,7 +1195,6 @@ const App = () => {
             </div>
 
             <div className="relative grid gap-5 md:grid-cols-3">
-
               {/* Connecting Line */}
 
               <div
@@ -1275,7 +1258,6 @@ const App = () => {
                   "
                 >
                   <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center">
-
                     <div
                       className={`
                         absolute
@@ -1338,11 +1320,8 @@ const App = () => {
           ======================================================= */}
 
           <section className="mt-28">
-
             <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-
               <div>
-
                 <div className="mb-2 flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inset-0 animate-ping rounded-full bg-indigo-400" />
@@ -1388,7 +1367,6 @@ const App = () => {
                   <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400" />
                   <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-
                 Everything synced
               </div>
             </div>
@@ -1428,7 +1406,6 @@ const App = () => {
           ======================================================= */}
 
           <section className="relative mt-28 overflow-hidden rounded-[35px] shadow-2xl shadow-purple-200/50">
-
             {/* Animated Gradient Background */}
 
             <div
@@ -1469,10 +1446,7 @@ const App = () => {
             {/* Content */}
 
             <div className="relative px-6 py-14 text-center sm:px-12 sm:py-16">
-
-              <div className="float mb-4 text-3xl">
-                ✨
-              </div>
+              <div className="float mb-4 text-3xl">✨</div>
 
               <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
                 Make every link look better.
@@ -1482,6 +1456,31 @@ const App = () => {
                 Clean URLs are easier to share, easier to remember, and easier
                 to manage.
               </p>
+
+              <div
+                className="
+    mt-5
+    inline-flex
+    items-center
+    gap-2
+    rounded-full
+    border border-white/20
+    bg-white/10
+    px-4
+    py-2
+    text-[10px]
+    font-bold
+    tracking-wide
+    text-white/80
+    backdrop-blur-md
+  "
+              >
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-300" />
+                Created by
+                <span className="font-black text-white">
+                  Vaibhav Gajanan Alat
+                </span>
+              </div>
 
               <div
                 className="
@@ -1519,45 +1518,114 @@ const App = () => {
               FOOTER
           ======================================================= */}
 
-          <footer className="mt-16 border-t border-slate-200/70 pt-8 pb-5 text-center">
+          {/* =======================================================
+    FOOTER
+======================================================= */}
+          <footer className="mt-16 border-t border-slate-200/70 pt-8 pb-6 text-center">
+            {/* Developer Credit */}
+            <div className="group inline-flex flex-col items-center">
+              <div className="mb-2 flex items-center gap-2">
+                <span className="text-xs font-medium text-slate-400">
+                  Crafted with
+                </span>
 
-            <div className="flex items-center justify-center gap-2">
-              <span className="text-xs font-semibold text-slate-400">
-                Built with
-              </span>
+                <span className="float text-sm text-pink-500">♥</span>
 
-              <span className="float text-sm text-pink-500">
-                ♥
-              </span>
+                <span className="text-xs font-medium text-slate-400">by</span>
+              </div>
 
-              <span className="text-xs font-semibold text-slate-400">
-                for simpler links
-              </span>
+              {/* Developer Name */}
+              <div
+                className="
+        relative
+        overflow-hidden
+        rounded-full
+        border border-indigo-100
+        bg-white/80
+        px-5
+        py-2.5
+        shadow-lg
+        shadow-indigo-100/40
+        backdrop-blur-xl
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:border-purple-200
+        hover:shadow-xl
+        hover:shadow-purple-100/50
+      "
+              >
+                {/* Animated shine */}
+                <div className="shine pointer-events-none absolute inset-0" />
+
+                <span
+                  className="
+          relative
+          bg-linear-to-r
+          from-indigo-600
+          via-purple-600
+          to-cyan-500
+          bg-clip-text
+          text-sm
+          font-black
+          tracking-tight
+          text-transparent
+        "
+                >
+                  Vaibhav Gajanan Alat
+                </span>
+              </div>
+
+              {/* Role */}
+              <p className="mt-2 text-[9px] font-bold uppercase tracking-[.22em] text-slate-400">
+                Developer • URL Shortener
+              </p>
             </div>
 
+            {/* Product Values */}
             <div
               className="
-                mt-4
-                flex
-                flex-wrap
-                items-center
-                justify-center
-                gap-3
-                text-[8px]
-                font-black
-                uppercase
-                tracking-[.25em]
-                text-slate-300
-              "
+      mt-6
+      flex
+      flex-wrap
+      items-center
+      justify-center
+      gap-3
+      text-[8px]
+      font-black
+      uppercase
+      tracking-[.25em]
+      text-slate-300
+    "
             >
-              <span className="hover:text-indigo-500">Short</span>
+              <span className="transition-colors hover:text-indigo-500">
+                Short
+              </span>
+
               <span>✦</span>
-              <span className="hover:text-purple-500">Clean</span>
+
+              <span className="transition-colors hover:text-purple-500">
+                Clean
+              </span>
+
               <span>✦</span>
-              <span className="hover:text-pink-500">Shareable</span>
+
+              <span className="transition-colors hover:text-pink-500">
+                Shareable
+              </span>
+
               <span>✦</span>
-              <span className="hover:text-cyan-500">Smart</span>
+
+              <span className="transition-colors hover:text-cyan-500">
+                Smart
+              </span>
             </div>
+
+            {/* Copyright */}
+            <p className="mt-5 text-[10px] font-medium text-slate-300">
+              © {new Date().getFullYear()} Vaibhav Gajanan Alat. All rights
+              reserved.
+            </p>
           </footer>
         </div>
       </main>
