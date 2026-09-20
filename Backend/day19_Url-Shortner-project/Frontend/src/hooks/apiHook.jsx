@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import useApi from "../api/api";
 import { useEffect } from "react";
 import { urlsStore } from "../context/urlStore";
+import { toast } from "react-toastify";
 
 export const useUrls = () => {
   const api = useApi();
@@ -15,7 +16,10 @@ export const useUrls = () => {
   const handleSubmit = async (data) => {
     data.preventDefault();
     try {
-      const res = await api.post("/urls/", url);
+      await api.post("/urls/", url);
+      toast.success("short url generated", {
+        closeOnClick: true,
+      })
     } catch (error) {
       console.log("error while gererating shortcode", error);
     }

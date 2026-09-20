@@ -1,7 +1,15 @@
 import { useContext, useState } from "react";
-import { Check, Copy, ExternalLink, Link2, Sparkles } from "lucide-react";
-
+import {
+  Check,
+  Copy,
+  ExternalLink,
+  Link2,
+  Sparkles,
+  ShieldCheck,
+  Zap,
+} from "lucide-react";
 import { urlsStore } from "../context/urlStore";
+import { toast } from "react-toastify";
 
 const UrlResult = () => {
   const { urlResult } = useContext(urlsStore);
@@ -17,291 +25,843 @@ const UrlResult = () => {
 
       setCopied(true);
 
+      toast.success("URL copied successfully!", {
+        closeOnClick: true,
+        autoClose: 1500,
+      });
+
       setTimeout(() => {
         setCopied(false);
       }, 2000);
     } catch (error) {
       console.log("Copy failed:", error);
+
+      toast.error("Failed to copy URL", {
+        autoClose: 1500,
+      });
     }
   };
 
   return (
-    <div
-      className="
-        relative mt-6 w-full min-w-0 overflow-hidden
-        rounded-2xl
-        border border-emerald-400/10
-        bg-linear-to-br
-        from-emerald-500/6
-        via-transparent
-        to-violet-500/4
-        p-4
-        pt-5
-        shadow-lg shadow-emerald-950/10
-        sm:p-5
-      "
-    >
-      {/* Decorative Glow */}
-      <div
-        className="
-          pointer-events-none absolute
-          -right-16 -top-16
-          h-40 w-40
-          rounded-full
-          bg-emerald-500/10
-          blur-3xl
-        "
-      />
+    <>
+      <style>
+        {`
+          @keyframes resultEnter {
+            0% {
+              opacity: 0;
+              transform: translateY(35px) rotateX(8deg) scale(0.94);
+              filter: blur(8px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0) rotateX(0) scale(1);
+              filter: blur(0);
+            }
+          }
 
-      <div
-        className="
-          pointer-events-none absolute
-          -bottom-20 -left-10
-          h-32 w-32
-          rounded-full
-          bg-violet-500/10
-          blur-3xl
-        "
-      />
+          @keyframes cardFloat {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-3px);
+            }
+          }
 
-      <div className="relative">
-        {/* Success Header */}
-        <div className="mb-5 flex items-center gap-3">
-          {/* Animated Success Icon */}
+          @keyframes borderRotate {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          @keyframes successPop {
+            0% {
+              opacity: 0;
+              transform: scale(0.3) rotate(-25deg);
+            }
+            65% {
+              opacity: 1;
+              transform: scale(1.18) rotate(8deg);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1) rotate(0);
+            }
+          }
+
+          @keyframes successRing {
+            0% {
+              transform: scale(0.7);
+              opacity: 0.8;
+            }
+            70%, 100% {
+              transform: scale(1.45);
+              opacity: 0;
+            }
+          }
+
+          @keyframes iconGlow {
+            0%, 100% {
+              box-shadow:
+                0 0 0 rgba(16, 185, 129, 0),
+                0 10px 30px rgba(16, 185, 129, 0.08);
+            }
+            50% {
+              box-shadow:
+                0 0 35px rgba(16, 185, 129, 0.25),
+                0 15px 40px rgba(16, 185, 129, 0.12);
+            }
+          }
+
+          @keyframes sparkleSpin {
+            0%, 100% {
+              transform: rotate(0deg) scale(1);
+            }
+            50% {
+              transform: rotate(15deg) scale(1.15);
+            }
+          }
+
+          @keyframes dotPulse {
+            0%, 100% {
+              transform: scale(1);
+              opacity: 0.55;
+            }
+            50% {
+              transform: scale(1.5);
+              opacity: 1;
+            }
+          }
+
+          @keyframes scanLine {
+            0% {
+              transform: translateX(-120%);
+              opacity: 0;
+            }
+            15% {
+              opacity: 1;
+            }
+            85% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(120%);
+              opacity: 0;
+            }
+          }
+
+          @keyframes gradientMove {
+            0%, 100% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+          }
+
+          @keyframes shine {
+            0% {
+              transform: translateX(-150%) skewX(-20deg);
+            }
+            100% {
+              transform: translateX(250%) skewX(-20deg);
+            }
+          }
+
+          @keyframes copiedPop {
+            0% {
+              opacity: 0;
+              transform: scale(0.4) rotate(-10deg);
+            }
+            70% {
+              opacity: 1;
+              transform: scale(1.2) rotate(4deg);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1) rotate(0);
+            }
+          }
+
+          @keyframes miniFloat {
+            0%, 100% {
+              transform: translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-5px) rotate(2deg);
+            }
+          }
+
+          @keyframes lineGlow {
+            0%, 100% {
+              opacity: 0.35;
+              transform: scaleX(0.7);
+            }
+            50% {
+              opacity: 1;
+              transform: scaleX(1);
+            }
+          }
+
+          .result-card {
+            animation:
+              resultEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both,
+              cardFloat 5s ease-in-out 0.7s infinite;
+            transform-style: preserve-3d;
+          }
+
+          .result-border {
+            animation: borderRotate 8s linear infinite;
+          }
+
+          .success-icon {
+            animation:
+              successPop 0.65s cubic-bezier(0.22, 1, 0.36, 1) both,
+              iconGlow 3s ease-in-out 0.7s infinite;
+          }
+
+          .success-ring {
+            animation: successRing 2.2s ease-out 0.6s infinite;
+          }
+
+          .sparkle-animation {
+            animation: sparkleSpin 2.4s ease-in-out infinite;
+          }
+
+          .success-dot {
+            animation: dotPulse 1.8s ease-in-out infinite;
+          }
+
+          .scan-line {
+            animation: scanLine 3.5s ease-in-out infinite;
+          }
+
+          .gradient-button {
+            background-size: 200% 200%;
+            animation: gradientMove 4s ease infinite;
+          }
+
+          .copy-shine {
+            transform: translateX(-150%) skewX(-20deg);
+          }
+
+          .gradient-button:hover .copy-shine {
+            animation: shine 0.75s ease-out;
+          }
+
+          .copied-pop {
+            animation: copiedPop 0.35s ease-out both;
+          }
+
+          .mini-float {
+            animation: miniFloat 4s ease-in-out infinite;
+          }
+
+          .glow-line {
+            animation: lineGlow 2.5s ease-in-out infinite;
+          }
+
+          .result-link {
+            background-size: 200% 200%;
+            animation: gradientMove 5s ease infinite;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .result-card,
+            .result-border,
+            .success-icon,
+            .success-ring,
+            .sparkle-animation,
+            .success-dot,
+            .scan-line,
+            .gradient-button,
+            .mini-float,
+            .glow-line,
+            .result-link {
+              animation: none;
+            }
+          }
+        `}
+      </style>
+
+      <div className="relative mt-6 w-full min-w-0 [perspective:1200px]">
+        {/* Rotating gradient border */}
+        <div className="absolute -inset-[1px] overflow-hidden rounded-[22px] opacity-70">
           <div
             className="
-              relative flex h-10 w-10 shrink-0
-              items-center justify-center
-              rounded-xl
-              border border-emerald-400/20
-              bg-emerald-500/10
-              text-emerald-400
-              shadow-lg shadow-emerald-500/10
+              result-border
+              absolute
+              left-1/2
+              top-1/2
+              h-[180%]
+              w-[180%]
+              -translate-x-1/2
+              -translate-y-1/2
+              bg-[conic-gradient(from_0deg,transparent_0deg,#10b981_70deg,#8b5cf6_150deg,#06b6d4_230deg,transparent_310deg)]
             "
-          >
-            <Sparkles
-              size={18}
-              className="animate-[pulse_2s_ease-in-out_infinite]"
-            />
-
-            {/* Small Dot */}
-            <span
-              className="
-                absolute -right-1 -top-1
-                h-2.5 w-2.5
-                rounded-full
-                border-2 border-[#0d0d12]
-                bg-emerald-400
-              "
-            />
-          </div>
-
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <h2 className="text-sm font-semibold text-white sm:text-base">
-                Your short link is ready
-              </h2>
-
-              <span className="hidden rounded-full bg-emerald-500/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-wider text-emerald-400 sm:inline-block">
-                Success
-              </span>
-            </div>
-
-            <p className="mt-0.5 text-xs text-zinc-500">
-              Copy it and share it anywhere
-            </p>
-          </div>
+          />
         </div>
 
-        {/* Short URL + Copy */}
-        <div className="flex w-full min-w-0 gap-2 max-[799px]:flex-col">
-          {/* URL Box */}
+        {/* Main card */}
+        <div
+          className="
+            result-card
+            relative
+            w-full
+            min-w-0
+            overflow-hidden
+            rounded-[21px]
+            border
+            border-white/80
+            bg-white/95
+            p-4
+            shadow-[0_25px_70px_rgba(76,29,149,0.14)]
+            backdrop-blur-xl
+            sm:p-5
+          "
+        >
+          {/* Background 3D glows */}
           <div
             className="
-              group flex min-h-12 min-w-0 flex-1
-              items-center gap-2
-              rounded-xl
-              border border-white/8
-              bg-black/30
-              px-3
-              shadow-inner shadow-black/20
-              transition-all duration-300
-
-              hover:border-violet-400/25
-              hover:bg-black/40
-
-              focus-within:border-violet-400/40
-              focus-within:shadow-lg
-              focus-within:shadow-violet-500/10
+              pointer-events-none
+              absolute
+              -right-24
+              -top-24
+              h-64
+              w-64
+              rounded-full
+              bg-emerald-300/20
+              blur-3xl
             "
-          >
-            {/* Link Icon */}
-            <div
-              className="
-                flex h-7 w-7 shrink-0
-                items-center justify-center
-                rounded-lg
-                bg-violet-500/10
-              "
-            >
-              <Link2
-                size={16}
-                className="
-                  text-violet-400
-                  transition-transform duration-300
-                  group-hover:rotate-[-8deg]
-                "
-              />
-            </div>
+          />
 
-            {/* Short URL */}
-            <a
-              href={shortUrl}
-              target="_blank"
-              rel="noreferrer"
-              title={shortUrl}
-              className="
-                min-w-0 flex-1 truncate
-                text-sm font-medium
-                text-violet-300
-                transition-colors duration-200
-                hover:text-fuchsia-300
-              "
-            >
-              {shortUrl}
-            </a>
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -bottom-28
+              -left-24
+              h-64
+              w-64
+              rounded-full
+              bg-violet-300/20
+              blur-3xl
+            "
+          />
 
-            {/* Open Link */}
-            <a
-              href={shortUrl}
-              target="_blank"
-              rel="noreferrer"
-              title="Open short URL"
-              className="
-                flex h-8 w-8 shrink-0
-                items-center justify-center
-                rounded-lg
-                text-zinc-600
-                transition-all duration-200
+          <div
+            className="
+              pointer-events-none
+              absolute
+              left-1/2
+              top-0
+              h-px
+              w-2/3
+              -translate-x-1/2
+              bg-gradient-to-r
+              from-transparent
+              via-emerald-400
+              to-transparent
+              opacity-60
+            "
+          />
 
-                hover:bg-white/5
-                hover:text-zinc-200
-                hover:scale-105
-              "
-            >
-              <ExternalLink size={16} />
-            </a>
-          </div>
+          {/* Decorative floating dots */}
+          <span className="pointer-events-none absolute right-10 top-8 h-1.5 w-1.5 rounded-full bg-violet-400/70 shadow-lg shadow-violet-300" />
+          <span className="pointer-events-none absolute right-16 top-12 h-1 w-1 rounded-full bg-cyan-400/70" />
+          <span className="pointer-events-none absolute bottom-8 left-8 h-1.5 w-1.5 rounded-full bg-emerald-400/60" />
 
-          {/* Copy Button */}
-          <button
-            type="button"
-            onClick={handleCopy}
-            className={`
-              group relative flex min-h-12 shrink-0
-              items-center justify-center gap-2
-              overflow-hidden
-              rounded-xl
-              px-5
-              text-sm font-semibold
-              transition-all duration-300
-              active:scale-[0.97]
-              max-[799px]:w-full
+          <div className="relative">
+            {/* Header */}
+            <div className="mb-5 flex items-center gap-3">
+              {/* Success icon */}
+              <div className="relative shrink-0">
+                <div
+                  className="
+                    success-ring
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    rounded-2xl
+                    border-2
+                    border-emerald-400/40
+                  "
+                />
 
-              ${
-                copied
-                  ? `
-                    bg-emerald-500
-                    text-white
-                    shadow-lg
-                    shadow-emerald-500/20
-                  `
-                  : `
-                    bg-linear-to-r
-                    from-violet-600
-                    to-fuchsia-600
-                    text-white
-                    shadow-lg
-                    shadow-violet-500/20
-                    hover:from-violet-500
-                    hover:to-fuchsia-500
-                    hover:shadow-xl
-                    hover:shadow-violet-500/25
-                  `
-              }
-            `}
-          >
-            {!copied && (
-              <span
-                className="
-                  absolute inset-0
-                  -translate-x-full
-                  bg-linear-to-r
-                  from-transparent
-                  via-white/20
-                  to-transparent
-                  transition-transform duration-700
-                  group-hover:translate-x-full
-                "
-              />
-            )}
-
-            <span className="relative flex items-center gap-2">
-              {copied ? (
-                <>
-                  <Check
-                    size={17}
-                    className="animate-[scale-in_0.2s_ease-out]"
+                <div
+                  className="
+                    success-icon
+                    relative
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-emerald-200
+                    bg-gradient-to-br
+                    from-emerald-50
+                    via-white
+                    to-cyan-50
+                    text-emerald-500
+                  "
+                >
+                  <Sparkles
+                    size={20}
+                    strokeWidth={2}
+                    className="sparkle-animation"
                   />
-                  Copied!
-                </>
-              ) : (
-                <>
-                  <Copy
-                    size={17}
+
+                  <span
                     className="
-                      transition-transform duration-300
-                      group-hover:scale-110
+                      success-dot
+                      absolute
+                      -right-1
+                      -top-1
+                      h-3
+                      w-3
+                      rounded-full
+                      border-2
+                      border-white
+                      bg-emerald-500
+                      shadow-md
+                      shadow-emerald-300
                     "
                   />
-                  Copy URL
-                </>
-              )}
-            </span>
-          </button>
-        </div>
+                </div>
+              </div>
 
-        {/* Original URL */}
-        <div className="mt-5 border-t border-white/5 pt-4">
-          <div className="mb-1.5 flex items-center gap-2">
-            <p
-              className="
-                text-[10px] font-semibold
-                uppercase tracking-[0.18em]
-                text-zinc-600
-              "
-            >
-              Original URL
-            </p>
+              {/* Header text */}
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h2 className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-base">
+                    Your short link is ready
+                  </h2>
 
-            <span className="h-px flex-1 bg-linear-to-r from-white/5 to-transparent" />
+                  <span
+                    className="
+                      inline-flex
+                      items-center
+                      gap-1
+                      rounded-full
+                      border
+                      border-emerald-200
+                      bg-emerald-50
+                      px-2
+                      py-1
+                      text-[9px]
+                      font-extrabold
+                      uppercase
+                      tracking-wider
+                      text-emerald-600
+                    "
+                  >
+                    <ShieldCheck size={10} />
+                    Secure
+                  </span>
+                </div>
+
+                <p className="mt-1 text-xs text-slate-400">
+                  Your URL has been shortened and is ready to share.
+                </p>
+              </div>
+
+              {/* Decorative mini badge */}
+              <div
+                className="
+                  mini-float
+                  hidden
+                  shrink-0
+                  items-center
+                  gap-1.5
+                  rounded-xl
+                  border
+                  border-violet-100
+                  bg-violet-50/70
+                  px-3
+                  py-2
+                  text-[10px]
+                  font-bold
+                  text-violet-500
+                  sm:flex
+                "
+              >
+                <Zap size={12} />
+                Ready
+              </div>
+            </div>
+
+            {/* URL section */}
+            <div className="relative">
+              {/* Scanner */}
+              <div
+                className="
+                  scan-line
+                  pointer-events-none
+                  absolute
+                  inset-y-0
+                  left-0
+                  z-10
+                  w-1/4
+                  bg-gradient-to-r
+                  from-transparent
+                  via-violet-300/20
+                  to-transparent
+                  blur-sm
+                "
+              />
+
+              <div className="flex w-full min-w-0 gap-2 max-[799px]:flex-col">
+                {/* Short URL box */}
+                <div
+                  className="
+                    group
+                    relative
+                    flex
+                    min-h-14
+                    min-w-0
+                    flex-1
+                    items-center
+                    gap-2.5
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    border-slate-200
+                    bg-gradient-to-br
+                    from-slate-50
+                    via-white
+                    to-violet-50/40
+                    px-3
+                    shadow-sm
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-violet-200
+                    hover:shadow-xl
+                    hover:shadow-violet-100/70
+                  "
+                >
+                  {/* Animated left accent */}
+                  <div
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+                      top-0
+                      w-1
+                      bg-gradient-to-b
+                      from-violet-500
+                      via-fuchsia-500
+                      to-cyan-400
+                      opacity-70
+                    "
+                  />
+
+                  {/* Link icon */}
+                  <div
+                    className="
+                      relative
+                      flex
+                      h-9
+                      w-9
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-violet-100
+                      bg-gradient-to-br
+                      from-violet-100
+                      to-fuchsia-100
+                      text-violet-600
+                      shadow-sm
+                      transition-all
+                      duration-300
+                      group-hover:scale-110
+                      group-hover:rotate-[-5deg]
+                      group-hover:shadow-md
+                    "
+                  >
+                    <Link2
+                      size={17}
+                      className="transition-transform duration-300 group-hover:rotate-6"
+                    />
+
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        rounded-xl
+                        bg-violet-400/10
+                        opacity-0
+                        blur-md
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-100
+                      "
+                    />
+                  </div>
+
+                  {/* URL */}
+                  <a
+                    href={shortUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={shortUrl}
+                    className="
+                      result-link
+                      min-w-0
+                      flex-1
+                      truncate
+                      bg-gradient-to-r
+                      from-violet-600
+                      via-fuchsia-500
+                      to-cyan-500
+                      bg-clip-text
+                      text-sm
+                      font-extrabold
+                      text-transparent
+                      transition-all
+                      duration-300
+                      hover:from-fuchsia-600
+                      hover:to-violet-600
+                    "
+                  >
+                    {shortUrl}
+                  </a>
+
+                  {/* Open link */}
+                  <a
+                    href={shortUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Open short URL"
+                    className="
+                      flex
+                      h-9
+                      w-9
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-white
+                      text-slate-400
+                      shadow-sm
+                      transition-all
+                      duration-300
+                      hover:-translate-y-0.5
+                      hover:scale-110
+                      hover:border-violet-200
+                      hover:bg-violet-50
+                      hover:text-violet-600
+                      hover:shadow-md
+                    "
+                  >
+                    <ExternalLink
+                      size={16}
+                      className="transition-transform duration-300 group-hover:rotate-6"
+                    />
+                  </a>
+                </div>
+
+                {/* Copy button */}
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  className={`
+                    gradient-button
+                    group
+                    relative
+                    flex
+                    min-h-14
+                    shrink-0
+                    items-center
+                    justify-center
+                    gap-2
+                    overflow-hidden
+                    rounded-2xl
+                    px-5
+                    text-sm
+                    font-extrabold
+                    text-white
+                    shadow-xl
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    active:translate-y-0
+                    active:scale-[0.97]
+                    max-[799px]:w-full
+                    ${
+                      copied
+                        ? "bg-emerald-500 shadow-emerald-200"
+                        : "bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 shadow-violet-200/70 hover:shadow-2xl hover:shadow-fuchsia-200"
+                    }
+                  `}
+                >
+                  {/* Shine */}
+                  {!copied && (
+                    <span
+                      className="
+                        copy-shine
+                        pointer-events-none
+                        absolute
+                        inset-y-0
+                        left-[-30%]
+                        w-[35%]
+                        bg-gradient-to-r
+                        from-transparent
+                        via-white/40
+                        to-transparent
+                      "
+                    />
+                  )}
+
+                  {/* Inner glass */}
+                  <span
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-0
+                      rounded-2xl
+                      bg-white/5
+                      ring-1
+                      ring-inset
+                      ring-white/25
+                    "
+                  />
+
+                  {/* Button content */}
+                  <span className="relative flex items-center gap-2">
+                    {copied ? (
+                      <>
+                        <span className="copied-pop">
+                          <Check size={18} strokeWidth={3} />
+                        </span>
+                        Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Copy
+                          size={17}
+                          className="
+                            transition-all
+                            duration-300
+                            group-hover:scale-110
+                            group-hover:rotate-[-8deg]
+                          "
+                        />
+                        Copy URL
+                      </>
+                    )}
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* Original URL */}
+            <div className="mt-5 border-t border-slate-200/80 pt-4">
+              <div className="mb-2 flex items-center gap-2">
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-1.5
+                    text-[10px]
+                    font-extrabold
+                    uppercase
+                    tracking-[0.18em]
+                    text-slate-400
+                  "
+                >
+                  <Link2 size={10} />
+                  Original URL
+                </div>
+
+                <span className="glow-line h-px flex-1 origin-left bg-gradient-to-r from-slate-200 via-violet-200 to-transparent" />
+              </div>
+
+              <div
+                className="
+                  group
+                  flex
+                  min-w-0
+                  items-center
+                  gap-2
+                  rounded-xl
+                  border
+                  border-transparent
+                  px-2
+                  py-1.5
+                  transition-all
+                  duration-300
+                  hover:border-slate-200
+                  hover:bg-slate-50
+                "
+              >
+                <div
+                  className="
+                    h-1.5
+                    w-1.5
+                    shrink-0
+                    rounded-full
+                    bg-gradient-to-r
+                    from-violet-500
+                    to-cyan-400
+                    opacity-60
+                    transition-transform
+                    duration-300
+                    group-hover:scale-150
+                  "
+                />
+
+                <p
+                  title={urlResult.originalUrl}
+                  className="
+                    min-w-0
+                    flex-1
+                    truncate
+                    text-xs
+                    leading-5
+                    text-slate-400
+                    transition-colors
+                    duration-300
+                    group-hover:text-slate-600
+                  "
+                >
+                  {urlResult.originalUrl}
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom decorative status */}
+            <div className="mt-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                </span>
+
+                <span className="text-[10px] font-semibold text-slate-400">
+                  Link active
+                </span>
+              </div>
+
+              <div className="hidden items-center gap-1 text-[10px] font-semibold text-slate-300 sm:flex">
+                <Sparkles size={10} />
+                Ready to share
+              </div>
+            </div>
           </div>
-
-          <p
-            title={urlResult.originalUrl}
-            className="
-              min-w-0 truncate
-              text-xs leading-5
-              text-zinc-500
-              transition-colors
-              hover:text-zinc-400
-            "
-          >
-            {urlResult.originalUrl}
-          </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
