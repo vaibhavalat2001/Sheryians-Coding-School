@@ -2,8 +2,7 @@ import axios from "axios";
 
 const useApi = () => {
   const api = axios.create({
-    // baseURL: "https://urlshort-backend.vercel.app/api",
-    baseURL: "http://localhost:5173/api",
+    baseURL: "https://urlshort-backend.vercel.app/api",
     withCredentials: true,
   });
 
