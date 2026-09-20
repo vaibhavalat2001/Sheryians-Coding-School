@@ -292,7 +292,7 @@ const App = () => {
           animation: pulseRing 3s ease-out infinite;
         }
 
-        .gradient-moving {
+        .linear-moving {
           background-size: 300% 300%;
           animation: gradientMove 7s ease infinite;
         }
@@ -349,7 +349,7 @@ const App = () => {
           left: 0;
           width: 24%;
           height: 180%;
-          background: linear-gradient(
+          background: linear-linear(
             90deg,
             transparent,
             rgba(255,255,255,.7),
@@ -371,7 +371,7 @@ const App = () => {
           height: 180%;
           left: -40%;
           top: -40%;
-          background: conic-gradient(
+          background: conic-linear(
             from 0deg,
             transparent 0deg,
             transparent 35deg,
@@ -447,10 +447,10 @@ const App = () => {
             className="
               aurora-one
               absolute
-              -left-[320px]
-              -top-[330px]
-              h-[750px]
-              w-[750px]
+              -left-80
+              -top-82.5
+              h-188
+              w-188
               rounded-full
               bg-indigo-500/20
               blur-[140px]
@@ -463,9 +463,9 @@ const App = () => {
               aurora-two
               absolute
               left-[35%]
-              -top-[280px]
-              h-[600px]
-              w-[600px]
+              -top-70
+              h-150
+              w-150
               rounded-full
               bg-purple-500/15
               blur-[140px]
@@ -477,10 +477,10 @@ const App = () => {
             className="
               aurora-two
               absolute
-              -right-[300px]
-              top-[160px]
-              h-[700px]
-              w-[700px]
+              -right-75
+              top-40
+              h-175
+              w-175
               rounded-full
               bg-cyan-400/20
               blur-[140px]
@@ -492,10 +492,10 @@ const App = () => {
             className="
               aurora-one
               absolute
-              bottom-[-350px]
+              -bottom-88
               left-[25%]
-              h-[700px]
-              w-[700px]
+              h-175
+              w-175
               rounded-full
               bg-pink-400/15
               blur-[140px]
@@ -507,10 +507,10 @@ const App = () => {
             className="
               aurora-two
               absolute
-              bottom-[-300px]
+              -bottom-75
               right-[5%]
-              h-[500px]
-              w-[500px]
+              h-125
+              w-125
               rounded-full
               bg-blue-400/10
               blur-[120px]
@@ -522,11 +522,11 @@ const App = () => {
             className="grid-moving absolute inset-0 opacity-60"
             style={{
               backgroundImage: `
-                linear-gradient(
+                linear-linear(
                   rgba(99,102,241,.045) 1px,
                   transparent 1px
                 ),
-                linear-gradient(
+                linear-linear(
                   90deg,
                   rgba(99,102,241,.045) 1px,
                   transparent 1px
@@ -541,12 +541,12 @@ const App = () => {
             className="
               absolute
               left-1/2
-              top-[180px]
-              h-[650px]
-              w-[1000px]
+              top-45
+              h-163
+              w-250
               -translate-x-1/2
               rounded-full
-              bg-gradient-to-r
+              bg-linear-to-r
               from-indigo-300/10
               via-white/80
               to-cyan-300/10
@@ -560,12 +560,12 @@ const App = () => {
               pulse-glow
               absolute
               left-1/2
-              top-[450px]
-              h-[500px]
-              w-[800px]
+              top-113
+              h-125
+              w-200
               -translate-x-1/2
               rounded-full
-              bg-gradient-to-r
+              bg-linear-to-r
               from-violet-400/10
               via-fuchsia-400/10
               to-cyan-400/10
@@ -579,10 +579,10 @@ const App = () => {
               beam
               absolute
               left-[-30%]
-              top-[390px]
+              top-98
               h-px
               w-[75%]
-              bg-gradient-to-r
+              bg-linear-to-r
               from-transparent
               via-indigo-400/80
               to-transparent
@@ -596,10 +596,10 @@ const App = () => {
               beam
               absolute
               right-[-30%]
-              top-[720px]
+              top-180
               h-px
               w-[65%]
-              bg-gradient-to-r
+              bg-linear-to-r
               from-transparent
               via-cyan-400/60
               to-transparent
@@ -762,7 +762,7 @@ const App = () => {
               >
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inset-0 animate-ping rounded-full bg-indigo-500 opacity-60" />
-                  <span className="relative h-2.5 w-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600" />
+                  <span className="relative h-2.5 w-2.5 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
                 </span>
 
                 Smart URL Workspace
@@ -793,10 +793,10 @@ const App = () => {
 
               <span
                 className="
-                  gradient-moving
+                  linear-moving
                   mt-4
                   block
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-indigo-600
                   via-purple-600
                   via-fuchsia-500
@@ -914,7 +914,7 @@ const App = () => {
               className="
                 pointer-events-none
                 absolute
-                inset-[-100px]
+                -inset-25
                 hidden
                 items-center
                 justify-center
@@ -925,8 +925,8 @@ const App = () => {
                 className="
                   orbit-one
                   absolute
-                  h-[720px]
-                  w-[720px]
+                  h-180
+                  w-180
                   rounded-full
                   border
                   border-indigo-200/30
@@ -937,8 +937,8 @@ const App = () => {
                 className="
                   orbit-two
                   absolute
-                  h-[600px]
-                  w-[600px]
+                  h-150
+                  w-150
                   rounded-full
                   border
                   border-cyan-200/30
@@ -949,8 +949,8 @@ const App = () => {
                 className="
                   orbit-three
                   absolute
-                  h-[480px]
-                  w-[480px]
+                  h-120
+                  w-120
                   rounded-full
                   border
                   border-fuchsia-200/30
@@ -974,7 +974,7 @@ const App = () => {
                 absolute
                 -inset-10
                 rounded-[50px]
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-indigo-400/20
                 via-purple-400/15
                 via-pink-400/10
@@ -990,7 +990,7 @@ const App = () => {
                 animated-border
                 scale-reveal
                 rounded-[34px]
-                p-[2px]
+                p-0.5
                 shadow-[0_30px_100px_rgba(79,70,229,.18)]
               "
             >
@@ -999,7 +999,7 @@ const App = () => {
                   animated-border-content
                   relative
                   overflow-hidden
-                  rounded-[32px]
+                  rounded-4xl
                   bg-white/95
                   p-5
                   backdrop-blur-2xl
@@ -1019,7 +1019,7 @@ const App = () => {
                     top-0
                     h-28
                     w-full
-                    bg-gradient-to-b
+                    bg-linear-to-b
                     from-transparent
                     via-indigo-400/10
                     to-transparent
@@ -1040,7 +1040,7 @@ const App = () => {
                     rounded-2xl
                     border
                     border-indigo-100
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-indigo-50
                     via-white
                     to-cyan-50
@@ -1065,7 +1065,7 @@ const App = () => {
                           items-center
                           justify-center
                           rounded-2xl
-                          bg-gradient-to-br
+                          bg-linear-to-br
                           from-indigo-600
                           via-purple-600
                           to-cyan-500
@@ -1222,7 +1222,7 @@ const App = () => {
                   top-12
                   hidden
                   h-px
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-indigo-200
                   via-purple-200
                   via-pink-200
@@ -1237,21 +1237,21 @@ const App = () => {
                   icon: "↗",
                   title: "Paste your URL",
                   text: "Drop your long link into the generator.",
-                  gradient: "from-indigo-500 to-blue-500",
+                  linear: "from-indigo-500 to-blue-500",
                 },
                 {
                   number: "02",
                   icon: "✦",
                   title: "Create your link",
                   text: "Turn it into a compact shareable URL.",
-                  gradient: "from-purple-500 to-fuchsia-500",
+                  linear: "from-purple-500 to-fuchsia-500",
                 },
                 {
                   number: "03",
                   icon: "✓",
                   title: "Share & track",
                   text: "Share your link and monitor clicks.",
-                  gradient: "from-cyan-500 to-teal-500",
+                  linear: "from-cyan-500 to-teal-500",
                 },
               ].map((item) => (
                 <div
@@ -1281,8 +1281,8 @@ const App = () => {
                         absolute
                         inset-0
                         rounded-2xl
-                        bg-gradient-to-br
-                        ${item.gradient}
+                        bg-linear-to-br
+                        ${item.linear}
                         opacity-20
                         blur-xl
                         transition-all
@@ -1301,8 +1301,8 @@ const App = () => {
                         items-center
                         justify-center
                         rounded-2xl
-                        bg-gradient-to-br
-                        ${item.gradient}
+                        bg-linear-to-br
+                        ${item.linear}
                         text-xl
                         font-black
                         text-white
@@ -1433,10 +1433,10 @@ const App = () => {
 
             <div
               className="
-                gradient-moving
+                linear-moving
                 absolute
                 inset-0
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-indigo-600
                 via-purple-600
                 via-fuchsia-600

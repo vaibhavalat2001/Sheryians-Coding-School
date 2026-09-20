@@ -239,7 +239,7 @@ const UrlResult = () => {
             animation: scanLine 3.5s ease-in-out infinite;
           }
 
-          .gradient-button {
+          .linear-button {
             background-size: 200% 200%;
             animation: gradientMove 4s ease infinite;
           }
@@ -248,7 +248,7 @@ const UrlResult = () => {
             transform: translateX(-150%) skewX(-20deg);
           }
 
-          .gradient-button:hover .copy-shine {
+          .linear-button:hover .copy-shine {
             animation: shine 0.75s ease-out;
           }
 
@@ -277,7 +277,7 @@ const UrlResult = () => {
             .sparkle-animation,
             .success-dot,
             .scan-line,
-            .gradient-button,
+            .linear-button,
             .mini-float,
             .glow-line,
             .result-link {
@@ -287,9 +287,9 @@ const UrlResult = () => {
         `}
       </style>
 
-      <div className="relative mt-6 w-full min-w-0 [perspective:1200px]">
-        {/* Rotating gradient border */}
-        <div className="absolute -inset-[1px] overflow-hidden rounded-[22px] opacity-70">
+      <div className="relative mt-6 w-full min-w-0 perspective-distant">
+        {/* Rotating linear border */}
+        <div className="absolute inset-[-0.25] overflow-hidden rounded-[22px] opacity-70">
           <div
             className="
               result-border
@@ -300,7 +300,7 @@ const UrlResult = () => {
               w-[180%]
               -translate-x-1/2
               -translate-y-1/2
-              bg-[conic-gradient(from_0deg,transparent_0deg,#10b981_70deg,#8b5cf6_150deg,#06b6d4_230deg,transparent_310deg)]
+              bg-[conic-linear(from_0deg,transparent_0deg,#10b981_70deg,#8b5cf6_150deg,#06b6d4_230deg,transparent_310deg)]
             "
           />
         </div>
@@ -361,7 +361,7 @@ const UrlResult = () => {
               h-px
               w-2/3
               -translate-x-1/2
-              bg-gradient-to-r
+              bg-linear-to-r
               from-transparent
               via-emerald-400
               to-transparent
@@ -403,7 +403,7 @@ const UrlResult = () => {
                     rounded-2xl
                     border
                     border-emerald-200
-                    bg-gradient-to-br
+                    bg-linear-to-br
                     from-emerald-50
                     via-white
                     to-cyan-50
@@ -507,7 +507,7 @@ const UrlResult = () => {
                   left-0
                   z-10
                   w-1/4
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-transparent
                   via-violet-300/20
                   to-transparent
@@ -531,7 +531,7 @@ const UrlResult = () => {
                     rounded-2xl
                     border
                     border-slate-200
-                    bg-gradient-to-br
+                    bg-linear-to-br
                     from-slate-50
                     via-white
                     to-violet-50/40
@@ -553,7 +553,7 @@ const UrlResult = () => {
                       left-0
                       top-0
                       w-1
-                      bg-gradient-to-b
+                      bg-linear-to-b
                       from-violet-500
                       via-fuchsia-500
                       to-cyan-400
@@ -574,7 +574,7 @@ const UrlResult = () => {
                       rounded-xl
                       border
                       border-violet-100
-                      bg-gradient-to-br
+                      bg-linear-to-br
                       from-violet-100
                       to-fuchsia-100
                       text-violet-600
@@ -618,7 +618,7 @@ const UrlResult = () => {
                       min-w-0
                       flex-1
                       truncate
-                      bg-gradient-to-r
+                      bg-linear-to-r
                       from-violet-600
                       via-fuchsia-500
                       to-cyan-500
@@ -676,7 +676,7 @@ const UrlResult = () => {
                   type="button"
                   onClick={handleCopy}
                   className={`
-                    gradient-button
+                    linear-button
                     group
                     relative
                     flex
@@ -701,7 +701,7 @@ const UrlResult = () => {
                     ${
                       copied
                         ? "bg-emerald-500 shadow-emerald-200"
-                        : "bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 shadow-violet-200/70 hover:shadow-2xl hover:shadow-fuchsia-200"
+                        : "bg-linear-to-r from-violet-600 via-fuchsia-500 to-cyan-500 shadow-violet-200/70 hover:shadow-2xl hover:shadow-fuchsia-200"
                     }
                   `}
                 >
@@ -715,7 +715,7 @@ const UrlResult = () => {
                         inset-y-0
                         left-[-30%]
                         w-[35%]
-                        bg-gradient-to-r
+                        bg-linear-to-r
                         from-transparent
                         via-white/40
                         to-transparent
@@ -784,7 +784,7 @@ const UrlResult = () => {
                   Original URL
                 </div>
 
-                <span className="glow-line h-px flex-1 origin-left bg-gradient-to-r from-slate-200 via-violet-200 to-transparent" />
+                <span className="glow-line h-px flex-1 origin-left bg-linear-to-r from-slate-200 via-violet-200 to-transparent" />
               </div>
 
               <div
@@ -811,7 +811,7 @@ const UrlResult = () => {
                     w-1.5
                     shrink-0
                     rounded-full
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-violet-500
                     to-cyan-400
                     opacity-60

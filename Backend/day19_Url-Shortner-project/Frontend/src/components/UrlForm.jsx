@@ -300,7 +300,7 @@ const UrlForm = () => {
                   absolute
                   -inset-2
                   rounded-[22px]
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-violet-400/20
                   via-fuchsia-400/15
                   to-cyan-400/20
@@ -315,11 +315,11 @@ const UrlForm = () => {
                   url-border
                   relative
                   rounded-2xl
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-violet-200
                   via-fuchsia-200
                   to-cyan-200
-                  p-[1px]
+                  p-[0.25]
                   transition-all
                   duration-500
                   focus-within:from-violet-400
@@ -362,7 +362,7 @@ const UrlForm = () => {
                       left-0
                       w-20
                       skew-x-[-20deg]
-                      bg-gradient-to-r
+                      bg-linear-to-r
                       from-transparent
                       via-violet-300/20
                       to-transparent
@@ -387,7 +387,7 @@ const UrlForm = () => {
                       rounded-xl
                       border
                       border-violet-100
-                      bg-gradient-to-br
+                      bg-linear-to-br
                       from-violet-50
                       via-fuchsia-50
                       to-cyan-50
@@ -421,7 +421,7 @@ const UrlForm = () => {
                     <Link2
                       size={19}
                       strokeWidth={2.2}
-                      className="relative z-10 transition-transform duration-500 group-focus-within:rotate-[-12deg]"
+                      className="relative z-10 transition-transform duration-500 group-focus-within:-rotate-12"
                     />
 
                   </div>
@@ -463,10 +463,10 @@ const UrlForm = () => {
                         absolute
                         bottom-1
                         left-0
-                        h-[2px]
+                        h-0.5
                         w-8
                         rounded-full
-                        bg-gradient-to-r
+                        bg-linear-to-r
                         from-violet-500
                         to-fuchsia-500
                         opacity-0
@@ -537,7 +537,7 @@ const UrlForm = () => {
                 gap-2.5
                 overflow-hidden
                 rounded-2xl
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-violet-600
                 via-fuchsia-500
                 to-cyan-500
@@ -554,7 +554,7 @@ const UrlForm = () => {
                 hover:shadow-2xl
                 active:translate-y-0
                 active:scale-[0.97]
-                min-[700px]:min-w-[155px]
+                min-[700px]:min-w-39
               "
             >
 
@@ -572,7 +572,7 @@ const UrlForm = () => {
                   w-[35%]
                   rotate-[-5deg]
                   skew-x-[-20deg]
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-transparent
                   via-white/45
                   to-transparent
@@ -758,13 +758,13 @@ const UrlForm = () => {
 
           <div className="mt-5 flex items-center gap-2">
 
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-200 to-transparent" />
 
             <div className="tiny-rotate flex h-4 w-4 items-center justify-center rounded-full border border-violet-100 bg-white text-[7px] text-violet-400 shadow-sm">
               ✦
             </div>
 
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-200 to-transparent" />
 
           </div>
 

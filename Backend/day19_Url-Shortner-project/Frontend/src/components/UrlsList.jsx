@@ -247,7 +247,7 @@ const UrlsList = () => {
             animation: iconFloat 3s ease-in-out infinite;
           }
 
-          .list-gradient {
+          .list-linear {
             background-size: 200% 200%;
             animation: gradientMove 4s ease infinite;
           }
@@ -300,7 +300,7 @@ const UrlsList = () => {
             .list-header-enter,
             .url-card,
             .list-icon,
-            .list-gradient,
+            .list-linear,
             .rotating-border,
             .pulse-dot,
             .number-pop,
@@ -335,7 +335,7 @@ const UrlsList = () => {
                 rounded-2xl
                 border
                 border-violet-100
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-violet-50
                 via-white
                 to-fuchsia-50
@@ -406,7 +406,7 @@ const UrlsList = () => {
               rounded-full
               border
               border-violet-100
-              bg-gradient-to-r
+              bg-linear-to-r
               from-violet-50
               to-fuchsia-50
               px-3
@@ -473,7 +473,7 @@ const UrlsList = () => {
                   sm:p-5
                 "
               >
-                {/* Rotating top gradient line */}
+                {/* Rotating top linear line */}
                 <div
                   className="
                     pointer-events-none
@@ -491,16 +491,16 @@ const UrlsList = () => {
                       absolute
                       left-1/2
                       top-1/2
-                      h-[500px]
-                      w-[500px]
+                      h-125
+                      w-125
                       -translate-x-1/2
                       -translate-y-1/2
-                      bg-[conic-gradient(from_0deg,transparent,#8b5cf6,#ec4899,#06b6d4,transparent)]
+                      bg-[conic-linear(from_0deg,transparent,#8b5cf6,#ec4899,#06b6d4,transparent)]
                     "
                   />
                 </div>
 
-                {/* Left gradient accent */}
+                {/* Left linear accent */}
                 <div
                   className="
                     absolute
@@ -508,7 +508,7 @@ const UrlsList = () => {
                     left-0
                     top-0
                     w-1
-                    bg-gradient-to-b
+                    bg-linear-to-b
                     from-violet-500
                     via-fuchsia-500
                     to-cyan-400
@@ -567,7 +567,7 @@ const UrlsList = () => {
                     left-0
                     z-10
                     w-1/5
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-transparent
                     via-violet-300/10
                     to-transparent
@@ -644,7 +644,7 @@ const UrlsList = () => {
                       <span
                         className="
                           truncate
-                          bg-gradient-to-r
+                          bg-linear-to-r
                           from-violet-600
                           via-fuchsia-500
                           to-cyan-500
@@ -757,7 +757,7 @@ const UrlsList = () => {
                       rounded-2xl
                       border
                       border-cyan-100
-                      bg-gradient-to-br
+                      bg-linear-to-br
                       from-cyan-50
                       via-white
                       to-blue-50
@@ -782,7 +782,7 @@ const UrlsList = () => {
                         items-center
                         justify-center
                         rounded-xl
-                        bg-gradient-to-br
+                        bg-linear-to-br
                         from-cyan-100
                         to-blue-100
                         text-cyan-600
@@ -853,7 +853,7 @@ const UrlsList = () => {
                         ${
                           isCopied
                             ? "bg-emerald-500 shadow-emerald-200"
-                            : "list-gradient bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 shadow-violet-200/60 hover:shadow-xl hover:shadow-fuchsia-200/60"
+                            : "list-linear bg-linear-to-r from-violet-600 via-fuchsia-500 to-cyan-500 shadow-violet-200/60 hover:shadow-xl hover:shadow-fuchsia-200/60"
                         }
                       `}
                     >
@@ -866,7 +866,7 @@ const UrlsList = () => {
                             inset-y-0
                             left-[-30%]
                             w-[35%]
-                            bg-gradient-to-r
+                            bg-linear-to-r
                             from-transparent
                             via-white/40
                             to-transparent
@@ -969,7 +969,7 @@ const UrlsList = () => {
                   #{String(index + 1).padStart(2, "0")}
                 </span>
 
-                {/* Bottom gradient line */}
+                {/* Bottom linear line */}
                 <div
                   className="
                     pointer-events-none
@@ -979,7 +979,7 @@ const UrlsList = () => {
                     h-px
                     w-1/3
                     -translate-x-1/2
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-transparent
                     via-violet-300/40
                     to-transparent
@@ -1003,12 +1003,12 @@ const UrlsList = () => {
               relative
               mt-2
               flex
-              min-h-[300px]
+              min-h-75
               flex-col
               items-center
               justify-center
               overflow-hidden
-              rounded-[24px]
+              rounded-3xl
               border
               border-dashed
               border-slate-200
@@ -1063,10 +1063,10 @@ const UrlsList = () => {
                 w-20
                 items-center
                 justify-center
-                rounded-[24px]
+                rounded-3xl
                 border
                 border-violet-100
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-violet-50
                 via-white
                 to-fuchsia-50
