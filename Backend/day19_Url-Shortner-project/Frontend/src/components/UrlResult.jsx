@@ -31,10 +31,10 @@ const UrlResult = () => {
         relative mt-6 w-full min-w-0 overflow-hidden
         rounded-2xl
         border border-emerald-400/10
-        bg-gradient-to-br
-        from-emerald-500/[0.06]
+        bg-linear-to-br
+        from-emerald-500/6
         via-transparent
-        to-violet-500/[0.04]
+        to-violet-500/4
         p-4
         pt-5
         shadow-lg shadow-emerald-950/10
@@ -121,7 +121,7 @@ const UrlResult = () => {
               group flex min-h-12 min-w-0 flex-1
               items-center gap-2
               rounded-xl
-              border border-white/[0.08]
+              border border-white/8
               bg-black/30
               px-3
               shadow-inner shadow-black/20
@@ -217,7 +217,7 @@ const UrlResult = () => {
                     shadow-emerald-500/20
                   `
                   : `
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-violet-600
                     to-fuchsia-600
                     text-white
@@ -236,7 +236,7 @@ const UrlResult = () => {
                 className="
                   absolute inset-0
                   -translate-x-full
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-transparent
                   via-white/20
                   to-transparent
@@ -272,7 +272,7 @@ const UrlResult = () => {
         </div>
 
         {/* Original URL */}
-        <div className="mt-5 border-t border-white/[0.05] pt-4">
+        <div className="mt-5 border-t border-white/5 pt-4">
           <div className="mb-1.5 flex items-center gap-2">
             <p
               className="
@@ -284,7 +284,7 @@ const UrlResult = () => {
               Original URL
             </p>
 
-            <span className="h-px flex-1 bg-gradient-to-r from-white/5 to-transparent" />
+            <span className="h-px flex-1 bg-linear-to-r from-white/5 to-transparent" />
           </div>
 
           <p

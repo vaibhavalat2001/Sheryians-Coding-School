@@ -175,7 +175,7 @@ const UrlsList = () => {
                 flex h-11 w-11 shrink-0 items-center justify-center
                 rounded-xl
                 border border-violet-400/10
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-violet-500/15
                 to-fuchsia-500/10
                 text-violet-400
@@ -239,7 +239,7 @@ const UrlsList = () => {
                   group relative overflow-hidden
                   rounded-2xl
                   border border-white/[0.07]
-                  bg-white/[0.025]
+                  bg-white/2.5
                   p-4
                   shadow-xl shadow-black/10
                   backdrop-blur-xl
@@ -247,7 +247,7 @@ const UrlsList = () => {
 
                   hover:-translate-y-1
                   hover:border-violet-400/25
-                  hover:bg-white/[0.045]
+                  hover:bg-white/4.5
                   hover:shadow-2xl
                   hover:shadow-violet-950/20
 
@@ -258,8 +258,8 @@ const UrlsList = () => {
                 <div
                   className="
                     absolute left-0 top-0
-                    h-full w-[2px]
-                    bg-gradient-to-b
+                    h-full w-0.5
+                    bg-linear-to-b
                     from-violet-500
                     via-fuchsia-500
                     to-cyan-500
@@ -388,14 +388,14 @@ const UrlsList = () => {
                       flex w-fit items-center gap-2
                       rounded-xl
                       border border-cyan-400/10
-                      bg-cyan-400/[0.04]
+                      bg-cyan-400/4
                       px-3 py-2
                       text-xs text-zinc-400
                       transition-all duration-300
 
                       hover:scale-105
                       hover:border-cyan-400/25
-                      hover:bg-cyan-400/[0.08]
+                      hover:bg-cyan-400/8
 
                       max-md:w-full
                     "
@@ -450,7 +450,7 @@ const UrlsList = () => {
                               shadow-emerald-500/20
                             `
                             : `
-                              bg-gradient-to-r
+                              bg-linear-to-r
                               from-violet-600
                               to-fuchsia-600
                               text-white
@@ -469,7 +469,7 @@ const UrlsList = () => {
                           className="
                             absolute inset-0
                             -translate-x-full
-                            bg-gradient-to-r
+                            bg-linear-to-r
                             from-transparent
                             via-white/25
                             to-transparent
@@ -513,7 +513,7 @@ const UrlsList = () => {
                         items-center justify-center
                         rounded-xl
                         border border-red-400/10
-                        bg-red-500/[0.06]
+                        bg-red-500/6
                         px-3
                         text-red-400
                         transition-all duration-300
@@ -561,8 +561,8 @@ const UrlsList = () => {
               flex flex-col items-center justify-center
               overflow-hidden
               rounded-2xl
-              border border-dashed border-white/[0.08]
-              bg-white/[0.02]
+              border border-dashed border-white/8
+              bg-white/2
               px-5 py-14
               text-center
             "
@@ -586,7 +586,7 @@ const UrlsList = () => {
                 items-center justify-center
                 rounded-2xl
                 border border-violet-400/10
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-violet-500/10
                 to-fuchsia-500/10
                 shadow-lg

@@ -12,7 +12,7 @@ const UrlForm = () => {
           className="
             group relative flex min-w-0 flex-1 items-center gap-3
             rounded-2xl
-            border border-white/[0.08]
+            border border-white/8
             bg-white/[0.035]
             px-4
             shadow-inner shadow-black/20
@@ -20,10 +20,10 @@ const UrlForm = () => {
             transition-all duration-300
 
             hover:border-violet-400/20
-            hover:bg-white/[0.05]
+            hover:bg-white/5
 
             focus-within:border-violet-400/50
-            focus-within:bg-violet-500/[0.04]
+            focus-within:bg-violet-500/4
             focus-within:shadow-lg
             focus-within:shadow-violet-500/10
           "
@@ -33,7 +33,7 @@ const UrlForm = () => {
             className="
               flex h-9 w-9 shrink-0 items-center justify-center
               rounded-xl
-              bg-gradient-to-br from-violet-500/20 to-fuchsia-500/10
+              bg-linear-to-br from-violet-500/20 to-fuchsia-500/10
               transition-all duration-300
               group-focus-within:scale-105
               group-focus-within:from-violet-500/30
@@ -73,8 +73,8 @@ const UrlForm = () => {
             className="
               hidden items-center gap-1
               rounded-lg
-              border border-white/[0.06]
-              bg-white/[0.03]
+              border border-white/6
+              bg-white/3
               px-2 py-1
               text-[10px] text-zinc-600
               sm:flex
@@ -92,17 +92,17 @@ const UrlForm = () => {
             items-center justify-center gap-2
             overflow-hidden
             rounded-2xl
-            bg-gradient-to-r
+            bg-linear-to-r
             from-violet-600
             via-fuchsia-500
             to-violet-600
-            bg-[length:200%_100%]
+            bg-size-[200%_100%]
             px-7
             text-sm font-semibold text-white
             shadow-xl shadow-violet-500/20
             transition-all duration-500
 
-            hover:bg-[position:100%_0]
+            hover:bg-position[100%_0]
             hover:shadow-2xl
             hover:shadow-fuchsia-500/20
             active:scale-[0.97]
@@ -115,7 +115,7 @@ const UrlForm = () => {
             className="
               absolute inset-0
               -translate-x-full
-              bg-gradient-to-r
+              bg-linear-to-r
               from-transparent
               via-white/20
               to-transparent
