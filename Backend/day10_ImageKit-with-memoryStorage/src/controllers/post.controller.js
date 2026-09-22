@@ -12,7 +12,6 @@ export const createPost = async (req, res) => {
       });
     }
 
-
     const uploadedImg = await sendFiles(file.buffer, file.originalname);
    
     const storedImg = await postModel.create({caption, image: uploadedImg.url})
