@@ -8,7 +8,7 @@ export const registerValidator = [
     .isString()
     .withMessage("name must be a string")
     .bail()
-    .isAlpha("en-IN", { ignore: " " })
+    .isAlpha("en", { ignore: " " })
     .trim()
     .isLength({ min: 2, max: 100 })
     .withMessage("name must be between 2 to 100 charater"),
