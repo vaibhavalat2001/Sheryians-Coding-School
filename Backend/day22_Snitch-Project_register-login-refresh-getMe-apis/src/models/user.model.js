@@ -13,20 +13,20 @@ const userSchema = new mongoose.Schema(
     passwordHash: {
       type: String,
       required: true,
-      minLenght: [6, "6 character required"],
+      // minLenght: [6, "6 character required"],
     },
     role: {
       type: String,
-      enum: ["user", "seller"],
       default: "user",
+      enum: ["user", "seller"],
     },
     refreshToken: {
       type: String,
     },
   },
-  { timestamps: true },
+  { timestamps: true },      
 );
 
-const userModel = mongoose.model("user", userSchema);
+const userModel = mongoose.model("users", userSchema);
 
 export default userModel;

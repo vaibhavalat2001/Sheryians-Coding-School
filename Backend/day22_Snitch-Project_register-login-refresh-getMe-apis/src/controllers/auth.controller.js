@@ -19,7 +19,7 @@ export const register = async (req, res) => {
       });
     }
 
-    const user = await userModel({
+    const user = await userModel.create({
       name,
       email,
       passwordHash: await bcrypt.hash(password, 13),
@@ -160,7 +160,7 @@ export const getMe = async (req, res) => {
       data: {
         name: user.name,
         email: user.email,
-      },       
+      },
     });
   } catch (error) {
     return res.status(400).json({
