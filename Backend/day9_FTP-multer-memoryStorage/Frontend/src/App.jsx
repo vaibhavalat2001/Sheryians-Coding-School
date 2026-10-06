@@ -8,13 +8,13 @@ const App = () => {
     const value = e.target;
     setData({ ...data, [value.name]: value.value });
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const value = e.target;
-
+console.log(value.images.files)
       const formData = new FormData();
 
       formData.append("name", data.name);
@@ -26,7 +26,6 @@ const App = () => {
 
       const res = await axios.post("http://localhost:3000/create", formData);
       console.log(res);
-      
     } catch (error) {
       console.log("error in api:", error);
     }
