@@ -1,13 +1,13 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { getProducts } from "../api/productApi";
+import { getAllProducts } from "../api/productApi";
 
 export const usePageLoad = () => {
   const [page, setPage] = useState(0);
   const limit = 12;
   const { data, isPending, error, isPlaceholderData } = useQuery({
     queryKey: ["products", page],
-    queryFn: () => getProducts(limit, page),
+    queryFn: () => getAllProducts(limit, page),
     placeholderData: keepPreviousData,
   });
 

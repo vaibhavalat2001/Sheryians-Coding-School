@@ -1,5 +1,6 @@
 import React from "react";
 import { ShoppingCart, Heart, Star, Tag } from "lucide-react";
+import { Navigate, useNavigate } from "react-router";
 
 const ProductCard = ({ product }) => {
   const {
@@ -12,12 +13,17 @@ const ProductCard = ({ product }) => {
     images,
   } = product;
 
-  return (
-    <div className="group w-full max-w-sm overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/60">
+  const navigate = useNavigate();
 
+  return (
+    <div
+      onClick={() => {
+        navigate(`/details/${product.id}`);
+      }}
+      className="group w-full max-w-sm overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/60"
+    >
       {/* ================= PRODUCT IMAGE ================= */}
       <div className="relative h-64 overflow-hidden bg-[#f5faf7]">
-
         {/* Discount Badge */}
         <div className="absolute left-4 top-4 z-10 flex items-center gap-1 rounded-full bg-orange-500 px-3 py-1.5 text-xs font-bold text-white shadow-sm">
           <Tag size={12} />
@@ -42,7 +48,6 @@ const ProductCard = ({ product }) => {
 
       {/* ================= PRODUCT DETAILS ================= */}
       <div className="p-5">
-
         {/* Brand */}
         <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
           {brand}
@@ -55,20 +60,16 @@ const ProductCard = ({ product }) => {
 
         {/* Rating */}
         <div className="mt-3 flex items-center gap-2">
-
           <span className="flex items-center gap-1 rounded-lg bg-emerald-500 px-2.5 py-1 text-xs font-bold text-white">
             <Star size={12} fill="currentColor" />
             {rating}
           </span>
 
-          <span className="text-xs text-slate-400">
-            Customer rating
-          </span>
+          <span className="text-xs text-slate-400">Customer rating</span>
         </div>
 
         {/* Price */}
         <div className="mt-4 flex items-center gap-3">
-
           <span className="text-2xl font-extrabold text-slate-900">
             ${price}
           </span>
@@ -80,7 +81,6 @@ const ProductCard = ({ product }) => {
 
         {/* Stock */}
         <div className="mt-2 flex items-center gap-2">
-
           <span
             className={`h-2 w-2 rounded-full ${
               availabilityStatus === "In Stock"
@@ -98,7 +98,6 @@ const ProductCard = ({ product }) => {
           >
             {availabilityStatus}
           </p>
-
         </div>
 
         {/* Button */}
@@ -112,9 +111,7 @@ const ProductCard = ({ product }) => {
         >
           <ShoppingCart size={17} />
 
-          {availabilityStatus === "In Stock"
-            ? "Add to Cart"
-            : "Out of Stock"}
+          {availabilityStatus === "In Stock" ? "Add to Cart" : "Out of Stock"}
         </button>
       </div>
     </div>
