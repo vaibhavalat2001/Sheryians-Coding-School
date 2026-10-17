@@ -1,8 +1,8 @@
-const Order = require("../models/order.model");
 const Restaurant = require("../models/restaurant.model");
 const MenuItem = require("../models/menuItem.model");
 const getPagination = require("../utils/pagination");
 const findOwnedRestaurant = require("../utils/ownership");
+const orderModel = require("../models/order.model");
 
 const PAYMENT_METHODS = ["upi", "card", "cod"];
 
@@ -83,14 +83,18 @@ async function getMyOrders(req, res) {
   const { page, limit, skip } = getPagination(req.query);
   const filter = { customer: req.user.id };
 
+  console.time("time");
+
   const [orders, total] = await Promise.all([
-    Order.find(filter)
+    orderModel.find(filter)
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit)
       .populate("restaurant", "name city area"),
-    Order.countDocuments(filter),
+    orderModel.countDocuments(filter),
   ]);
+
+  console.timeEnd('time');
 
   res.json({ page, limit, total, totalPages: Math.ceil(total / limit), orders });
 }

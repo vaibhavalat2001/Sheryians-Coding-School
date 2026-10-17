@@ -18,13 +18,21 @@ async function getMenu(req, res) {
   }
 
   const menuItems = await MenuItem.find(filter).sort({ category: 1, name: 1 });
-  res.json({ restaurant: { id: restaurant._id, name: restaurant.name }, count: menuItems.length, menuItems });
+
+  res.json({
+    restaurant: { id: restaurant._id, name: restaurant.name },
+    count: menuItems.length,
+    menuItems,
+  });
 }
 
 // POST /api/restaurants/:id/menu  (owner)
 // Body: { name, category, price, isVeg, isAvailable }
 async function createMenuItem(req, res) {
-  const { restaurant, error } = await findOwnedRestaurant(req.params.id, req.user.id);
+  const { restaurant, error } = await findOwnedRestaurant(
+    req.params.id,
+    req.user.id,
+  );
   if (error) {
     return res.status(error.status).json({ message: error.message });
   }
@@ -44,12 +52,18 @@ async function createMenuItem(req, res) {
 
 // PATCH /api/restaurants/:id/menu/:itemId  (owner)
 async function updateMenuItem(req, res) {
-  const { restaurant, error } = await findOwnedRestaurant(req.params.id, req.user.id);
+  const { restaurant, error } = await findOwnedRestaurant(
+    req.params.id,
+    req.user.id,
+  );
   if (error) {
     return res.status(error.status).json({ message: error.message });
   }
 
-  const menuItem = await MenuItem.findOne({ _id: req.params.itemId, restaurant: restaurant._id });
+  const menuItem = await MenuItem.findOne({
+    _id: req.params.itemId,
+    restaurant: restaurant._id,
+  });
   if (!menuItem) {
     return res.status(404).json({ message: "Menu item not found" });
   }
@@ -67,12 +81,18 @@ async function updateMenuItem(req, res) {
 
 // DELETE /api/restaurants/:id/menu/:itemId  (owner)
 async function deleteMenuItem(req, res) {
-  const { restaurant, error } = await findOwnedRestaurant(req.params.id, req.user.id);
+  const { restaurant, error } = await findOwnedRestaurant(
+    req.params.id,
+    req.user.id,
+  );
   if (error) {
     return res.status(error.status).json({ message: error.message });
   }
 
-  const menuItem = await MenuItem.findOneAndDelete({ _id: req.params.itemId, restaurant: restaurant._id });
+  const menuItem = await MenuItem.findOneAndDelete({
+    _id: req.params.itemId,
+    restaurant: restaurant._id,
+  });
   if (!menuItem) {
     return res.status(404).json({ message: "Menu item not found" });
   }

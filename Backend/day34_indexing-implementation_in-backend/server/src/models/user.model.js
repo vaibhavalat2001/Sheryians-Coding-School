@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
     // bcrypt hash of the user's current refresh token (null when logged out)
     refreshToken: { type: String, default: null, select: false },
   },
-  { timestamps: { createdAt: true, updatedAt: false } }
+  { timestamps: { createdAt: true, updatedAt: false } },
 );
 
 module.exports = mongoose.model("User", userSchema);
