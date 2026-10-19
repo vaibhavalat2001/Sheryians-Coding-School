@@ -220,7 +220,11 @@ const App = () => {
                 </div>
 
                 {/* Submit Button */}
-                <button type="submit" disabled={saving}>
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="rounded-xl bg-blue-600 px-4 py-3 font-semibold transition hover:bg-blue-500 active:scale-[0.98]"
+                >
                   {saving
                     ? "Saving..."
                     : update
