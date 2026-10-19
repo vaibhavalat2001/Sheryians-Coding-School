@@ -19,20 +19,39 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (saving) return;
+
+    setSaving(true);
+
     try {
       if (update) {
-        await api.put(`/${update._id}`, formData);
+        // UPDATE NOTE
+        const res = await api.put(`/${update._id}`, formData);
+
+        // Update the existing note in React state
+        const updatedNote = res.data.note ?? {
+          ...update,
+          ...formData,
+        };
 
         setNotesData((prev) =>
-          prev.map((note) =>
-            note._id === update._id ? { ...note, ...formData } : note,
-          ),
+          prev.map((note) => (note._id === update._id ? updatedNote : note)),
         );
 
         setUpdate(null);
       } else {
-        await api.post("/create", formData);
-        await getNotes();
+        // CREATE NOTE
+        const res = await api.post("/create", formData);
+
+        // Use the created note returned by your backend
+        const createdNote = res.data.note ?? res.data.newNote;
+
+        if (createdNote?._id) {
+          setNotesData((prev) => [createdNote, ...prev]);
+        } else {
+          // Fallback if your backend doesn't return the created note
+          await getNotes();
+        }
       }
 
       setFormData({ title: "", description: "" });
