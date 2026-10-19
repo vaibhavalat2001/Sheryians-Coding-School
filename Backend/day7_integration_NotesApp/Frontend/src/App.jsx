@@ -3,6 +3,7 @@ import { api } from "./config/axiosInstance";
 import NotesCard from "../components/NotesCard";
 
 const App = () => {
+  const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({ title: "", description: "" });
   const [notesData, setNotesData] = useState([]);
@@ -38,6 +39,8 @@ const App = () => {
       setShowForm(false);
     } catch (error) {
       console.error("Save note error:", error.response?.data || error.message);
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -217,11 +220,12 @@ const App = () => {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="rounded-xl bg-blue-600 px-4 py-3 font-semibold transition hover:bg-blue-500 active:scale-[0.98]"
-                >
-                  {update ? "Update Note" : "Create Note"}
+                <button type="submit" disabled={saving}>
+                  {saving
+                    ? "Saving..."
+                    : update
+                      ? "Update Note"
+                      : "Create Note"}
                 </button>
               </form>
             </div>
