@@ -3,8 +3,9 @@ import { api } from "./config/axiosInstance";
 import NotesCard from "../components/NotesCard";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({ title: "", description: "" });
-  const [notesData, setNotesData] = useState();
+  const [notesData, setNotesData] = useState([]);
   const [update, setUpdate] = useState();
   const [showForm, setShowForm] = useState();
 
@@ -13,28 +14,30 @@ const App = () => {
   };
 
   // CREATE NOTES
+
   const handleSubmit = async (e) => {
-    if (update) {
-      try {
+    e.preventDefault();
+
+    try {
+      if (update) {
         await api.put(`/${update._id}`, formData);
-        getNotes();
+
+        setNotesData((prev) =>
+          prev.map((note) =>
+            note._id === update._id ? { ...note, ...formData } : note,
+          ),
+        );
+
         setUpdate(null);
-      } catch (error) {
-        console.log("update api error", error);
+      } else {
+        await api.post("/create", formData);
+        await getNotes();
       }
-    } else {
-      try {
-        e.preventDefault();
-        const res = await api.post("/create", formData);
-        getNotes();
-        setFormData({
-          title: "",
-          description: "",
-        });
-        setShowForm(false);
-      } catch (error) {
-        console.log("create notes api error:", error);
-      }
+
+      setFormData({ title: "", description: "" });
+      setShowForm(false);
+    } catch (error) {
+      console.error("Save note error:", error.response?.data || error.message);
     }
   };
 
@@ -45,6 +48,8 @@ const App = () => {
       setNotesData(res.data.allNotes);
     } catch (error) {
       console.log("get api error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,32 +69,40 @@ const App = () => {
   };
 
   // DELETE NOTES
+
   const deleteNotes = async (id) => {
     try {
-      await api.delete(id);
-      getNotes();
+      await api.delete(`/${id}`);
+
+      setNotesData((prev) => prev.filter((note) => note._id !== id));
     } catch (error) {
-      console.log("delete api error:", error);
+      console.error(
+        "Delete note error:",
+        error.response?.data || error.message,
+      );
     }
   };
 
   // DELETE ALL NOTES
   const deleteAllNotes = async () => {
+    if (!window.confirm("Are you sure you want to delete all notes?")) {
+      return;
+    }
+
     try {
-      const res = confirm("are you want to delete all notes");
-      if (!res) {
-        return;
-      }
-      await api.delete("allDelete");
-      getNotes();
+      await api.delete("/allDelete");
+      setNotesData([]);
     } catch (error) {
-      console.log("allDelete api error:", error);
+      console.error(
+        "Delete all notes error:",
+        error.response?.data || error.message,
+      );
     }
   };
 
   const closeForm = () => {
     setShowForm(false);
-
+    setUpdate(null);
     setFormData({
       title: "",
       description: "",
@@ -175,7 +188,7 @@ const App = () => {
                   </label>
 
                   <input
-                  required
+                    required
                     onChange={handleChange}
                     name="title"
                     value={formData.title}
@@ -192,7 +205,8 @@ const App = () => {
                   </label>
 
                   <textarea
-                  minLength={20}
+                    required
+                    minLength={20}
                     onChange={handleChange}
                     name="description"
                     value={formData.description}
@@ -225,16 +239,20 @@ const App = () => {
           </div>
 
           {/* Notes Grid */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {notesData?.map((val) => (
-              <NotesCard
-                key={val._id}
-                notes={val}
-                deleteNotes={deleteNotes}
-                updateNotes={updateNotes}
-              />
-            ))}
-          </div>
+          {loading ? (
+            <p>Loading notes...</p>
+          ) : (
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {notesData?.map((val) => (
+                <NotesCard
+                  key={val._id}
+                  notes={val}
+                  deleteNotes={deleteNotes}
+                  updateNotes={updateNotes}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
