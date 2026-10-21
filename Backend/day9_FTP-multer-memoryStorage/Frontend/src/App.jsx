@@ -8,13 +8,12 @@ const App = () => {
     const value = e.target;
     setData({ ...data, [value.name]: value.value });
   };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const value = e.target;
-console.log(value.images.files)
       const formData = new FormData();
 
       formData.append("name", data.name);
@@ -32,7 +31,7 @@ console.log(value.images.files)
   };
 
   return (
-    <div className="h-screen bg-black flex justify-center items-center p-4 text-white">
+    <div className="h-screen grid max-[450px]:grid-cols-1 bg-black flex justify-center items-center p-4 text-white">
       <form
         onSubmit={handleSubmit}
         className="bg-zinc-700 flex flex-col rounded-xl gap-4 p-6 border-zinc-300"
