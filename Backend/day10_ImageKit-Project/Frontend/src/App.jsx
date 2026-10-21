@@ -161,7 +161,7 @@ const App = () => {
           <form onSubmit={handleUpload}>
             <label
               htmlFor="images"
-              className="flex min-h-44 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-zinc-700 bg-white/[0.02] p-6 text-center transition hover:border-violet-500 hover:bg-violet-500/5"
+              className="flex min-h-44 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-zinc-700 bg-white/2 p-6 text-center transition hover:border-violet-500 hover:bg-violet-500/5"
             >
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/15 text-3xl text-violet-400">
                 ↑
@@ -316,7 +316,7 @@ const App = () => {
                         </div>
                       )}
 
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12">
+                      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 to-transparent p-4 pt-12">
                         <p className="truncate text-sm font-medium text-white">
                           {image.originalName ||
                             image.name ||
