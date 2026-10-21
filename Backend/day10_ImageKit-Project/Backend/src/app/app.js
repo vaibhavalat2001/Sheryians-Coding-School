@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://imgnest-frontend.vercel.app/",
+    origin: "https://imgnest-frontend.vercel.app",
     credentials: true,
   }),
 );
