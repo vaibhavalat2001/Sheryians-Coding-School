@@ -1,5 +1,6 @@
-import axios from "axios"
+import axios from "axios";
 
-export const apiInstance = async () => {
-    return axios.create("http://localhost:3000/image")
-}
+export const apiInstance = axios.create({
+  baseURL: "https://10imagekit-project.vercel.app/image",
+  withCredentials: true,
+});
