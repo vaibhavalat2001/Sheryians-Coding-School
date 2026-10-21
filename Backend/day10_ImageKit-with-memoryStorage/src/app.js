@@ -7,4 +7,4 @@ app.use(express.json())
 
 app.use("/", postRouter)
 
-export default app;   
+export default app;
