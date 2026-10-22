@@ -30,10 +30,6 @@ const App = () => {
     } catch (err) {
       console.error("Error fetching images:", err);
 
-      setError(
-        err.response?.data?.message ||
-          "Unable to load images. Please check your backend.",
-      );
     } finally {
       setLoading(false);
     }
@@ -116,7 +112,7 @@ const App = () => {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
-              Pixel<span className="text-violet-500">Vault</span>
+              Img<span className="text-violet-500">Nest</span>
             </h1>
 
             <p className="mt-1 text-sm text-zinc-400">
