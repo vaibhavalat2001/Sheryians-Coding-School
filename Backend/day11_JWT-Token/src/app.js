@@ -25,7 +25,7 @@ app.post("/api/register", (req, res) => {
   );
 
   res.status(201).json({
-    message: "token created successfully",
+    message: "user registered successfully",
     token,
   });
 });
