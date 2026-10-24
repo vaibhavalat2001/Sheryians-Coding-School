@@ -10,7 +10,7 @@ app.use(express.json());
 await connectDB();
 app.use(
   cors({
-    origin: "https://tokenflow-frontend.vercel.app/",
+    origin: "https://tokenflow-frontend.vercel.app",
     credentials: true,
   }),
 );
