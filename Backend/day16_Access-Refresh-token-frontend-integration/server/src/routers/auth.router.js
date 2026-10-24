@@ -22,7 +22,7 @@ router.post("/register", async (req, res) => {
 
   if (!name || !email || !password) {
     return res.status(401).json({
-      message: "unauthorized, all fileds required",
+      message: "unauthorized, all fields required",
     });
   }
 
@@ -133,7 +133,7 @@ router.post("/login", async (req, res) => {
 
     if (!compare) {
       return res.status(401).json({
-        message: "unauthorized, passwrod didn't matched",
+        message: "unauthorized, password didn't matched",
       });
     }
 
@@ -147,7 +147,7 @@ router.post("/login", async (req, res) => {
     });
 
     return res.status(200).json({
-      message: "user loggedin successfully",
+      message: "user login successfully",
       data: {
         user: {
           name: user.name,
