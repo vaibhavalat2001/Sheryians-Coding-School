@@ -12,7 +12,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     fetchProfile();
-  }, []);
+  }, []); 
   return (
     <div className="h-screen gap-4 flex flex-col justify-center items-center">
       <div>Name: {user?.name}</div>
