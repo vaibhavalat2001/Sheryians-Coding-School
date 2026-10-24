@@ -12,16 +12,16 @@ const AppRouters = () => {
       element: <MainLayout />,
       children: [
         {
+          path: "/",
+          element: <LoginPage />,
+        },
+        {
           path: "/register",
           element: <RegisterPage />,
         },
         {
           path: "/profile",
           element: <ProfilePage />,
-        },
-        {
-          path: "/login",
-          element: <LoginPage />,
         },
       ],
     },
