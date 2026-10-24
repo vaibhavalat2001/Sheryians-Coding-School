@@ -49,7 +49,7 @@ const MainLayout = () => {
     setUser(null);
     setAccessToken(null);
     closeMenu();
-    navigate("/login", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (
@@ -62,7 +62,7 @@ const MainLayout = () => {
         >
           {/* Logo */}
           <NavLink
-            to={isAuthenticated ? "/profile" : "/login"}
+            to={isAuthenticated ? "/profile" : "/"}
             onClick={closeMenu}
             className="flex min-w-0 shrink items-center gap-2.5 sm:gap-3"
           >
@@ -101,7 +101,7 @@ const MainLayout = () => {
               </>
             ) : (
               <>
-                <NavLink to="/login" className={navLinkStyle}>
+                <NavLink to="/" className={navLinkStyle}>
                   <LogIn size={17} />
                   <span>Login</span>
                 </NavLink>
@@ -182,7 +182,7 @@ const MainLayout = () => {
                 ) : (
                   <>
                     <NavLink
-                      to="/login"
+                      to="/"
                       onClick={closeMenu}
                       tabIndex={menuOpen ? 0 : -1}
                       className={mobileLinkStyle}
