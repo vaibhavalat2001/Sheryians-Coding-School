@@ -6,7 +6,7 @@ export default function useApi() {
   const { accessToken, setAccessToken } = useContext(userStore);
 
   const api = axios.create({
-    baseURL: "/api",
+    baseURL: "https://tokenflow-backend.vercel.app/api",
     withCredentials: true,
   });
 
