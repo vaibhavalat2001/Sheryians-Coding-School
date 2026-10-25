@@ -51,6 +51,9 @@ router.post("/register", async (req, res) => {
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
     });
 
     return res.status(200).json({
@@ -144,6 +147,9 @@ router.post("/login", async (req, res) => {
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
     });
 
     return res.status(200).json({
@@ -198,6 +204,9 @@ router.post("/refresh", async (req, res) => {
 
     res.cookie("refreshToken", newRefreshToken, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
     });
 
     return res.status(200).json({
