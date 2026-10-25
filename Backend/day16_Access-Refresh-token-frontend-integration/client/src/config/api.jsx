@@ -30,7 +30,7 @@ export default function useApi() {
     },
 
     async (error) => {
-      if (error.response.status === 401) {
+      if (error.response?.status === 401) {
         const res = await api.post("/auth/refresh");
         setAccessToken(res.data.token.accessToken);
         error.config.headers.Authorization = `Bearer ${res.data.token.accessToken}`;

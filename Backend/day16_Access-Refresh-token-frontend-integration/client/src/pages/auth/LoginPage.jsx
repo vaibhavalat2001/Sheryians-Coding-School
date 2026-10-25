@@ -84,7 +84,7 @@ const LoginPage = () => {
         error.response?.data?.message ||
           error.response?.data?.error ||
           error.message ||
-          "Login failed. Please check your credentials and try again."
+          "Login failed. Please check your credentials and try again.",
       );
     } finally {
       setLoading(false);
@@ -92,7 +92,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-[#080B18] px-4 py-10 sm:px-6">
+    <div className=" relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-[#080B18] px-4 py-10 sm:px-6">
       {/* Background decorations */}
       <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-violet-600/20 blur-[100px] sm:h-96 sm:w-96" />
 
@@ -115,9 +115,7 @@ const LoginPage = () => {
               <Sparkles size={24} />
             </div>
 
-            <span className="text-xl font-bold tracking-wide">
-              CreateSpace
-            </span>
+            <span className="text-xl font-bold tracking-wide">CreateSpace</span>
           </div>
 
           {/* Promotional content */}
@@ -164,35 +162,21 @@ const LoginPage = () => {
         {/* Login form section */}
         <div className="flex flex-col justify-center px-5 py-9 sm:px-10 sm:py-12 md:px-14 lg:px-10 xl:px-16">
           {/* Mobile brand */}
-          <div className="mb-8 flex items-center gap-3 lg:hidden">
+
+          {/* Heading */}
+          <div className="mb-8 flex gap-x-6">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white shadow-lg shadow-violet-500/20">
               <Sparkles size={23} />
             </div>
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Welcome back
+              </h2>
 
-            <div>
-              <h1 className="text-xl font-bold text-white">
-                Create<span className="text-violet-400">Space</span>
-              </h1>
-
-              <p className="text-[10px] tracking-[0.15em] text-slate-500">
-                YOUR PERSONAL SPACE
+              <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
+                Enter your credentials to sign in to your account.
               </p>
             </div>
-          </div>
-
-          {/* Heading */}
-          <div className="mb-8">
-            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-400/20 bg-violet-500/10 text-violet-300">
-              <LogIn size={28} />
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Welcome back
-            </h2>
-
-            <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
-              Enter your credentials to sign in to your account.
-            </p>
           </div>
 
           {/* Form */}
@@ -265,11 +249,7 @@ const LoginPage = () => {
                   disabled={loading}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 transition-colors hover:text-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 disabled:cursor-not-allowed"
                 >
-                  {showPassword ? (
-                    <EyeOff size={19} />
-                  ) : (
-                    <Eye size={19} />
-                  )}
+                  {showPassword ? <EyeOff size={19} /> : <Eye size={19} />}
                 </button>
               </div>
             </div>
@@ -299,7 +279,6 @@ const LoginPage = () => {
               ) : (
                 <>
                   Sign in to your account
-
                   <ArrowRight
                     size={19}
                     className="transition-transform duration-300 group-hover:translate-x-1"
