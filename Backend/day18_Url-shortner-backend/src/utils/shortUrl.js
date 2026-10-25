@@ -8,5 +8,3 @@ export const shortCode = () => {
 
   return code;
 };
-
-shortCode();
