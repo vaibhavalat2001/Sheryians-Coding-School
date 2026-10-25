@@ -120,7 +120,7 @@ router.post("/login", async (req, res) => {
 
   if (!email || !password) {
     return res.status(401).json({
-      message: "unauthorized, all fileds are required",
+      message: "unauthorized, all fields are required",
     });
   }
   try {
@@ -128,15 +128,15 @@ router.post("/login", async (req, res) => {
 
     if (!user) {
       return res.status(401).json({
-        message: "unauthorized, email not mateched",
+        message: "unauthorized, email or password don't match",
       });
     }
 
-    const compare = bcrypt.compare(password, user.passwordHash);
+    const compare = await bcrypt.compare(password, user.passwordHash);
 
     if (!compare) {
       return res.status(401).json({
-        message: "unauthorized, password didn't matched",
+        message: "unauthorized, email or password don't match",
       });
     }
 
