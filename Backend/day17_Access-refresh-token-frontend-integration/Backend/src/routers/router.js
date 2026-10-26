@@ -9,7 +9,6 @@ import {
 
 const router = Router();
 
-
 // connection
 router.get("/", (req, res) => {
   res.send("connected server");
@@ -53,6 +52,9 @@ router.post("/register", async (req, res) => {
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
     });
 
     return res.status(200).json({
@@ -82,7 +84,7 @@ export default router;
 
 router.get("/me", async (req, res) => {
   const accessToken = req.headers.authorization?.split(" ")[1];
-console.log(accessToken)
+  console.log(accessToken);
   if (!accessToken) {
     return res.status(404).json({
       message: "accessToken not found",
@@ -101,7 +103,7 @@ console.log(accessToken)
     }
 
     return res.status(200).json({
-      messag: "user matched successfully",
+      message: "user matched successfully",
       data: {
         user: {
           name: user.name,
@@ -159,10 +161,13 @@ router.post("/login", async (req, res) => {
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
     });
 
     return res.status(200).json({
-      message: "user loggedin successfully",
+      message: "user login successfully",
       data: {
         user: {
           name: user.name,
@@ -216,6 +221,9 @@ router.post("/refresh", async (req, res) => {
 
     res.cookie("refreshToken", newRefreshToken, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
     });
 
     return res.status(200).json({
