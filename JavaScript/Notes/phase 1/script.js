@@ -21,7 +21,7 @@ console.log("My name is", "Vaibhav", "and I am", 25, "years old");
 
 
 // 5. ### Variable -- The Heart of Programming ---
-var age = 24;
+var age = 24;  
 let name = "Vaibhav";
 const PI = 3.141559;
 

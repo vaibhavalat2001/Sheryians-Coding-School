@@ -10,15 +10,15 @@ let prompt = require("prompt-sync")();
 // a negative number, to make sure it always gives the right answer.  
 // Concepts: functions, if-else, % (modulo) operator 
 // =====>
-// function num() {
-//     let n = Number(prompt("Enter a number:"));
-//     if (n === 0) return "The number is zero";
-//     else if (n % 2 === 1) return "Odd";
-//     else if (n % 2 === 0) return "Even";
-//     else return "The number is negative";
-// }
-// let result = num();
-// console.log(result);
+function num() {
+    let n = Number(prompt("Enter a number:"));
+    if (n === 0) return "The number is zero";
+    else if (n % 2 === 1) return "Odd";
+    else if (n % 2 === 0) return "Even";
+    else return "The number is negative";
+}
+let result = num();
+console.log(result);
 
 
 // 2. GREETING GENERATOR  
